@@ -1,0 +1,1 @@
+/Users/simpleplan/Documents/GitHub/avenue-dev-theme/avenue-dev-theme/AGENTS.md
