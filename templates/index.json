@@ -13,12 +13,11 @@
       "type": "home-banner",
       "settings": {
         "banner-bg": "shopify://shop_images/avenue-home-banner.png",
-        "review_star_rating": "150,000 satisfied customers",
-        "review_star_star": 5,
-        "head": "",
-        "para": "",
-        "button_text": "",
-        "button_link": ""
+        "banner-image": "shopify://shop_images/avenue-logo-white.svg",
+        "head": "The avenue to better skin.",
+        "para": "We are a full-service dermatology centre based in Toronto focused on evidence-based treatment of your skin.",
+        "button_text": "book an appointment",
+        "button_link": "#"
       }
     }
   },
