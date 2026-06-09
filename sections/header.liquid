@@ -1,77 +1,80 @@
-<header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
+<header class="transparent" data-ajax-cart-section>
+   <div class="container-fluid">
+      <div class="header-in">
+         <div class="hi-left">
 
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
-
-  <div class="header__icons">
-    {% if shop.customer_accounts_enabled %}
-      <shopify-account menu="{{ section.settings.customer_account_menu }}">
-        {{ 'icon-account.svg' | inline_asset_content }}
-      </shopify-account>
-    {% endif %}
-
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
-      {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
-    </a>
-  </div>
+         </div>
+         <div class="header-logo">
+            <a href="{{ routes.root_url }}">
+              {% if section.settings.select_logo %}
+                <img
+                  src="{{ section.settings.select_logo | image_url }}"
+                  alt="{{ shop.name | escape }}"
+                  class="icon">
+              {% else %}
+                {{ shop.name }}
+              {% endif %}
+            </a>
+         </div>
+         <div class="hi-right">
+            <div class="right-menu"></div>
+            <div class="right-extra">
+               {% if customer %}
+                  <a href="{{ routes.account_url }}" class="cust-login">Account</a>
+               {% else %}
+                  <a href="{{ routes.account_login_url }}" class="profile">login</a>
+               {% endif %}
+               {% unless template.name == 'cart' %}
+               <div class="cart" data-ajax-cart-section>
+                  <a href="javascript:void(0)" class="cart-open">
+                     Cart <span data-ajax-cart-bind="item_count" class="header__cart-quantity">{{ cart.item_count }}</span>
+                  </a>
+               </div>
+               {% endunless %}
+            </div>
+         </div>
+      </div>
+   </div>
 </header>
 
-{% stylesheet %}
-  header {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header a {
-    position: relative;
-    text-decoration: none;
-    color: var(--color-foreground);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  header a sup {
-    position: absolute;
-    left: 100%;
-    overflow: hidden;
-    max-width: var(--page-margin);
-  }
-  header svg {
-    width: 2rem;
-  }
-  header .header__menu,
-  header .header__icons {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
-
 {% schema %}
-{
-  "name": "t:general.header",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
-    },
-    {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:labels.customer_account_menu",
-      "default": "customer-account-main-menu"
-    }
-  ]
-}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "select_logo",
+        "label": "Change Logo"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "nav_menu_right",
+        "name": "Nav Menu Right",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "nav_items_right",
+            "label": "Nav Items"
+          },
+          {
+            "type": "text",
+            "id": "product_list_heading",
+            "label": "Product List Heading"
+          },
+          {
+            "type": "product_list",
+            "id": "product_list",
+            "label": "Select Products",
+            "limit": 3
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Header"
+      }
+    ]
+  }
 {% endschema %}

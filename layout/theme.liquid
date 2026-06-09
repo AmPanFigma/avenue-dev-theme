@@ -3,6 +3,68 @@
   <head>
     {% # Inlined CSS Variables %}
     {% render 'css-variables' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    {%- liquid
+      assign favicon_default = ''
+      assign favicon_light = ''
+      assign favicon_dark = ''
+      if settings.favicon != blank
+        assign favicon_default = settings.favicon | img_url: '32x32'
+      endif
+      if settings.favicon_light != blank
+        assign favicon_light = settings.favicon_light | img_url: '32x32'
+      endif
+      if settings.favicon_dark != blank
+        assign favicon_dark = settings.favicon_dark | img_url: '32x32'
+      endif
+      assign favicon_initial = favicon_default
+      if favicon_light != blank
+        assign favicon_initial = favicon_light
+      elsif favicon_dark != blank
+        assign favicon_initial = favicon_dark
+      endif
+    -%}
+
+    {%- if favicon_initial != blank -%}
+      <link id="theme-favicon" rel="icon" href="{{ favicon_initial }}" type="image/png">
+      <link id="theme-favicon-shortcut" rel="shortcut icon" href="{{ favicon_initial }}" type="image/png">
+      <script>
+        (function() {
+          var faviconLight = {{ favicon_light | json }};
+          var faviconDark = {{ favicon_dark | json }};
+          var faviconDefault = {{ favicon_default | json }};
+          var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+          function getFaviconHref() {
+            if (mediaQuery.matches && faviconDark) return faviconDark;
+            if (!mediaQuery.matches && faviconLight) return faviconLight;
+            return faviconDefault || faviconLight || faviconDark || '';
+          }
+
+          function setFavicon() {
+            var href = getFaviconHref();
+            if (!href) return;
+
+            var iconLink = document.getElementById('theme-favicon');
+            var shortcutLink = document.getElementById('theme-favicon-shortcut');
+
+            if (iconLink) iconLink.href = href;
+            if (shortcutLink) shortcutLink.href = href;
+          }
+
+          setFavicon();
+
+          if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', setFavicon);
+          } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(setFavicon);
+          }
+        })();
+      </script>
+    {%- endif -%}
 
     {% comment %}
       Font preloading:
@@ -16,21 +78,29 @@
       {% comment %} Preload the base font variant for initial page render {% endcomment %}
       {{ settings.type_primary_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
     {% endunless %}
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 
     {% # Load and preload the critical CSS %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 
     {% # Social, title, etc. %}
-    {% render 'meta-tags' %}
+    {% comment %} {% render 'meta-tags' %} {% endcomment %}
 
     {{ content_for_header }}
+
+    {{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'responsive.css' | asset_url | stylesheet_tag: preload: true }}
   </head>
 
   <body>
     {% sections 'header-group' %}
 
-    {{ content_for_layout }}
+    <div class="main">
+      {{ content_for_layout }}
+    </div>
 
     {% sections 'footer-group' %}
+
+    <script src="{{ 'global.js' |  asset_url }}" defer></script>
   </body>
 </html>

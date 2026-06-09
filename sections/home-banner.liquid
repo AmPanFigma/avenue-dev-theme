@@ -1,0 +1,99 @@
+<section class="banner home">
+    <div class="bg-image">
+        <picture>
+            {% if section.settings.banner_bg_mobile != blank %}
+                <source media="(max-width: 767px)" srcset="{{ section.settings.banner_bg_mobile | img_url: 'master' }}">
+            {% endif %}
+            <img src="{{ section.settings.banner-bg | image_url }}" alt="banner image">
+        </picture>
+    </div>
+    <div class="container">
+        <div class="banner-content">
+            <div class="bc-top">
+
+            </div>
+            <div class="bc-bottom">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner-bg",
+      "label": "Banner Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_bg_mobile",
+      "label": "Banner Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "review_star_rating",
+      "label": "Review Text",
+      "default": "150,000 satisfied customers"
+    },
+    {
+      "type": "range",
+      "id": "review_star_star",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "label": "Star Ratings",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "head",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "para",
+      "label": "Paragraph"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Reviews",
+      "type": "reviews",
+      "settings": [
+        {
+          "type": "text",
+          "id": "review-top",
+          "label": "Platform Name",
+          "default": "Google Reviews"
+        },
+        {
+          "type": "range",
+          "id": "review_star",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "label": "Star Ratings",
+          "default": 4.7
+        }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Home Banner" }
+  ]
+}
+{% endschema %}
