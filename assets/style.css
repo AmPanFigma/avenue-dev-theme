@@ -36,6 +36,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
     font-size: clamp(60px, 5vw, 90px);
+    letter-spacing: 0.16px;
 }
 h2 {
 
@@ -53,9 +54,38 @@ h6 {
 
 }
 
-.container-fluid {
-    max-width: 1400px;
+.container {
+    width: 100%;
+    max-width: 1200px;
     padding: 0 20px;
+    margin: 0 auto;
+}
+.container-fluid {
+    max-width: 1600px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4.16px;
+    text-align: center;
+    transition: .3s ease all;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+.custom-btn.filled {
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+    border-color: var(--bg-light);
+}
+.custom-btn.filled:hover {
+    background-color: var(--bg-primary);
+    color: var(--white);
 }
 
 
@@ -73,6 +103,18 @@ header.transparent {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+}
+.header-logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    width: 140px;
+}
+.header-logo img {
+    width: 100%;
 }
 .hi-right {
     display: flex;
@@ -93,6 +135,9 @@ header.transparent {
     position: relative;
     height: 100vh;
     min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .banner .bg-image {
     position: absolute;
@@ -108,5 +153,48 @@ header.transparent {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+.banner-in {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-content {
+    
+}
+.bc-top .bct-image {
+    width: 80%;
+    margin: auto;
+}
+.bct-image img {
+    width: 100%;
+}
+.bc-bottom {
+    margin-top: 100px;
+}
+.bc-bottom .bcb-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.bcb-content h1 {
+    color: var(--white);
+    font-size: 30px;
+    text-align: center;
+}
+.bcb-content p {
+    color: var(--white);
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    line-height: 134%;
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 /* Homepage CSS */
