@@ -11,7 +11,15 @@
   "sections": {
     "banner": {
       "type": "home-banner",
-      "settings": {}
+      "settings": {
+        "banner-bg": "shopify://shop_images/avenue-home-banner.png",
+        "review_star_rating": "150,000 satisfied customers",
+        "review_star_star": 5,
+        "head": "",
+        "para": "",
+        "button_text": "",
+        "button_link": ""
+      }
     }
   },
   "order": [

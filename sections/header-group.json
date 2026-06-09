@@ -13,10 +13,12 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "select_logo": "shopify://shop_images/avenue-logo-white.svg"
+      }
     }
   },
   "order": [
     "header"
-  ],
+  ]
 }
