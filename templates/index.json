@@ -23,23 +23,81 @@
     "spacer": {
       "type": "spacer",
       "settings": {
-        
+        "spacer_height": 170
       }
     },
     "service": {
       "type": "services",
+      "blocks": {
+        "tab_xxtzMe": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Medical",
+            "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
+            "button_text": "learn more",
+            "button_link": "#",
+            "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
+            "tab_alt_image": "girl face with pimple"
+          }
+        },
+        "tab_kPDGHd": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Aesthetic",
+            "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
+            "button_text": "learn more",
+            "button_link": "#",
+            "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
+            "tab_alt_image": "girl face with pimple"
+          }
+        },
+        "tab_XdrgJV": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Clinical Trial",
+            "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
+            "button_text": "learn more",
+            "button_link": "#",
+            "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
+            "tab_alt_image": "girl face with pimple"
+          }
+        },
+        "tab_Db6qap": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "Body Mapping",
+            "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
+            "button_text": "learn more",
+            "button_link": "#",
+            "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
+            "tab_alt_image": "girl face with pimple"
+          }
+        }
+      },
+      "block_order": [
+        "tab_xxtzMe",
+        "tab_kPDGHd",
+        "tab_XdrgJV",
+        "tab_Db6qap"
+      ],
       "settings": {
-        
+        "highlight": "explore our services",
+        "heading": "At Avenue, we offer medical & aesthetic services to help you achieve your healthiest & most beautiful skin.",
+        "button_text": "",
+        "button_link": ""
       }
     },
     "spacer1": {
       "type": "spacer",
       "settings": {
-        
+        "spacer_height": 170
       }
-    },
+    }
   },
   "order": [
-    "banner","spacer","service","spacer1"
+    "banner",
+    "spacer",
+    "service",
+    "spacer1"
   ]
 }
