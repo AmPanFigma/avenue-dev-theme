@@ -1,0 +1,5 @@
+@media(max-width:1500px) {
+    .service-in {
+        margin-left: calc((100vw - 1440px) / 2);
+    }
+}

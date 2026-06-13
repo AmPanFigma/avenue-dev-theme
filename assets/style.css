@@ -7,8 +7,8 @@
 }
 @font-face {
     font-family: 'PP Neue Montreal';
-    src: url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontrealMono-Book.woff2?v=1781031423') format('woff2'),
-        url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontrealMono-Book.woff?v=1781031424') format('woff');
+    src: url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontreal-Book.woff2?v=1781352370') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontreal-Book.woff?v=1781352370') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -39,10 +39,16 @@ h1 {
     letter-spacing: 0.16px;
 }
 h2 {
-
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    line-height: 122%;
 }
 h3 {
-
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    line-height: 122%;
 }
 h4 {
 
@@ -87,6 +93,15 @@ h6 {
     background-color: var(--bg-primary);
     color: var(--white);
 }
+.custom-btn.grey {
+    color: var(--white);
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+}
+.custom-btn.grey:hover {
+    background-color: var(--bg-primary);
+    color: var(--white);
+}
 
 
 /* Header CSS */
@@ -95,6 +110,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 9999;
+    height: 60px;
 }
 header.transparent {
     background-color: transparent;
@@ -104,17 +120,21 @@ header.transparent {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    height: 60px;
 }
 .header-logo {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
+    top: 10px;
     margin: auto;
-    width: 140px;
+    width: auto;
+    height: 40px;
 }
 .header-logo img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .hi-right {
     display: flex;
@@ -134,7 +154,7 @@ header.transparent {
 .banner.home {
     position: relative;
     height: 100vh;
-    min-height: 700px;
+    min-height: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,15 +206,160 @@ header.transparent {
     color: var(--white);
     font-size: 30px;
     text-align: center;
+    letter-spacing: 0.16px;
 }
 .bcb-content p {
     color: var(--white);
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
     letter-spacing: 0.32px;
     line-height: 134%;
     max-width: 56ch;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+/* Heading */
+.heading {
+
+}
+.heading.split {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    gap: 80px;
+    margin-bottom: 120px;
+}
+.heading .subheading p {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4.16px;
+    text-transform: uppercase;
+}
+.heading.split h2 {
+    text-align: right;
+}
+.heading.split h2 span {
+    display: inline-block;
+    width: 13ch;
+}
+
+/* Service Section */
+.service-in {
+    margin-left: calc((100vw - 1600px) / 2);
+    padding-left: 20px;
+}
+.service-tabs .tabs-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    gap: 80px;
+}
+.tabs-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.tabs-nav .tab-button {
+    position: relative;
+    transition: .2s ease all;
+    background: transparent;
+    border: none;
+    font-family: var(--ppneue);
+    font-size: 24px;
+    letter-spacing: 0.16px;
+    color: #A3A3A3;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 14px 0;
+    background-image: url(https://cdn.shopify.com/s/files/1/0886/1895/8882/files/arrow-right.svg?v=1781359734);
+    background-repeat: no-repeat;
+    background-size: 0px;
+    background-position: 100% 53%;
+}
+.tabs-nav .tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E1DCD7;
+}
+.tabs-nav .tab-button:hover {
+    color: var( --text-primary);
+}
+.tabs-nav .tab-button.active {
+    color: var( --text-primary);
+    background-size: 30px;
+}
+.tabs-nav .tab-button.active::after {
+    background-color: #B4A89B;
+}
+.tabs-content {
+  position: relative;
+}
+
+.tab-panel {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.tab-panel.active {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.service-tabs .tabcontent-in {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+}
+.service-tabs .tbci-left {
+    width: 50%;
+    background-color: #F8F7F3;
+    padding: 45px 32px 45px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+.tbc-left-top h3 {
+    margin-bottom: 26px;
+}
+.tbc-left-top p {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.48px;
+}
+.tbc-left-bottom .custom-btn {
+    width: 100%;
+}
+.tbci-right {
+    width: 50%;
+    aspect-ratio: 8.5/9;
+    overflow: hidden;
+}
+.tbci-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* Homepage CSS */

@@ -78,3 +78,50 @@
     ]
   }
 {% endschema %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $(function() {
+    // mobile drawer toggles (if you use them)
+    $('.close').hide();
+    $('.open').on('click', function() {
+      $('.h-nav').addClass('active');
+      $('body').attr('data-lenis-prevent', 'true'); // add attribute
+      $('.close').show();
+      $('.open').hide();
+    });
+    $('.close').on('click', function() {
+      $('.h-nav').removeClass('active');
+      $('body').removeAttr('data-lenis-prevent'); // remove attribute
+      $('.close').hide();
+      $('.open').show();
+    });
+
+    // nested mobile subnav
+    $('.mob-link_inner').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('.mob-link').find('.sublinks_wrapper').addClass('visible');
+    });
+    $('.mob-sublink_inner').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('.mob-sublink').find('.childlink_wrapper').addClass('visible');
+    });
+    $('.nav_back_link').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('.sublinks_wrapper').removeClass('visible');
+    });
+    $('.nav_back_sublink').on('click', function(e) {
+      e.preventDefault();
+      $(this).closest('.childlink_wrapper').removeClass('visible');
+    });
+
+    // backdrop hover for desktop mega menu
+    $('.nav-item.has-mega-menu').on('mouseenter', function() {
+      $('main').addClass('backdrop_bg');
+    }).on('mouseleave', function() {
+      $('main').removeClass('backdrop_bg');
+    });
+  });
+
+</script>

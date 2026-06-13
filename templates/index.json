@@ -19,9 +19,27 @@
         "button_text": "book an appointment",
         "button_link": "#"
       }
-    }
+    },
+    "spacer": {
+      "type": "spacer",
+      "settings": {
+        
+      }
+    },
+    "service": {
+      "type": "services",
+      "settings": {
+        
+      }
+    },
+    "spacer1": {
+      "type": "spacer",
+      "settings": {
+        
+      }
+    },
   },
   "order": [
-    "banner"
+    "banner","spacer","service","spacer1"
   ]
 }
