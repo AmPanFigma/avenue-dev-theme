@@ -92,12 +92,19 @@
       "settings": {
         "spacer_height": 170
       }
-    }
+    },
+    "about": {
+      "type": "about-avenue",
+      "settings": {
+        
+      }
+    },
   },
   "order": [
     "banner",
     "spacer",
     "service",
-    "spacer1"
+    "spacer1",
+    "about"
   ]
 }

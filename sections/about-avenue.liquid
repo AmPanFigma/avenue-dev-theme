@@ -1,0 +1,140 @@
+<section class="about-avenue">
+    <div class="container-fluid">
+        <div class="av-in">
+            <div class="avi-left">
+                <div class="avi-image">
+                    <img src="{{ section.settings.about-image | image_url }}" alt="{{ section.settings.about-alt }}">
+                </div>
+            </div>
+            <div class="avi-right">
+                <div class="avi-content">
+                    <div class="avic-top">
+                        <div class="heading with-btn">
+                            <div class="subheading">
+                                <p>{{ section.settings.highlight }}</p>
+                            </div>
+                            <h2>{{ section.settings.heading }}</h2>
+                            <div class="heading-btn">
+                                <a href="{{ section.settings.button_link | default: '#' }}" class="link-btn">{{ section.settings.button_text }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avic-bottom">
+                        <div class="avb-wrap">
+                            <div class="avb-left">
+                                <div class="avbl-image">
+                                    <img src="{{ section.settings.about-small-image | image_url }}" alt="{{ section.settings.about-small-alt }}">
+                                </div>
+                            </div>
+                            <div class="avb-right">
+                                <div class="avbr-top">
+                                    <p>{{ section.settings.small-para }}</p>
+                                </div>
+                                <div class="avbr-bottom">
+                                    <div class="address">
+                                        <p class="open-text">{{ section.settings.open-para }}</p>
+                                        <p>{{ section.settings.addres-para }}</p>
+                                    </div>
+                                    <div class="num-mail">
+                                        <a href="tel:{{ section.settings.number }}">{{ section.settings.number }}</a>
+                                        <span>|</span>
+                                        <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+                                    </div>
+                                    <div class="custom-link">
+                                        <a href="{{ section.settings.direction_link }}">{{ section.settings.direction_link_text }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Avenue",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about-image",
+      "label": "About section image"
+    },
+    {
+      "type": "text",
+      "id": "about-alt",
+      "label": "about image alt text"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "about-small-image",
+      "label": "About Small Image"
+    },
+    {
+      "type": "text",
+      "id": "about-small-alt",
+      "label": "About Small Image Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "small-para",
+      "label": "About Right Paragraph Text"
+    },
+    {
+      "type": "text",
+      "id": "open-para",
+      "label": "Open Paragraph Text"
+    },
+    {
+      "type": "text",
+      "id": "addres-para",
+      "label": "Address Paragraph Text"
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "Enter Mobile Number"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Enter Email"
+    },
+    {
+      "type": "url",
+      "id": "direction_link",
+      "label": "Enter Direction Link"
+    },
+    {
+      "type": "text",
+      "id": "direction_link_text",
+      "label": "Enter Direction Link Text"
+    }
+  ],
+  "presets": [
+    { "name": "About Avenue" }
+  ]
+}
+{% endschema %}
