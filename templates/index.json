@@ -96,9 +96,23 @@
     "about": {
       "type": "about-avenue",
       "settings": {
-        
+        "about-image": "shopify://shop_images/db0afd17481db10d469cde36f5dda4724defdc60.png",
+        "about-alt": "about avenue dermatology group",
+        "highlight": "about avenue dermatology group",
+        "heading": "We are a full-service dermatology centre based in Toronto focused on evidence-based treatment of your skin.",
+        "button_text": "learn more",
+        "button_link": "#",
+        "about-small-image": "shopify://shop_images/bd50aa2a0a8fa2a7e845a658fd2f382c8c7e7d6b.png",
+        "about-small-alt": "image alt text",
+        "small-para": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare a suscipit aenean.",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
       }
-    },
+    }
   },
   "order": [
     "banner",
