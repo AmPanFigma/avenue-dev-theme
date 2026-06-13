@@ -6,45 +6,46 @@
             </div>
             <h2><span></span>{{ section.settings.heading }}</h2>
         </div>
-    </div>
-    <div class="service-in">
-        <div class="service-tabs">
-            <div class="tabs-wrapper">
-                <div class="tabs-nav">
-                    {% for block in section.blocks %}
-                    <button
-                        class="tab-button {% if forloop.first %}active{% endif %}"
-                        data-tab="{{ block.id }}"
-                        {{ block.shopify_attributes }}
-                    >
-                        {{ block.settings.tab_title }}
-                    </button>
-                    {% endfor %}
-                </div>
+        <div class="service-in">
+            <div class="service-tabs">
+                <div class="tabs-wrapper">
+                    <div class="tabs-nav">
+                        {% for block in section.blocks %}
+                        <button
+                            class="tab-button {% if forloop.first %}active{% endif %}"
+                            data-tab="{{ block.id }}"
+                            {{ block.shopify_attributes }}
+                        >
+                            {{ block.settings.tab_title }}
+                        </button>
+                        {% endfor %}
+                    </div>
 
-                <div class="tabs-content">
-                    {% for block in section.blocks %}
-                    <div class="tab-panel {% if forloop.first %}active{% endif %}" id="{{ block.id }}">
-                        <div class="tabcontent-in">
-                            <div class="tbci-left">
-                                <div class="tbc-left-top">
-                                    <h3>{{ block.settings.tab_title }}</h3>
-                                    <p>{{ block.settings.tab_content }}</p>
+                    <div class="tabs-content">
+                        {% for block in section.blocks %}
+                        <div class="tab-panel {% if forloop.first %}active{% endif %}" id="{{ block.id }}">
+                            <div class="tabcontent-in">
+                                <div class="tbci-left">
+                                    <div class="tbc-left-top">
+                                        <h3>{{ block.settings.tab_title }}</h3>
+                                        <p>{{ block.settings.tab_content }}</p>
+                                    </div>
+                                    <div class="tbc-left-bottom">
+                                        <a href="{{ block.settings.button_link | default: '#' }}" class="custom-btn grey">{{ block.settings.button_text }}</a>    
+                                    </div>
                                 </div>
-                                <div class="tbc-left-bottom">
-                                    <a href="{{ block.settings.button_link | default: '#' }}" class="custom-btn grey">{{ block.settings.button_text }}</a>    
+                                <div class="tbci-right">
+                                    <img src="{{ block.settings.tab-image | image_url }}" alt="{{ block.settings.tab_alt_image }}">
                                 </div>
-                            </div>
-                            <div class="tbci-right">
-                                <img src="{{ block.settings.tab-image | image_url }}" alt="{{ block.settings.tab_alt_image }}">
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    
 </section>
 
 <script>

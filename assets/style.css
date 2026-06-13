@@ -102,6 +102,65 @@ h6 {
     background-color: var(--bg-primary);
     color: var(--white);
 }
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    font-size: 12px;
+    letter-spacing: 4.16px;
+    padding-bottom: 4px;
+    transition: .3s ease all;
+}
+.link-btn span {
+    display: flex;
+    width: 14px;
+}
+.link-btn span img {
+    width: 100%;
+    transition: .3s ease all;
+}
+.link-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-primary);
+}
+.link-btn:hover span img {
+    animation: horizontal-shake 0.3s infinite linear;
+}
+@keyframes horizontal-shake {
+    0%   { transform: translate3d(0, 0, 0); }
+    25%  { transform: translate3d(-3px, 0, 0); }
+    50%  { transform: translate3d(0, 0, 0); }
+    75%  { transform: translate3d(3px, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+.custom-link a {
+    position: relative;
+    padding-bottom: 1px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.custom-link a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--text-tertiary);
+    width: 100%;
+    transition: .3s ease all;
+}
 
 
 /* Header CSS */
@@ -222,12 +281,18 @@ header.transparent {
 
 /* Heading */
 .heading {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.heading.with-btn .heading-btn {
+    margin-top: 10px;
 }
 .heading.split {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    gap: 80px;
+    /* gap: 80px; */
     margin-bottom: 120px;
 }
 .heading .subheading p {
@@ -241,23 +306,24 @@ header.transparent {
 }
 .heading.split h2 span {
     display: inline-block;
-    width: 13ch;
+    width: 20ch;
 }
 
 /* Service Section */
-.service-in {
+/* .service-in {
     margin-left: calc((100vw - 1600px) / 2);
     padding-left: 20px;
-}
+} */
 .service-tabs .tabs-wrapper {
     display: grid;
     grid-template-columns: 3fr 5fr;
-    gap: 80px;
+    /* gap: 80px; */
 }
 .tabs-nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-right: 80px;
 }
 .tabs-nav .tab-button {
     position: relative;
@@ -361,5 +427,108 @@ header.transparent {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* About Avenue Section */
+
+.about-avenue .av-in {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    /* gap: 80px; */
+}
+.av-in .avi-image {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.avi-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avi-right {
+    padding-left: 20px;
+}
+.avi-right .avi-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 150px;
+    height: 100%;
+}
+.avic-top {
+    padding-left: 16px;
+}
+.avic-bottom .avb-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+}
+.avb-left .avbl-image {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+.avbl-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avb-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 30px;
+    gap: 30px;
+}
+.avbr-top p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.48px;
+    max-width: 50ch;
+    color: var(--text-tertiary);
+}
+.avbr-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.48px;
+}
+.avbr-bottom .address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.address .open-text {
+    font-size: 18px;
+}
+.address p {
+    font-size: 14px;
+}
+.num-mail a {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.48px;
+    text-decoration: none;
+    transition: .3s ease all;
+    position: relative;
+    padding-bottom: 2px;
+}
+.num-mail a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: var(--text-tertiary);
+    width: 0;
+    transition: .3s ease all;
+}
+.num-mail a:hover::after {
+    width: 100%;
 }
 /* Homepage CSS */
