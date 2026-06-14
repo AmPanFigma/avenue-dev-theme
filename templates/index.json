@@ -129,6 +129,12 @@
         "button_text": "shop all",
         "button_link": "#"
       }
+    },
+    "testimonial": {
+      "type": "testimonial-carousel",
+      "settings": {
+
+      }
     }
   },
   "order": [
@@ -138,6 +144,7 @@
     "spacer1",
     "about",
     "spacer_cQDX4w",
-    "bestseller"
+    "bestseller",
+    "testimonial"
   ]
 }

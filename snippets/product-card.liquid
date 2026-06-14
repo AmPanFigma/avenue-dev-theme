@@ -1,7 +1,7 @@
 <div class="product-card">
     <div class="pc-in">
+        <a href="{{ product.url }}" class="card-link"></a>
         <div class="pci-top">
-            <a href="{{ product.url }}" class="card-link"></a>
             {% assign images = product.images %}
 
             <div class="fc_image {% if images.size > 1 %}has-hover-img{% endif %}">
@@ -30,6 +30,18 @@
                 class="img_sizing primary-img">
             {% endif %}
             </div>
+
+            <div class="add_to_cart">
+                <button class="atc-button custom-btn grey">quick add to cart +</button>
+            </div>
+        </div>
+        <div class="pci-bottom">
+            <p class="fc_product_title">
+                <a href="{{ product.url }}">{{ product.title }}</a>
+            </p>
+            <p class="product-price">
+                {{ product.price | money }}
+            </p>
         </div>
     </div>
 </div>

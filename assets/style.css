@@ -1,17 +1,23 @@
-
+:root {
+    /* fonts */
+    --ppneue: "PP Neue Montreal";
+    --switzer: 'Switzer', sans-serif;
+    
+    /* colors */
+    --bg-light: #F8F7F3;
+    --white: #fff;
+    --bg-primary: #978F87;
+    --bg-secondary: #A69E95;
+    --btn-color: #978F87;
+    --text-primary: #191919;
+    --text-secondary: #F8F7F3;
+    --text-tertiary: #444444;
+  }
 * {
     box-sizing: border-box;
     margin: 0;
     font-synthesis: none !important;
     scroll-behavior: smooth;
-}
-@font-face {
-    font-family: 'PP Neue Montreal';
-    src: url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontreal-Book.woff2?v=1781352370') format('woff2'),
-        url('https://cdn.shopify.com/s/files/1/0886/1895/8882/files/PPNeueMontreal-Book.woff?v=1781352370') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
 }
 /** Theme styles below */
 html,
@@ -83,6 +89,7 @@ h6 {
     transition: .3s ease all;
     text-decoration: none;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 .custom-btn.filled {
     color: var(--text-primary);
@@ -99,7 +106,8 @@ h6 {
     border-color: var(--btn-color);
 }
 .custom-btn.grey:hover {
-    background-color: var(--bg-primary);
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
     color: var(--white);
 }
 .link-btn {
@@ -284,7 +292,7 @@ header.transparent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 20px;
 }
 .heading.with-btn .heading-btn {
     margin-top: 10px;
@@ -530,5 +538,129 @@ header.transparent {
 }
 .num-mail a:hover::after {
     width: 100%;
+}
+
+/* Bestseller */
+.bestseller_in {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.cards_wrapper {
+    display: grid;    
+}
+.bestseller_in .cards_wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Product Card CSS */
+.product-card {
+    
+}
+.pc-in {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+.product-card .card-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+.pci-top {
+    position: relative;
+    cursor: pointer;
+}
+.pci-top .add_to_cart {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 99;
+    transition: .2s ease all;
+    visibility: hidden;
+    opacity: 0;
+}
+.product-card:hover .pci-top .add_to_cart {
+    visibility: visible;
+    opacity: 1;
+}
+.pci-top>div.fc_image {
+    z-index: 1;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.fc_image .img_sizing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity .4s ease-in-out;
+}
+.fc_image .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+.fc_image:hover .hover-img {
+    opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover .has-hover-img .hover-img {
+    opacity: 1;
+  }
+
+  .product-card:hover .has-hover-img .primary-img {
+    opacity: 0;
+  }
+}
+.pci-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.pci-bottom .fc_product_title {
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;   
+    letter-spacing: 4.16px; 
+}
+.fc_product_title a {
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;   
+    letter-spacing: 4.16px; 
+    text-decoration: none;
+    color: var(--text-primary);
+}
+.pci-bottom .product-price {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4.16px; 
+    color: var(--text-primary);
+}
+.img-detect img {
+    transform: scale(1.2, 1.2) !important;
+    transition: transform 1.5s cubic-bezier(.215, .61, .355, 1);
+    transition-delay: .1s;
+}
+
+.img-detect.is-inview img {
+    transform: scale(1, 1) !important;
 }
 /* Homepage CSS */

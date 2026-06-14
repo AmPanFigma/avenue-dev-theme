@@ -72,12 +72,12 @@
       2. Preload only the critical font variant (base weight)
       3. Additional variants load on-demand via @font-face
     {% endcomment %}
-    {% unless settings.type_primary_font.system? %}
+    {% comment %} {% unless settings.type_primary_font.system? %}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
       {% comment %} Preload the base font variant for initial page render {% endcomment %}
       {{ settings.type_primary_font | font_url | preload_tag: as: 'font', crossorigin: 'anonymous' }}
-    {% endunless %}
+    {% endunless %} {% endcomment %}
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700&display=swap" rel="stylesheet">
 
     {% # Load and preload the critical CSS %}
@@ -87,6 +87,19 @@
     {% comment %} {% render 'meta-tags' %} {% endcomment %}
 
     {{ content_for_header }}
+
+    <style>
+      @font-face {
+          font-family: 'PP Neue Montreal';
+          src: url('PPNeueMontreal-Book.woff2') format('woff2'),
+              url('PPNeueMontreal-Book.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+      }
+    </style>
+    <link rel="preload" href="/assets/PPNeueMontreal-Book.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/PPNeueMontreal-Book.woff2" as="font" type="font/woff2" crossorigin>
 
     {{ 'style.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'responsive.css' | asset_url | stylesheet_tag: preload: true }}
