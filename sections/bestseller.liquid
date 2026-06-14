@@ -9,11 +9,14 @@
                     <p>{{ section.settings.highlight }}</p>
                 </div>
                 <h2>{{ section.settings.heading }}</h2>
-                <div class="heading-btn">
-                    <a href="{{ section.settings.button_link | default: '#' }}" class="link-btn">
-                    {{ section.settings.button_text }} <span><img src="https://cdn.shopify.com/s/files/1/0886/1895/8882/files/arrow-right.svg?v=1781359734" alt=""></span>
-                    </a>
-                </div>
+                {%- if section.settings.button_text != blank -%}
+                    <div class="heading-btn">
+                      <a href="{{ section.settings.button_link | default: '#' }}" class="link-btn">
+                      {{ section.settings.button_text }} <span><img src="https://cdn.shopify.com/s/files/1/0886/1895/8882/files/arrow-right.svg?v=1781359734" alt=""></span>
+                      </a>
+                  </div>
+                {%- endif -%}
+                
             </div>
         
             {%- assign collection = section.settings.collection -%}
