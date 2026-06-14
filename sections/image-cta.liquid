@@ -1,0 +1,51 @@
+<section class="image-cta">
+    <div class="container-fluid">
+        <div class="imagecta-in">
+            <div class="ici-image">
+                <img src="{{ section.settings.cta-image | image_url }}" alt="{{ section.settings.cta-alt }}">
+            </div>
+            <div class="ici-data">
+                <h3>{{ section.settings.cta-heading }}</h3>
+                <div class="ici-btn">
+                    <a href="{{ section.settings.button_link | default: '#' }}" class="custom-btn filled">{{ section.settings.button_text }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cta-image",
+      "label": "CTA Section Image"
+    },
+    {
+      "type": "text",
+      "id": "cta-alt",
+      "label": "CTA Image alt text"
+    },
+    {
+      "type": "text",
+      "id": "cta-heading",
+      "label": "Cta Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    { "name": "Image CTA" }
+  ]
+}
+{% endschema %}

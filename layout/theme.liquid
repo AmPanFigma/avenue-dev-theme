@@ -3,6 +3,7 @@
   <head>
     {% # Inlined CSS Variables %}
     {% render 'css-variables' %}
+    <title>{{ page_title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
@@ -91,8 +92,8 @@
     <style>
       @font-face {
           font-family: 'PP Neue Montreal';
-          src: url('PPNeueMontreal-Book.woff2') format('woff2'),
-              url('PPNeueMontreal-Book.woff') format('woff');
+          src: url('{{ 'PPNeueMontreal-Book.woff2' | asset_url }}') format('woff2'),
+              url('{{ 'PPNeueMontreal-Book.woff' | asset_url }}') format('woff');
           font-weight: normal;
           font-style: normal;
           font-display: swap;
@@ -114,9 +115,10 @@
 
     {% sections 'footer-group' %}
 
-    <script src="{{ 'global.js' |  asset_url }}" defer></script>
-
     <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js" defer></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="{{ 'global.js' |  asset_url }}" defer></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

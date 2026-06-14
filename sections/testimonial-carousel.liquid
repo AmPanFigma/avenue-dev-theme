@@ -1,17 +1,130 @@
-<section class="testimonial">
+{%- assign uid = section.id -%}
+{%- assign s = section.settings -%}
+{%- comment -%} Load Splide core + AutoScroll extension once per page {%- endcomment -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
 
+<section class="testimonial">
+    <div class="splide" id="Splide-{{ uid }}" aria-label="{{ s.section_title | escape | default: 'Testimonials' }}">
+        <div class="splide__track">
+            <div class="splide__list">
+            {%- for block in section.blocks -%}
+                <div class="splide__slide" {{ block.shopify_attributes }}>
+                    <div class="testimonial_slide_item">
+                        {%- if block.settings.quote != blank -%}
+                            <p class="mq-quote">"{{ block.settings.quote }}</p>
+                        {%- endif -%}
+                        {%- if block.settings.body != blank -%}
+                            <p class="mq-body">{{ block.settings.body }}</p>
+                        {%- endif -%}
+                        {%- if block.settings.author != blank -%}
+                            <p class="mq-author">{{ block.settings.author }}</p>
+                        {%- endif -%}
+                    </div>
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+  (function () {
+    function initSplide{{ uid | replace: '-', '_' }}() {
+      if (typeof Splide === 'undefined' || !window.splide || !window.splide.Extensions) {
+        // Extensions attach to window.splide.Extensions once both scripts load
+      }
+      var el = document.getElementById('Splide-{{ uid }}');
+      if (!el || el.classList.contains('is-initialized')) return;
+
+      new Splide(el, {
+        type: 'loop',
+        drag: 'free',
+        focus: 'center',
+        perPage: {{ s.per_page }},
+        gap: '{{ s.gap }}px',
+        arrows: false,
+        pagination: false,
+        autoWidth: false,
+        breakpoints: {
+          749: { perPage: {{ s.per_page_mobile }} }
+        },
+        autoScroll: {
+          speed: {{ s.speed }},          // pixels per frame; negative = right-to-left
+          pauseOnHover: {{ s.pause_on_hover }},
+          pauseOnFocus: false,
+          rewind: false
+        }
+      }).mount(window.splide.Extensions);
+    }
+
+    // Wait for the deferred CDN scripts to be ready.
+    function ready() {
+      if (typeof Splide !== 'undefined' && window.splide && window.splide.Extensions) {
+        initSplide{{ uid | replace: '-', '_' }}();
+      } else {
+        setTimeout(ready, 50);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', ready);
+    } else {
+      ready();
+    }
+  })();
+</script>
 
 {% schema %}
   {
     "name": "testimonial",
     "tag": "section",
     "settings": [
-      
-    ],
+    { "type": "text", "id": "section_title", "label": "Section title", "default": "What our patients say" },
+    { "type": "header", "content": "Scroll behavior" },
+    { "type": "range", "id": "speed", "label": "Scroll speed (px/frame)", "min": 0.2, "max": 4, "step": 0.1, "default": 1 },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": true },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "per_page", "label": "Cards visible (desktop)", "min": 1, "max": 6, "step": 1, "default": 4 },
+    { "type": "range", "id": "per_page_mobile", "label": "Cards visible (mobile)", "min": 1, "max": 3, "step": 1, "default": 1 },
+    { "type": "range", "id": "gap", "label": "Gap between cards", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_top", "label": "Padding top", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 60 },
+    { "type": "header", "content": "Typography" },
+    { "type": "range", "id": "heading_size", "label": "Quote size", "min": 14, "max": 32, "step": 1, "unit": "px", "default": 20 },
+    { "type": "range", "id": "body_size", "label": "Body size", "min": 11, "max": 20, "step": 1, "unit": "px", "default": 14 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#9b948b" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" },
+    { "type": "color", "id": "divider_color", "label": "Card divider line", "default": "#b6afa6" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote / headline", "default": "\"I cannot recommend ADG enough!" },
+        { "type": "textarea", "id": "body", "label": "Body text", "default": "They have the best doctor team I have ever seen for injectables. They have a \"less is more\" approach, which is rare." },
+        { "type": "text", "id": "author", "label": "Author", "default": "Rita D." }
+      ]
+    }
+  ],
+  "max_blocks": 20,
     "presets": [
       {
         "name": "testimonial",
+        "blocks": [
+            { "type": "testimonial" },
+            { "type": "testimonial", "settings": {
+            "quote": "\"I want to sincerely thank Dr. Maxwell Sauder for his exceptional skill and care.",
+            "body": "I spent two years searching for the right surgeon, and he exceeded all my expectations. The results are truly amazing — natural, refreshed, and harmonious. I now receive so many compliments, and I feel confident and happy.",
+            "author": "Rita D." } },
+            { "type": "testimonial" },
+            { "type": "testimonial", "settings": {
+            "quote": "\"I want to sincerely thank Dr. Maxwell Sauder for his exceptional skill and care.",
+            "body": "I spent two years searching for the right surgeon, and he exceeded all my expectations. The results are truly amazing — natural, refreshed, and harmonious.",
+            "author": "Rita D." } }
+        ],
         "settings": {
         }
       }
