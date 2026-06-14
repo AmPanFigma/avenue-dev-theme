@@ -1,0 +1,35 @@
+<div class="product-card">
+    <div class="pc-in">
+        <div class="pci-top">
+            <a href="{{ product.url }}" class="card-link"></a>
+            {% assign images = product.images %}
+
+            <div class="fc_image {% if images.size > 1 %}has-hover-img{% endif %}">
+            {% if images.size > 0 %}
+                <img
+                src="{{ images.first | img_url: 'master' }}"
+                alt="{{ product.title | escape }}"
+                width="{{ images.first.width }}"
+                height="{{ images.first.height }}"
+                class="img_sizing primary-img">
+
+                {% if images.size > 1 %}
+                <img
+                    src="{{ images[1] | img_url: 'master' }}"
+                    alt="{{ product.title | escape }}"
+                    width="{{ images[1].width }}"
+                    height="{{ images[1].height }}"
+                    class="img_sizing hover-img">
+                {% endif %}
+            {% else %}
+                <img
+                src="https://cdn.shopify.com/s/files/1/0752/8015/4881/files/jf-placeholder.png?v=1769522647"
+                alt="No Image Available"
+                width="800"
+                height="1000"
+                class="img_sizing primary-img">
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

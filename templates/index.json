@@ -112,6 +112,12 @@
         "direction_link": "#",
         "direction_link_text": "Get Directions"
       }
+    },
+    "bestseller": {
+      "type": "Bestseller",
+      "settings": {
+
+      }
     }
   },
   "order": [
@@ -119,6 +125,7 @@
     "spacer",
     "service",
     "spacer1",
-    "about"
+    "about",
+    "bestseller"
   ]
 }
