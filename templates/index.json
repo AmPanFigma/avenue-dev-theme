@@ -194,6 +194,24 @@
         "button_text": "book an appointment",
         "button_link": "#"
       }
+    },
+    "spacer_nLFm3N": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "bestseller_3fzd3V": {
+      "type": "bestseller",
+      "name": "Bestseller",
+      "settings": {
+        "collection": "bestseller",
+        "highlight": "shop bundles",
+        "heading": "Curated Skincare Sets",
+        "button_text": "",
+        "button_link": ""
+      }
     }
   },
   "order": [
@@ -207,6 +225,8 @@
     "spacer_wmytMD",
     "testimonial",
     "spacer_LAwg8E",
-    "image_cta_hU4KDd"
+    "image_cta_hU4KDd",
+    "spacer_nLFm3N",
+    "bestseller_3fzd3V"
   ]
 }
