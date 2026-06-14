@@ -116,7 +116,11 @@
     "bestseller": {
       "type": "Bestseller",
       "settings": {
-
+        "collection": "bestseller",
+        "highlight": "explore bestsellers",
+        "heading": "Best of Skincare",
+        "button_text": "shop all",
+        "button_link": "#"
       }
     }
   },
