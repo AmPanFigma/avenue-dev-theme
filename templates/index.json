@@ -113,6 +113,13 @@
         "direction_link_text": "Get Directions"
       }
     },
+    "spacer_cQDX4w": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
     "bestseller": {
       "type": "Bestseller",
       "settings": {
@@ -130,6 +137,7 @@
     "service",
     "spacer1",
     "about",
+    "spacer_cQDX4w",
     "bestseller"
   ]
 }
