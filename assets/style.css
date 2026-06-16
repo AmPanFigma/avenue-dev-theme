@@ -220,6 +220,56 @@ header.transparent {
 }
 /* Header CSS */
 
+/* Footer CSS */
+footer {
+    background-color: var(--bg-secondary);
+    padding-top: 74px;
+}
+.footer-in {
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+}
+.footer-in .fi-top {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.fi-top .fit-left {
+
+}
+.fit-left .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.newsletter .newsletter-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.newsletter-heading h3 {
+    color: var(--bg-light);
+}
+.newsletter-heading p {
+    color: var(--bg-light);
+    font-size: 14px;
+    letter-spacing: 0.48px;
+    line-height: 140%;
+    max-width: 40ch;
+}
+.fi-bottom .fib-logo {
+    width: 100%;
+}
+.fib-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Footer CSS */
+
 /* Homepage CSS */
 .banner.home {
     position: relative;
@@ -417,7 +467,7 @@ header.transparent {
     justify-content: space-between;
     gap: 60px;
 }
-.tbc-left-top h3 {
+.tbc-left-top h4 {
     margin-bottom: 26px;
 }
 .tbc-left-top p {

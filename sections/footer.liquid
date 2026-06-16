@@ -1,57 +1,158 @@
 <footer>
-  <div class="footer__copyright">
+    {% comment %} <div class="footer__copyright">
     &copy;
     {{ 'now' | date: '%Y' }}
     {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
-  </div>
+    </div>
 
-  <div class="footer__links">
+    <div class="footer__links">
     {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
+        {{ link.title | link_to: link.url }}
     {% endfor %}
-  </div>
+    </div>
 
-  <div class="footer__payment">
+    <div class="footer__payment">
     {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
+        {% for type in shop.enabled_payment_types %}
         {{ type | payment_type_svg_tag }}
-      {% endfor %}
+        {% endfor %}
     {% endif %}
-  </div>
+    </div> {% endcomment %}
+
+    <div class="container-fluid">
+        <div class="footer-in">
+            <div class="fi-top">
+                <div class="fit-left">
+                    <div class="newsletter">
+                        <div class="newsletter-heading">
+                            <h3>{{ section.settings.news_heading }}</h3>
+                            <p>{{ section.settings.news_para }}</p>
+                        </div>
+                        <div class="newsletter-wrap">
+                            {% form 'customer' %}
+                                {% if form.posted_successfully? %}
+                                <div class="newsletter-success">
+                                    Thank you for subscribing!
+                                </div>
+                                {% endif %}
+
+                                {{ form.errors | default_errors }}
+                                    <input type="hidden" name="contact[tags]" value="newsletter">
+                                    <div class="newsletter-form">
+                                    <input type="email" name="contact[email]" placeholder="enter your email" required>
+                                    <button type="submit">
+                                        {%- render 'white-arrow' -%}
+                                    </button>
+                                </div>
+
+                            {% endform %}
+                            </div>
+                    </div>
+                </div>
+                <div class="fit-right">
+                    <div class="footer-menu">
+                        {% for block in section.blocks %}
+                            {% if block.type == 'menu' %}
+                            {% assign menu = linklists[block.settings.menu] %}
+                            <div class="footer-column">
+                                <h4 class="footer_title">
+                                {{ menu.title }}
+                                </h4>
+                                {% for link in menu.links %}
+                                <div class="footer_links">
+                                    <a href="{{ link.url }}">{{ link.title }}</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="fi-bottom">
+                <div class="fib-logo">
+                    <img src="{{ section.settings['footer-logo'] | img_url: 'master' }}" alt="{{ section.settings.footerlogo-alt }}">
+                </div>
+                <div class="fib-bar">
+                    <div class="fibar-left">
+                        <p>{{ section.settings.copyright_text }}</p>
+                    </div>
+                    <div class="fibar-center">
+                        {% assign bottom_menu = linklists[section.settings.bottom_menu] %}
+
+                        {% if bottom_menu.links.size > 0 %}
+                            <div class="footer-bottom-links">
+                            {% for link in bottom_menu.links %}
+                                <a href="{{ link.url }}">
+                                {{ link.title }}
+                                </a>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                        </div>
+                    <div class="fibar-right">
+                        <p>Designed by Studio TWO42</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
-{% stylesheet %}
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
-  }
-  footer .footer__links,
-  footer .footer__payment {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:general.footer",
+  "name": "footer",
   "settings": [
     {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
+        "type": "text",
+        "id": "news_heading",
+        "label": "Newsletter Heading"
     },
     {
-      "type": "checkbox",
-      "id": "show_payment_icons",
-      "label": "t:labels.show_payment_icons",
-      "default": true
+        "type": "text",
+        "id": "news_para",
+        "label": "Newsletter Paragraph"
+    },
+    {
+        "type": "image_picker",
+        "id": "footer-logo",
+        "label": "Footer Logo"
+    },
+    {
+        "type": "text",
+        "id": "footerlogo-alt",
+        "label": "Footer Logo Alt Text"
+    },
+    {
+        "type": "link_list",
+        "id": "bottom_menu",
+        "label": "Footer links (bottom row)"
+    },
+    {
+        "type": "text",
+        "id": "copyright_text",
+        "label": "Enter Copyright Text"
+    },
+  ],
+  "blocks": [
+    {
+        "type": "menu",
+        "name": "Footer Menu",
+        "limit": 5,
+        "settings": [
+            {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+            }
+        ]
     }
-  ]
+  ],
+  "presets": [
+    {
+        "name": "Footer"
+    }
+]
 }
 {% endschema %}
