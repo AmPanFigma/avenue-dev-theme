@@ -212,6 +212,13 @@
         "button_text": "",
         "button_link": ""
       }
+    },
+    "spacer_rqFHnc": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
@@ -227,6 +234,7 @@
     "spacer_LAwg8E",
     "image_cta_hU4KDd",
     "spacer_nLFm3N",
-    "bestseller_3fzd3V"
+    "bestseller_3fzd3V",
+    "spacer_rqFHnc"
   ]
 }
