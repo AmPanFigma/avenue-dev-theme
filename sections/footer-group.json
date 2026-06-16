@@ -13,9 +13,45 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "menu_HdAQAk": {
+          "type": "menu",
+          "settings": {
+            "menu": "service"
+          }
+        },
+        "menu_iG6W94": {
+          "type": "menu",
+          "settings": {
+            "menu": "company"
+          }
+        },
+        "menu_BMi9jJ": {
+          "type": "menu",
+          "settings": {
+            "menu": "shop-skincare"
+          }
+        },
+        "menu_qM6XRK": {
+          "type": "menu",
+          "settings": {
+            "menu": "social"
+          }
+        }
+      },
+      "block_order": [
+        "menu_HdAQAk",
+        "menu_iG6W94",
+        "menu_BMi9jJ",
+        "menu_qM6XRK"
+      ],
       "settings": {
-        "menu": "",
-        "show_payment_icons": true
+        "news_heading": "Join the avenue",
+        "news_para": "Join our community for new product launches, skincare tips, and exclusive collaborations delivered straight to your inbox.",
+        "footer-logo": "shopify://shop_images/footer-logo.svg",
+        "footerlogo-alt": "Avenue logo",
+        "bottom_menu": "policy",
+        "copyright_text": "© 2026,  Avenue Dermatology Group"
       }
     }
   },
