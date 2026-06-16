@@ -248,7 +248,7 @@ footer {
 .newsletter .newsletter-heading {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 36px;
 }
 .newsletter-heading h3 {
     color: var(--bg-light);
@@ -260,6 +260,97 @@ footer {
     line-height: 140%;
     max-width: 40ch;
 }
+.newsletter-wrap {
+    width: 85%;
+}
+.newsletter-wrap .newsletter-form {
+    position: relative;
+}
+.newsletter-form input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #F8F7F3;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 7px 10px;
+    color: var(--bg-light);
+}
+.newsletter-form input:focus {
+    outline: none;
+}
+.newsletter-form input::placeholder {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--bg-light);
+}
+.newsletter-form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    z-index: 2;
+    cursor: pointer;
+}
+.fit-right {
+    margin-right: 40px;
+}
+.fit-right .footer-menu {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 50px;
+}
+.footer-menu .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer-column .footer_title {
+    font-family: var(--switzer);
+    font-size: 12px;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    color: #EFEFEF;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-column ul .footer_links {
+    display: flex;
+}
+.footer_links a {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.48px;
+    color: var(--white);
+    text-decoration: none;
+    transition: .3s ease all;
+    position: relative;
+    display: inline-block;
+}
+.footer_links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--white);
+    transition: .3s ease all;
+}
+.footer_links a:hover::before {
+    width: 100%;
+}
 .fi-bottom .fib-logo {
     width: 100%;
 }
@@ -267,6 +358,47 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 30px 0 20px 0;
+}
+.fibar-left p {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.48px;
+    color: var(--text-primary);
+}
+.fibar-center .footer-bottom-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+}
+.footer-bottom-links a {
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.48px;
+    text-decoration: none;
+    transition: .3s ease all;
+    position: relative;
+}
+.footer-bottom-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: .3s ease all;
+}
+.footer-bottom-links a:hover::before {
+    width: 100%;
+}
+.fibar-right p, .fibar-right p a {
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.48px;
+    color: var(--text-primary);
 }
 /* Footer CSS */
 

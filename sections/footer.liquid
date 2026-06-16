@@ -58,11 +58,13 @@
                                 <h4 class="footer_title">
                                 {{ menu.title }}
                                 </h4>
+                                <ul>
                                 {% for link in menu.links %}
-                                <div class="footer_links">
+                                <li class="footer_links">
                                     <a href="{{ link.url }}">{{ link.title }}</a>
-                                </div>
+                                </li>
                                 {% endfor %}
+                                </ul>
                             </div>
                             {% endif %}
                         {% endfor %}
@@ -91,7 +93,7 @@
                         {% endif %}
                         </div>
                     <div class="fibar-right">
-                        <p>Designed by Studio TWO42</p>
+                        <p>Designed by <a href="" target="_blank">Studio TWO42</a></p>
                     </div>
                 </div>
             </div>
