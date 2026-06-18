@@ -218,6 +218,97 @@ header.transparent {
     justify-content: flex-end;
     gap: 10px;
 }
+.header-in .hi-left {
+
+}
+.hi-left > ul,
+.right-menu > ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+.hi-left > ul > li,
+.right-menu > ul > li {
+
+}
+.hi-left > ul > li > a,
+.right-menu > ul > li > a {
+    font-family: var(--ppneue);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.92px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+}
+.header-menu .menu-item {
+    position: relative;
+}
+.header-menu .menu-item a {
+    
+}
+.menu-item.has-mega-menu .mega-menu {
+    position: fixed;
+    width: 100%;
+    background-color: transparent;
+    left: 0;
+    top: 60px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9;
+    clip-path: inset(0 0 100% 0);
+}
+.menu-item.has-mega-menu:hover .mega-menu {
+    clip-path: inset(0 0 0 0);
+    transition: .4s ease all;
+}
+.has-mega-menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 20px;
+}
+.mega-menu .megamenu-in {
+    background-color: var(--white);
+    left: auto;
+    position: relative;
+    right: 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 38px 60px;
+}
+.mega-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.mega-column .mega-title {
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.92px;
+    color: var(--text-primary);
+}
+.mega-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+}
+.mega-column ul li a {
+    color: #464545;
+    font-family: var(--ppneue);
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    text-decoration: none;
+}
 /* Header CSS */
 
 /* Footer CSS */

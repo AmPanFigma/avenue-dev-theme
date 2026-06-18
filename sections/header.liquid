@@ -2,8 +2,15 @@
    <div class="container-fluid">
       <div class="header-in">
          <div class="hi-left">
-
-         </div>
+            {% assign left_menu = linklists[section.settings.left_menu] %}
+            <ul class="header-menu left-menu">
+              {% for link in left_menu.links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
          <div class="header-logo">
             <a href="{{ routes.root_url }}">
               {% if section.settings.select_logo %}
@@ -17,7 +24,82 @@
             </a>
          </div>
          <div class="hi-right">
-            <div class="right-menu"></div>
+            <div class="right-menu">
+
+              {% assign right_menu = linklists[section.settings.right_menu] %}
+              {% assign shop_menu = linklists[section.settings.shop_mega_menu] %}
+              {% assign about_menu = linklists[section.settings.about_mega_menu] %}
+
+              <ul class="header-menu">
+
+                {% for link in right_menu.links %}
+                  {% comment %} Logic for adding mega menu class on items which have mega menu {% endcomment %}
+                  {% assign has_mega = false %}
+                  {% if link.title == 'Shop' and shop_menu.links.size > 0 %}
+                    {% assign has_mega = true %}
+                  {% endif %}
+                  {% if link.title == 'About' and about_menu.links.size > 0 %}
+                    {% assign has_mega = true %}
+                  {% endif %}
+                  {% comment %} Logic for adding mega menu class on items which have mega menu {% endcomment %}
+
+                  <li class="menu-item {% if has_mega %}has-mega-menu{% endif %}">
+
+                    <a href="{{ link.url }}">
+                      {{ link.title }}
+                    </a>
+
+                    {% if link.handle == 'shop' and shop_menu.links.size > 0 %}
+                      <div class="mega-menu">
+                        <div class="megamenu-in">
+                            <!-- First Column -->
+                            <div class="mega-column">
+                                {% for parent in shop_menu.links %}
+                                    {% if parent.links.size == 0 %}
+                                        <a href="{{ parent.url }}" class="mega-heading-link">
+                                            <p class="mega-title">{{ parent.title }}</p>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <!-- Remaining Columns -->
+                            {% for parent in shop_menu.links %}
+                                {% if parent.links.size > 0 %}
+                                    <div class="mega-column">
+                                        <p class="mega-title">{{ parent.title }}</p>
+                                        <ul>
+                                          {% for child in parent.links %}
+                                            <li>
+                                                <a href="{{ child.url }}">{{ child.title }}</a>
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                      </div>
+                    {% endif %}
+
+                    {% if link.title == 'About' and about_menu.links.size > 0 %}
+                      <div class="mega-menu small">
+                        <div class="mega-column">
+                          <p class="mega-title">{{ about_menu.title }}</p>
+                          <ul>
+                            {% for item in about_menu.links %}
+                              <a href="{{ item.url }}">
+                                {{ item.title }}
+                              </a>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
             <div class="right-extra">
                {% if customer %}
                   <a href="{{ routes.account_url }}" class="cust-login">Account</a>
@@ -45,32 +127,29 @@
         "type": "image_picker",
         "id": "select_logo",
         "label": "Change Logo"
-      }
-    ],
-    "blocks": [
+      },
       {
-        "type": "nav_menu_right",
-        "name": "Nav Menu Right",
-        "settings": [
-          {
-            "type": "link_list",
-            "id": "nav_items_right",
-            "label": "Nav Items"
-          },
-          {
-            "type": "text",
-            "id": "product_list_heading",
-            "label": "Product List Heading"
-          },
-          {
-            "type": "product_list",
-            "id": "product_list",
-            "label": "Select Products",
-            "limit": 3
-          }
-        ]
+        "type": "link_list",
+        "id": "left_menu",
+        "label": "Left Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "right_menu",
+        "label": "Right Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "shop_mega_menu",
+        "label": "Shop Mega Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "about_mega_menu",
+        "label": "About Mega Menu"
       }
     ],
+    
     "presets": [
       {
         "name": "Header"
