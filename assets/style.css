@@ -180,7 +180,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 9999;
-    height: 60px;
+    height: 80px;
 }
 header.transparent {
     background-color: transparent;
@@ -190,16 +190,21 @@ header.transparent {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    height: 60px;
+    height: 80px;
 }
 .header-logo {
     position: absolute;
     left: 0;
     right: 0;
-    top: 10px;
+    top: 20px;
     margin: auto;
     width: auto;
     height: 40px;
+    display: flex;
+    max-width: 150px;
+}
+.header-logo a {
+    margin: auto;
 }
 .header-logo img {
     width: 100%;
@@ -210,13 +215,22 @@ header.transparent {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
 }
 .right-extra {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
+}
+.right-extra a {
+    font-family: var(--ppneue);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.92px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
 }
 .header-in .hi-left {
 
@@ -225,12 +239,15 @@ header.transparent {
 .right-menu > ul {
     display: flex;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
     list-style: none;
+}
+.right-menu > ul {
+    justify-content: flex-end;
 }
 .hi-left > ul > li,
 .right-menu > ul > li {
-
+    padding: 0 10px;
 }
 .hi-left > ul > li > a,
 .right-menu > ul > li > a {
@@ -241,6 +258,26 @@ header.transparent {
     color: var(--white);
     text-decoration: none;
     font-weight: 400;
+    position: relative;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.hi-left > ul > li > a::after,
+.right-menu > ul > li > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--white);
+    opacity: 0;
+    transition: .3s ease all;
+}
+.hi-left > ul > li:hover > a::after,
+.right-menu > ul > li:hover > a::after {
+    opacity: 1;
 }
 .header-menu .menu-item {
     position: relative;
@@ -248,16 +285,37 @@ header.transparent {
 .header-menu .menu-item a {
     
 }
+.header-menu .menu-item.has-mega-menu {
+    cursor: pointer;
+}
+.header-menu .menu-item.has-mega-menu > a {
+    padding-right: 18px;
+    position: relative;
+}
+.menu-item.has-mega-menu > a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+    background-image: url(arrow-down-dark.svg);
+    filter: invert();
+    background-repeat: no-repeat;
+    background-size: 8px;
+    transition: .3s ease all;
+}
 .menu-item.has-mega-menu .mega-menu {
     position: fixed;
     width: 100%;
     background-color: transparent;
     left: 0;
-    top: 60px;
+    top: 81px;
     display: flex;
     justify-content: flex-end;
     z-index: 9;
     clip-path: inset(0 0 100% 0);
+    pointer-events: none;
 }
 .menu-item.has-mega-menu:hover .mega-menu {
     clip-path: inset(0 0 0 0);
@@ -269,7 +327,7 @@ header.transparent {
     left: 0;
     top: 100%;
     width: 100%;
-    height: 20px;
+    height: 30px;
 }
 .mega-menu .megamenu-in {
     background-color: var(--white);
@@ -279,11 +337,36 @@ header.transparent {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 38px 60px;
+    gap: 40px;
+    pointer-events: auto;
 }
 .mega-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.mega-column .mega-heading-link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    margin-top: -10px;
+}
+.mega-column .mega-heading-link:first-child {
+    margin-top: 0;
+}
+.mega-column .mega-heading-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: .3s ease all;
+}
+.mega-column .mega-heading-link:hover::before {
+    width: 100%;
 }
 .mega-column .mega-title {
     font-weight: 500;
@@ -291,6 +374,7 @@ header.transparent {
     text-transform: uppercase;
     letter-spacing: 1.92px;
     color: var(--text-primary);
+    display: inline-block;
 }
 .mega-column ul {
     list-style: none;
@@ -308,6 +392,21 @@ header.transparent {
     text-transform: capitalize;
     letter-spacing: 0;
     text-decoration: none;
+    position: relative;
+    transition: .3s ease all;
+}
+.mega-column ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #464545;
+    transition: .3s ease all;
+}
+.mega-column ul li a:hover::before {
+    width: 100%;
 }
 /* Header CSS */
 

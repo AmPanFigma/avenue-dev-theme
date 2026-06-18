@@ -1,0 +1,39 @@
+{% comment %}
+  Side cart drawer.
+  Rendered once in theme.liquid. Contents are populated/refreshed by
+  cart-drawer.js from /cart.js. Initial markup matches the empty state;
+  JS fills it on load and after every cart change.
+{% endcomment %}
+
+<div class="cart-drawer" id="CartDrawer" aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-close></div>
+
+  <aside class="cart-drawer__panel" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Your Cart (<span data-ajax-cart-bind="item_count">{{ cart.item_count }}</span>)</h2>
+      <button class="cart-drawer__close" type="button" data-cart-close aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer__body" data-lenis-prevent>
+      <div class="cart-drawer__items" data-cart-items>
+        {% comment %} Populated by cart-drawer.js {% endcomment %}
+      </div>
+      <p class="cart-drawer__empty" data-cart-empty hidden>Your cart is empty.</p>
+    </div>
+
+    <div class="cart-drawer__loader" aria-hidden="true">
+      <span class="cart-drawer__spinner"></span>
+    </div>
+
+    <footer class="cart-drawer__footer" data-cart-footer hidden>
+      <div class="cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <span data-cart-subtotal>{{ cart.total_price | money }}</span>
+      </div>
+      <a href="{{ routes.cart_url }}" class="cart-drawer__link">View cart</a>
+      <form action="{{ routes.cart_url }}" method="post">
+        <button type="submit" name="checkout" class="cart-drawer__checkout">Checkout</button>
+      </form>
+    </footer>
+  </aside>
+</div>

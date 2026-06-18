@@ -109,7 +109,7 @@
                {% unless template.name == 'cart' %}
                <div class="cart" data-ajax-cart-section>
                   <a href="javascript:void(0)" class="cart-open">
-                     Cart <span data-ajax-cart-bind="item_count" class="header__cart-quantity">{{ cart.item_count }}</span>
+                     Cart (<span data-ajax-cart-bind="item_count" class="header__cart-quantity">{{ cart.item_count }}</span>)
                   </a>
                </div>
                {% endunless %}

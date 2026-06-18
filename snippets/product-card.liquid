@@ -32,7 +32,12 @@
             </div>
 
             <div class="add_to_cart">
-                <button class="atc-button custom-btn grey">quick add to cart +</button>
+                {% assign card_variant = product.selected_or_first_available_variant %}
+                {% if card_variant.available %}
+                    <button class="atc-button custom-btn grey" type="button" data-variant-id="{{ card_variant.id }}">quick add to cart +</button>
+                {% else %}
+                    <button class="atc-button custom-btn grey" type="button" disabled>sold out</button>
+                {% endif %}
             </div>
         </div>
         <div class="pci-bottom">
