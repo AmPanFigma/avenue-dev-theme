@@ -181,9 +181,14 @@ header {
     width: 100%;
     z-index: 9999;
     height: 80px;
+    transition: .3s ease all;
 }
 header.transparent {
     background-color: transparent;
+}
+header.active {
+    background-color: var(--bg-light);
+    border-bottom: 1px solid #E1E1E1;
 }
 .header-in {
     display: flex;
@@ -196,12 +201,21 @@ header.transparent {
     position: absolute;
     left: 0;
     right: 0;
-    top: 20px;
+    top: 80px;
     margin: auto;
     width: auto;
     height: 40px;
     display: flex;
     max-width: 150px;
+    transition: .3s ease all;
+    opacity: 0;
+    visibility: hidden;
+}
+header.active .header-logo {
+    visibility: visible;
+    opacity: 1;
+    top: 20px;
+    transition: .3s ease all;
 }
 .header-logo a {
     margin: auto;
@@ -210,6 +224,9 @@ header.transparent {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+header.active .header-logo img {
+    filter: invert();
 }
 .hi-right {
     display: flex;
@@ -241,6 +258,7 @@ header.transparent {
     align-items: center;
     /* gap: 20px; */
     list-style: none;
+    padding: 0;
 }
 .right-menu > ul {
     justify-content: flex-end;
@@ -310,7 +328,7 @@ header.transparent {
     width: 100%;
     background-color: transparent;
     left: 0;
-    top: 81px;
+    top: 80px;
     display: flex;
     justify-content: flex-end;
     z-index: 9;
@@ -407,6 +425,20 @@ header.transparent {
 }
 .mega-column ul li a:hover::before {
     width: 100%;
+}
+header.active .hi-left > ul > li > a,
+header.active .right-menu > ul > li > a {
+    color: var(--text-primary);
+}
+header.active .menu-item.has-mega-menu > a::before {
+    filter: invert(0);
+}
+header.active .hi-left > ul > li > a::after,
+header.active .right-menu > ul > li > a::after {
+    background-color: #000;
+}
+header.active .right-extra a {
+    color: var(--text-primary);
 }
 /* Header CSS */
 
