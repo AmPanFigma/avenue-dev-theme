@@ -84,15 +84,18 @@
 
                     {% if link.title == 'About' and about_menu.links.size > 0 %}
                       <div class="mega-menu small">
-                        <div class="mega-column">
-                          <p class="mega-title">{{ about_menu.title }}</p>
-                          <ul>
-                            {% for item in about_menu.links %}
-                              <a href="{{ item.url }}">
-                                {{ item.title }}
-                              </a>
-                            {% endfor %}
-                          </ul>
+                        <div class="megamenu-in">
+                          <div class="mega-column">
+                            <ul>
+                              {% for item in about_menu.links %}
+                                <li>
+                                  <a href="{{ item.url }}">
+                                    {{ item.title }}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     {% endif %}

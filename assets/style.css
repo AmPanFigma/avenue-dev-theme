@@ -358,6 +358,10 @@ header.active .header-logo img {
     gap: 40px;
     pointer-events: auto;
 }
+.mega-menu.small .megamenu-in {
+    grid-template-columns: 1fr;
+    right: 24vw;
+}
 .mega-column {
     display: flex;
     flex-direction: column;
@@ -412,6 +416,15 @@ header.active .header-logo img {
     text-decoration: none;
     position: relative;
     transition: .3s ease all;
+}
+.mega-menu.small .mega-column ul li a {
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.92px;
+    color: var(--text-primary);
+    display: inline-block;
+    font-family: var(--switzer);
 }
 .mega-column ul li a::before {
     content: '';

@@ -28,3 +28,42 @@ images.forEach((image)=>{
   }
   toggle(window.scrollY); // set correct state on load
 })();
+
+/* Home banner logo -> header logo scroll transition */
+;(function () {
+  if (typeof gsap === 'undefined') return;
+  const bannerLogo = document.querySelector('.banner.home .bct-image');
+  const headerLogo = document.querySelector('header .header-logo');
+  if (!bannerLogo || !headerLogo) return; // only on the home page
+
+  if (typeof ScrollTrigger !== 'undefined' && gsap.registerPlugin) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Header logo starts hidden + small; it grows into place as you scroll.
+  gsap.set(headerLogo, { autoAlpha: 0, scale: 0.55, transformOrigin: 'center center' });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.banner.home',
+      start: 'top top',
+      end: '+=600',     // distance over which the transition plays
+      scrub: 0.5
+    }
+  });
+
+  // Banner logo lifts up, shrinks toward the header, and fades out.
+  tl.to(bannerLogo, {
+    y: () => -(bannerLogo.getBoundingClientRect().top + bannerLogo.offsetHeight * 0.5),
+    scale: 0.18,
+    autoAlpha: 0,
+    ease: 'none'
+  }, 0);
+
+  // Header logo scales up into place in sync with the banner logo (starts at 0).
+  tl.to(headerLogo, {
+    autoAlpha: 1,
+    scale: 1,
+    ease: 'none'
+  }, 0.2);
+})();
