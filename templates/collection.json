@@ -11,7 +11,10 @@
   "sections": {
     "main": {
       "type": "collection",
-      "settings": {}
+      "settings": {
+        "cb_image": "shopify://shop_images/Rectangle_25184.png",
+        "cb_alt": "Collection Banner"
+      }
     }
   },
   "order": [
