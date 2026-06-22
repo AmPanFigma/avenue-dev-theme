@@ -15,9 +15,17 @@
         "cb_image": "shopify://shop_images/Rectangle_25184.png",
         "cb_alt": "Collection Banner"
       }
+    },
+    "spacer_9XbW9K": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "spacer_9XbW9K"
   ]
 }
