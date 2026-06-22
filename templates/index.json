@@ -163,7 +163,7 @@
       ],
       "settings": {
         "section_title": "What our patients say",
-        "speed": 1,
+        "speed": 0.5,
         "pause_on_hover": true,
         "per_page": 4,
         "per_page_mobile": 1,
