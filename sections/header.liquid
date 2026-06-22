@@ -1,4 +1,9 @@
-<header class="transparent" data-ajax-cart-section>
+{% if template contains 'collection' %}
+  <header class="filled" data-ajax-cart-section>
+{% else %}
+  <header class="transparent" data-ajax-cart-section>
+{% endif %}
+
    <div class="container-fluid">
       <div class="header-in">
          <div class="hi-left">

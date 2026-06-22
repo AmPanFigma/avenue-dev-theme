@@ -1,47 +1,62 @@
-{% comment %}
-  This section is used in the collection template to render collection page
-  listing all products within a collection.
-
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
-{% endcomment %}
-
-<h1>{{ collection.title }}</h1>
-
-<div class="collection-products">
-  {% paginate collection.products by 20 %}
-    {% for product in collection.products %}
-      <div class="collection-product">
-        {% if product.featured_image %}
-          {% render 'image',
-            class: 'collection-product__image',
-            image: product.featured_image,
-            url: product.url,
-            width: 400,
-            height: 400,
-            crop: 'center'
-          %}
-        {% endif %}
-        <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
-          <p>{{ product.price | money }}</p>
-        </div>
-      </div>
-    {% endfor %}
-
-    {{ paginate | default_pagination }}
-  {% endpaginate %}
+<div class="collection-banner">
+    <div class="cb-image">
+        <img src="{{ section.settings.cb_image | image_url: width: 2000 }}" alt="{{ section.settings.cb_alt }}">
+    </div>
 </div>
 
-{% stylesheet %}
-  .collection-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  }
-{% endstylesheet %}
+<div class="collection-wrap">
+    <div class="container-fluid">
+        <div class="cwarp-in">
+            <div class="cwarp-head">
+                <div class="cwh-left">
+                    {% if collection.handle == 'all' %}
+                        <h1>All {{ collection.title }}</h1>
+                    {% else %}
+                        <h1>{{ collection.title }}</h1>
+                    {% endif %}
+                </div>
+                <div class="cwh-center">
+                    <div class="collection-filters">
+                        <ul>
+                            <li>moisturizers <span>22</span></li>
+                            <li>cleansers <span>22</span></li>
+                            <li>serums <span>22</span></li>
+                            <li>masks <span>22</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cwh-right">
+                    <div class="collection-sort">
+
+                    </div>
+                </div>
+            </div>
+            <div class="cwarp-product-wrap">
+                {% for product in collection.products %}
+                    {% render 'product-card', product: product %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 
 {% schema %}
 {
-  "name": "t:general.collection",
-  "settings": []
+    "name": "Collection",
+    "tag": "section",
+    "class": "collectionMain",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cb_image",
+            "label": "Banner Image"
+        },
+        {
+            "type": "text",
+            "id": "cb_alt",
+            "label": "Banner Image Alt Text",
+            "default": "Collection Banner"
+        }
+    ],
 }
 {% endschema %}
