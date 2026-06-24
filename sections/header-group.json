@@ -13,12 +13,42 @@
   "sections": {
     "header": {
       "type": "header",
+      "blocks": {
+        "promo_88e969": {
+          "type": "promo",
+          "settings": {
+            "panel": "Shop",
+            "heading": "Discover Bundles",
+            "product": "hydrating-b5-gel",
+            "link": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "promo_GTr7FK": {
+          "type": "promo",
+          "settings": {
+            "panel": "Shop By Concern",
+            "heading": "Discover Anti-Acne Best Sellers",
+            "product": "future-mineral-uv-defense-spf-51",
+            "link": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "promo_88e969",
+        "promo_GTr7FK"
+      ],
       "settings": {
         "select_logo": "shopify://shop_images/avenue-logo-white.svg",
         "left_menu": "left-menu",
         "right_menu": "right-menu",
         "shop_mega_menu": "shop",
-        "about_mega_menu": "about"
+        "about_mega_menu": "about",
+        "schedule_link": "#",
+        "schedule_label": "Schedule Visit"
       }
     }
   },

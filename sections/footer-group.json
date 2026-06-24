@@ -37,13 +37,20 @@
           "settings": {
             "menu": "social"
           }
+        },
+        "menu_3mCbH6": {
+          "type": "menu",
+          "settings": {
+            "menu": "policy"
+          }
         }
       },
       "block_order": [
         "menu_HdAQAk",
         "menu_iG6W94",
         "menu_BMi9jJ",
-        "menu_qM6XRK"
+        "menu_qM6XRK",
+        "menu_3mCbH6"
       ],
       "settings": {
         "news_heading": "Join the avenue",
