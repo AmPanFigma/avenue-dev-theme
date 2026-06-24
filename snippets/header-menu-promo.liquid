@@ -1,0 +1,37 @@
+{% comment %}
+  Renders mobile-menu promo blocks whose "panel" matches the given panel title.
+  Usage: {% render 'header-menu-promo', blocks: section.blocks, panel: 'Shop' %}
+{% endcomment %}
+{% for block in blocks %}
+  {% if block.type == 'promo' and block.settings.panel != blank and block.settings.panel == panel %}
+
+    {%- assign promo_product = block.settings.product -%}
+    {%- if promo_product != blank -%}
+      {%- assign promo_img = promo_product.featured_image -%}
+      {%- assign promo_url = block.settings.link | default: promo_product.url -%}
+    {%- else -%}
+      {%- assign promo_img = block.settings.image -%}
+      {%- assign promo_url = block.settings.link | default: '#' -%}
+    {%- endif -%}
+
+    {% if promo_img != blank or block.settings.button_label != blank %}
+      <div class="hnav-promo" {{ block.shopify_attributes }}>
+        {% if block.settings.heading != blank %}
+          <p class="hnav-promo__label">{{ block.settings.heading }}</p>
+        {% endif %}
+
+        {% if promo_img != blank %}
+          <a href="{{ promo_url }}" class="hnav-promo__media">
+            <img src="{{ promo_img | image_url: width: 700 }}"
+                 alt="{{ block.settings.heading | escape }}" loading="lazy">
+          </a>
+        {% endif %}
+
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <a href="{{ block.settings.button_link }}" class="custom-btn filled hnav-promo__btn">{{ block.settings.button_label }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  {% endif %}
+{% endfor %}

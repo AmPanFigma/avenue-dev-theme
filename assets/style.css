@@ -35,6 +35,9 @@ body {
     text-rendering: optimizeLegibility;
     touch-action: manipulation;
 }
+body[data-lenis-prevent] {
+    overflow: hidden;
+}
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
@@ -229,7 +232,8 @@ header.filled .header-logo img {
     height: 100%;
     object-fit: contain;
 }
-header.active .header-logo img {
+header.active .header-logo img,
+header.filled .header-logo img {
     filter: invert();
 }
 .hi-right {
@@ -252,6 +256,17 @@ header.active .header-logo img {
     color: var(--white);
     text-decoration: none;
     font-weight: 400;
+}
+.account-link svg,
+.cart svg {
+    display: none;
+}
+.account-link svg path,
+.cart svg path {
+    transition: .2s ease all;
+}
+.cart .cart-open{
+    display: flex;
 }
 .header-in .hi-left {
 
@@ -301,6 +316,9 @@ header.active .header-logo img {
 .right-menu > ul > li:hover > a::after {
     opacity: 1;
 }
+.right-menu > ul > li:hover > a::before {
+    transform: rotate(180deg);
+}
 .header-menu .menu-item {
     position: relative;
 }
@@ -320,7 +338,7 @@ header.active .header-logo img {
     right: 0;
     top: 20px;
     width: 8px;
-    height: 8px;
+    height: 4px;
     background-image: url(arrow-down-dark.svg);
     filter: invert();
     background-repeat: no-repeat;
@@ -463,6 +481,10 @@ header.active .right-extra a,
 header.filled .right-extra a {
     color: var(--text-primary);
 }
+header.active .right-extra svg path,
+header.filled .right-extra svg path {
+    stroke: var(--text-primary);
+}
 /* Header CSS */
 
 /* Footer CSS */
@@ -555,6 +577,9 @@ footer {
     flex-direction: column;
     gap: 20px;
 }
+.footer-menu .footer-column:last-child {
+    display: none;
+}
 .footer-column .footer_title {
     font-family: var(--switzer);
     font-size: 12px;
@@ -597,6 +622,9 @@ footer {
     width: 100%;
 }
 .fi-bottom .fib-logo {
+    width: 100%;
+}
+.fib-logo img {
     width: 100%;
 }
 .fib-bar {

@@ -7,6 +7,7 @@
    <div class="container-fluid">
       <div class="header-in">
          <div class="hi-left">
+            <button type="button" class="open menu-trigger" aria-label="Open menu">MENU</button>
             {% assign left_menu = linklists[section.settings.left_menu] %}
             <ul class="header-menu left-menu">
               {% for link in left_menu.links %}
@@ -15,7 +16,7 @@
                 </li>
               {% endfor %}
             </ul>
-        </div>
+         </div>
          <div class="header-logo">
             <a href="{{ routes.root_url }}">
               {% if section.settings.select_logo %}
@@ -110,19 +111,132 @@
             </div>
             <div class="right-extra">
                {% if customer %}
-                  <a href="{{ routes.account_url }}" class="cust-login">Account</a>
-               {% else %}
-                  <a href="{{ routes.account_login_url }}" class="profile">login</a>
-               {% endif %}
-               {% unless template.name == 'cart' %}
-               <div class="cart" data-ajax-cart-section>
-                  <a href="javascript:void(0)" class="cart-open">
-                     Cart (<span data-ajax-cart-bind="item_count" class="header__cart-quantity">{{ cart.item_count }}</span>)
-                  </a>
-               </div>
-               {% endunless %}
+                    <a href="{{ routes.account_url }}" class="cust-login account-link">
+                        <span class="account-text">Account</span>
+                        {% render 'icon-account' %}
+                    </a>
+                {% else %}
+                    <a href="{{ routes.account_login_url }}" class="profile account-link">
+                        <span class="account-text">Login</span>
+                        {% render 'icon-account' %}
+                    </a>
+                {% endif %}
+                {% unless template.name == 'cart' %}
+                <div class="cart" data-ajax-cart-section>
+                    <a href="javascript:void(0)" class="cart-open">
+                        <span class="cart-text">Cart</span>
+                         {% render 'cart-icon' %}
+                        (<span data-ajax-cart-bind="item_count" class="header__cart-quantity">{{ cart.item_count }}</span>)
+                    </a>
+                </div>
+                {% endunless %}
             </div>
          </div>
+      </div>
+      <div class="h-nav" id="mySidenav">
+          <div class="hnav-menu">
+
+            <div class="hnav-top">
+              <button type="button" class="close" aria-label="Close menu">CLOSE X</button>
+            </div>
+
+            <ul class="mob-menu">
+
+              {% comment %} Left menu — simple links ('---' = spacer) {% endcomment %}
+              {% for link in left_menu.links %}
+                {% if link.title == '---' %}
+                  <li class="mob-spacer" aria-hidden="true"></li>
+                {% else %}
+                  <li class="mob-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+
+              {% comment %} Right menu — Shop / About expand into sub-panels {% endcomment %}
+              {% for link in right_menu.links %}
+
+                {% if link.title == '---' %}
+                  <li class="mob-spacer" aria-hidden="true"></li>
+
+                {% elsif link.title == 'Shop' and shop_menu.links.size > 0 %}
+                  <li class="mob-link">
+                    <a href="{{ link.url }}" class="mob-link_inner">{{ link.title }} <span class="caret">&rsaquo;</span></a>
+                    <div class="sublinks_wrapper">
+                      <div class="hnav-top">
+                        <button type="button" class="nav_back_link" aria-label="Back">&lsaquo; BACK</button>
+                        <button type="button" class="close" aria-label="Close menu">CLOSE X</button>
+                      </div>
+                      <div class="hnav-bottom">
+                        <p class="subnav-title">{{ link.title }}</p>
+                        <ul class="subnav-list">
+                            {% comment %} Direct links (no children) e.g. Shop All, Best Sellers {% endcomment %}
+                            {% for parent in shop_menu.links %}
+                            {% if parent.links.size == 0 %}
+                                <li><a href="{{ parent.url }}">{{ parent.title }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                            {% comment %} Expandable groups e.g. By Concern, By Product {% endcomment %}
+                            {% for parent in shop_menu.links %}
+                            {% if parent.links.size > 0 %}
+                                <li class="mob-sublink">
+                                <a href="{{ parent.url }}" class="mob-sublink_inner">{{ parent.title }} <span class="caret">&rsaquo;</span></a>
+                                <div class="childlink_wrapper">
+                                    <div class="hnav-top">
+                                        <button type="button" class="nav_back_sublink" aria-label="Back">&lsaquo; BACK</button>
+                                        <button type="button" class="close" aria-label="Close menu">CLOSE X</button>
+                                    </div>
+                                    <div class="hnav-bottom">
+                                        <p class="subnav-title">{{ parent.title }}</p>
+                                        <ul class="subnav-list">
+                                        {% for child in parent.links %}
+                                            <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {% render 'header-menu-promo', blocks: section.blocks, panel: parent.title %}
+                                </div>
+                                </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                      </div>
+                      {% render 'header-menu-promo', blocks: section.blocks, panel: link.title %}
+                    </div>
+                  </li>
+
+                {% elsif link.title == 'About' and about_menu.links.size > 0 %}
+                  <li class="mob-link">
+                    <a href="{{ link.url }}" class="mob-link_inner">{{ link.title }} <span class="caret">&rsaquo;</span></a>
+                    <div class="sublinks_wrapper">
+                      <div class="hnav-top">
+                        <button type="button" class="nav_back_link" aria-label="Back">&lsaquo; BACK</button>
+                        <button type="button" class="close" aria-label="Close menu">CLOSE X</button>
+                      </div>
+                      <div class="hnav-bottom">
+                        <p class="subnav-title">{{ link.title }}</p>
+                        <ul class="subnav-list">
+                            {% for item in about_menu.links %}
+                            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                      </div>
+                      {% render 'header-menu-promo', blocks: section.blocks, panel: link.title %}
+                    </div>
+                  </li>
+
+                {% else %}
+                  <li class="mob-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endif %}
+
+              {% endfor %}
+            </ul>
+
+            {% if section.settings.schedule_link != blank %}
+              <div class="hnav-foot">
+                <a href="{{ section.settings.schedule_link }}" class="custom-btn grey">{{ section.settings.schedule_label | default: 'Schedule Visit' }}</a>
+              </div>
+            {% endif %}
+
+          </div>
       </div>
    </div>
 </header>
@@ -155,9 +269,43 @@
         "type": "link_list",
         "id": "about_mega_menu",
         "label": "About Mega Menu"
+      },
+      {
+        "type": "header",
+        "content": "Mobile menu"
+      },
+      {
+        "type": "url",
+        "id": "schedule_link",
+        "label": "Schedule button link"
+      },
+      {
+        "type": "text",
+        "id": "schedule_label",
+        "label": "Schedule button label",
+        "default": "Schedule Visit"
       }
     ],
-    
+    "blocks": [
+      {
+        "type": "promo",
+        "name": "Mobile menu promo",
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Shows at the bottom of a mobile sub-panel. 'Panel name' must exactly match the menu item title (e.g. Shop, About, By Concern)."
+          },
+          { "type": "text", "id": "panel", "label": "Panel name" },
+          { "type": "text", "id": "heading", "label": "Heading", "default": "Discover Bundles" },
+          { "type": "product", "id": "product", "label": "Product (optional)", "info": "If set, shows the product image. Falls back to the image below." },
+          { "type": "image_picker", "id": "image", "label": "Image (fallback)" },
+          { "type": "url", "id": "link", "label": "Image / product link" },
+          { "type": "text", "id": "button_label", "label": "Button label" },
+          { "type": "url", "id": "button_link", "label": "Button link" }
+        ]
+      }
+    ],
+
     "presets": [
       {
         "name": "Header"
@@ -183,6 +331,8 @@
       $('body').removeAttr('data-lenis-prevent'); // remove attribute
       $('.close').hide();
       $('.open').show();
+      // reset any open sub-panels so reopening starts at the top level
+      $('.sublinks_wrapper, .childlink_wrapper').removeClass('visible');
     });
 
     // nested mobile subnav
