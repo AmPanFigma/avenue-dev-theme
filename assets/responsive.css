@@ -259,6 +259,13 @@
         text-transform: uppercase;
         padding: 12px 0;
     }
+    .subnav-list > li .subnav-list > li a {
+        text-transform: capitalize;
+        font-family: var(--ppneue);
+        font-weight: 400;
+        color: #474747;
+        font-size: 18px;
+    }
     /* bottom CTA */
     .hnav-foot {
         flex: 0 0 auto;
