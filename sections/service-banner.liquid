@@ -1,0 +1,96 @@
+<section class="service-banner">
+    <div class="sb-background">
+        <img src="{{ section.settings.background_image | image_url }}" alt="{{ section.settings.background_image_alt }}">
+    </div>
+    <div class="service-banner-in">
+        <div class="container-fluid">
+            <div class="sbi">
+                <div class="sbi-left">
+                    <div class="sbi-header">
+                        <div class="sbih-top">
+                            <h1>{{ section.settings.heading }}</h1>
+                        </div>
+                        <div class="sbih-bottom">
+                            <p>{{ section.settings.subheading }}</p>
+                            <a href="{{ section.settings.button_link | default: '#' }}" class="custom-btn grey">
+                                {{ section.settings.button_text }}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sbi-footer">
+                        <p>{{ section.settings.para }}</p>
+                    </div>
+                </div>
+                <div class="sbi-right">
+                    <div class="sbir-image">
+                        <img src="{{ section.settings.sbi_image | image_url }}" alt="{{ section.settings.sbi_image_alt }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Service Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "background_image_alt",
+      "label": "Background Image Alt Text",
+      "default": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Add your subheading here."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "textarea",
+      "id": "para",
+      "label": "Bottom Paragraph",
+      "default": "Add your footer paragraph here."
+    },
+    {
+      "type": "image_picker",
+      "id": "sbi_image",
+      "label": "Right Image"
+    },
+    {
+      "type": "text",
+      "id": "sbi_image_alt",
+      "label": "Right Image Alt Text",
+      "default": "Service Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Banner"
+    }
+  ]
+}
+{% endschema %}

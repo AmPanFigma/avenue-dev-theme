@@ -9,14 +9,14 @@
  */
 {
   "sections": {
-    "banner": {
-        "type": "bestseller",
+    "ServiceBanner": {
+        "type": "service-banner",
         "settings": {
             
         }
     },
   },
   "order": [
-    "banner"
+    "ServiceBanner"
   ]
 }
