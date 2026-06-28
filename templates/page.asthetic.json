@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "page_background": {
+      "type": "page-background",
+      "settings": {
+        "bg_color": "#F8F7F3"
+      }
+    },
     "ServiceBanner": {
       "type": "service-banner",
       "settings": {
@@ -311,6 +317,7 @@
     }
   },
   "order": [
+    "page_background",
     "ServiceBanner",
     "spacer_jqddNi",
     "belief_tNWxBU",

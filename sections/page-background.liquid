@@ -1,0 +1,24 @@
+{% comment %}
+  Settings-only section. Sets the page background colour for whichever
+  template it is added to. Renders no visible markup.
+{% endcomment %}
+{% style %}
+  body { background-color: {{ section.settings.bg_color }}; }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Page Background",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Page background",
+      "default": "#F8F7F3"
+    }
+  ],
+  "presets": [
+    { "name": "Page Background" }
+  ]
+}
+{% endschema %}
