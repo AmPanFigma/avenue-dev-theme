@@ -66,6 +66,72 @@
       "settings": {
         "spacer_height": 170
       }
+    },
+    "icon_section_ytXm7r": {
+      "type": "icon-section",
+      "blocks": {
+        "icon_item_qDMfgt": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_waGKnM": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_TJzhDf": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_qDMfgt",
+        "icon_item_waGKnM",
+        "icon_item_TJzhDf"
+      ],
+      "name": "Icon Section",
+      "settings": {
+        "highlight": "our approach",
+        "heading": "Evidence Based. Always."
+      }
+    },
+    "spacer_wLFcfe": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_pdqQx7": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/Rectangle_25152.jpg",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "book an appointment",
+        "button_link": "#",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
+      }
     }
   },
   "order": [
@@ -74,6 +140,9 @@
     "Belief",
     "spacer_r7iC3U",
     "DualImage",
-    "spacer_CLNGpw"
+    "spacer_CLNGpw",
+    "icon_section_ytXm7r",
+    "spacer_wLFcfe",
+    "image_cta_pdqQx7"
   ]
 }
