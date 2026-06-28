@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ServiceBanner": {
@@ -5,17 +14,315 @@
       "settings": {
         "background_image": "shopify://shop_images/dot-background.svg",
         "background_image_alt": "Background Image",
-        "heading": "Medical Services",
+        "heading": "Aesthetic Services",
         "subheading": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
-        "button_text": "get referral form",
+        "button_text": "book an appointment",
         "button_link": "#",
-        "para": "If you’re unsure whether your concern is medical or aesthetic, your referring physician can help guide this, and our team is always happy to clarify next steps once your medical referral is received.",
-        "sbi_image": "shopify://shop_images/453abf181f95cab60a37f89e8df0f52709fe67ed_1.png",
+        "para": "",
+        "sbi_image": "shopify://shop_images/11a7d9a57e703bf1492d7ee5305d72f782c4a541.png",
         "sbi_image_alt": "Service Image"
       }
     },
+    "spacer_jqddNi": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "belief_tNWxBU": {
+      "type": "belief",
+      "name": "Belief",
+      "settings": {
+        "highlight": "Our Belief",
+        "heading": "We believe in helping you achieve your skin goals through evidence based care.",
+        "bi_image": "shopify://shop_images/4937f880335ad70baf496c7b1f7659593b7c3318.png",
+        "bi-alt": "",
+        "bii_image": "shopify://shop_images/322ee6e2f9f9a411746177d80a345228f6ebe0b5.png",
+        "bii-alt": "",
+        "image_para": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare a suscipit aenean. Fringilla id egestas condimentum."
+      }
+    },
+    "spacer_yBtymt": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "offerings_kVWLLJ": {
+      "type": "offerings",
+      "blocks": {
+        "offering_9PkmBY": {
+          "type": "offering",
+          "settings": {
+            "title": "Anti-Aging",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..",
+            "services_label": "Services :",
+            "services": "Botox\nPRP Injections\nDerma Fillers\nInjectibles",
+            "image": "shopify://shop_images/029d32546da842490fe6083421385f9406093570.png"
+          }
+        },
+        "offering_DAMRxW": {
+          "type": "offering",
+          "settings": {
+            "title": "Hydration",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..",
+            "services_label": "Services :",
+            "services": "Botox\nPRP Injections\nDerma Fillers\nInjectibles",
+            "image": "shopify://shop_images/dd456e601c83a545b81daa6d6a674b171357caab.png"
+          }
+        }
+      },
+      "block_order": [
+        "offering_9PkmBY",
+        "offering_DAMRxW"
+      ],
+      "name": "Offerings",
+      "settings": {
+        "highlight": "Offerings",
+        "heading": "Serving your Skin Needs"
+      }
+    },
+    "spacer_FzGhcW": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "services_list_ky8hBw": {
+      "type": "services-list",
+      "blocks": {
+        "service_m9LDHC": {
+          "type": "service",
+          "settings": {
+            "label": "Lasers",
+            "link": ""
+          }
+        },
+        "service_kYKFUL": {
+          "type": "service",
+          "settings": {
+            "label": "PRP Injections",
+            "link": ""
+          }
+        },
+        "service_iLEdiL": {
+          "type": "service",
+          "settings": {
+            "label": "Micro Needling",
+            "link": ""
+          }
+        },
+        "service_J63Ggy": {
+          "type": "service",
+          "settings": {
+            "label": "Injectables",
+            "link": ""
+          }
+        },
+        "service_AfNrcf": {
+          "type": "service",
+          "settings": {
+            "label": "Laser Hair Removal",
+            "link": ""
+          }
+        },
+        "service_BFQ8Ui": {
+          "type": "service",
+          "settings": {
+            "label": "Botox",
+            "link": ""
+          }
+        },
+        "service_bKCiwg": {
+          "type": "service",
+          "settings": {
+            "label": "Dermal Fillers",
+            "link": ""
+          }
+        },
+        "service_y6QG8A": {
+          "type": "service",
+          "settings": {
+            "label": "Derma Planning",
+            "link": ""
+          }
+        },
+        "service_3cz4Uf": {
+          "type": "service",
+          "settings": {
+            "label": "Medical Facial",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_m9LDHC",
+        "service_kYKFUL",
+        "service_iLEdiL",
+        "service_J63Ggy",
+        "service_AfNrcf",
+        "service_BFQ8Ui",
+        "service_bKCiwg",
+        "service_y6QG8A",
+        "service_3cz4Uf"
+      ],
+      "name": "Services List",
+      "settings": {
+        "highlight": "Services",
+        "heading": "Explore our Services",
+        "footer_text": "<p>Don't see what you're looking for here? </p><p>Get in touch with us <a href=\"#\" title=\"#\">here.</a></p>"
+      }
+    },
+    "spacer_JWGBUg": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "icon_section_yc7VRh": {
+      "type": "icon-section",
+      "blocks": {
+        "icon_item_PAHt4T": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_U6JEwb": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_qzta4M": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_PAHt4T",
+        "icon_item_U6JEwb",
+        "icon_item_qzta4M"
+      ],
+      "name": "Icon Section",
+      "settings": {
+        "highlight": "our approach",
+        "heading": "Evidence Based. Always."
+      }
+    },
+    "spacer_87pwVA": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_RzrqRW": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/Rectangle_25152.jpg",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "book an appointment",
+        "button_link": "#",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
+      }
+    },
+    "spacer_jpVGyb": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "faq_N6Gchd": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_Hr6BUp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_item_tmFhwU": {
+          "type": "faq_item",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_item_GQHxqh": {
+          "type": "faq_item",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_item_EPTcUe": {
+          "type": "faq_item",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_item_M8QxVA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_Hr6BUp",
+        "faq_item_tmFhwU",
+        "faq_item_GQHxqh",
+        "faq_item_EPTcUe",
+        "faq_item_M8QxVA"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "highlight": "Frequently Asked",
+        "heading": "Common Concerns",
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+      }
+    }
   },
   "order": [
     "ServiceBanner",
+    "spacer_jqddNi",
+    "belief_tNWxBU",
+    "spacer_yBtymt",
+    "offerings_kVWLLJ",
+    "spacer_FzGhcW",
+    "services_list_ky8hBw",
+    "spacer_JWGBUg",
+    "icon_section_yc7VRh",
+    "spacer_87pwVA",
+    "image_cta_RzrqRW",
+    "spacer_jpVGyb",
+    "faq_N6Gchd"
   ]
 }
