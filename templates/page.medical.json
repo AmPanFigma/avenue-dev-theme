@@ -23,22 +23,57 @@
         "sbi_image_alt": "Service Image"
       }
     },
+    "spacer_xDktjA": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
     "Belief": {
-        "type": "belief",
-        "settings": {
-
-        }
+      "type": "belief",
+      "settings": {
+        "highlight": "our belief",
+        "heading": "We believe in helping you achieve your skin goals through evidence based care.",
+        "bi_image": "shopify://shop_images/7e9e64f985bdbd1d003872195e273115803f6274.png",
+        "bi-alt": "belief image",
+        "bii_image": "shopify://shop_images/847a8f25fe8e30fbc78ccc613b4db3f1c718a69c.png",
+        "bii-alt": "belief image",
+        "image_para": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare a suscipit aenean. Fringilla id egestas condimentum."
+      }
+    },
+    "spacer_r7iC3U": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     },
     "DualImage": {
-        "type": "dual-image",
-        "settings": {
-
-        }
+      "type": "dual-image",
+      "settings": {
+        "dii_image": "shopify://shop_images/87441eed460528f1eb6af1e3143cc29dd81dcca8.png",
+        "dii_background": "shopify://shop_images/d716e900d62accc721c30ea25dd4c38483444ff0.png",
+        "heading": "Leading the way to you dream skin.",
+        "paragraph": "Lorem ipsum dolor sit amet consectetur. Morbi enim etiam amet vitae a a. Amet enim tincidunt tempus auctor adipiscing quis.",
+        "button_text": "get referral form",
+        "button_link": "#"
+      }
+    },
+    "spacer_CLNGpw": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
     "ServiceBanner",
+    "spacer_xDktjA",
     "Belief",
-    "DualImage"
+    "spacer_r7iC3U",
+    "DualImage",
+    "spacer_CLNGpw"
   ]
 }
