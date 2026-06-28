@@ -139,6 +139,59 @@
       "settings": {
         "spacer_height": 170
       }
+    },
+    "faq_zWth9Q": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_6iWTQg": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_MLLJqm": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_yJhfTA": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_hPnfcJ": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_7J8GFR": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_6iWTQg",
+        "faq_item_MLLJqm",
+        "faq_item_yJhfTA",
+        "faq_item_hPnfcJ",
+        "faq_item_7J8GFR"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "highlight": "Frequently Asked",
+        "heading": "Common Concerns",
+        "footer_text": "<p>Don't see what you're looking for here?</p><p>Get in touch with us <a href=\"#\" target=\"_blank\" title=\"#\">here</a>.</p>"
+      }
     }
   },
   "order": [
@@ -151,6 +204,7 @@
     "icon_section_ytXm7r",
     "spacer_wLFcfe",
     "image_cta_pdqQx7",
-    "spacer_YYepQ8"
+    "spacer_YYepQ8",
+    "faq_zWth9Q"
   ]
 }
