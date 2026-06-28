@@ -132,6 +132,13 @@
         "direction_link": "#",
         "direction_link_text": "Get Directions"
       }
+    },
+    "spacer_YYepQ8": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
@@ -143,6 +150,7 @@
     "spacer_CLNGpw",
     "icon_section_ytXm7r",
     "spacer_wLFcfe",
-    "image_cta_pdqQx7"
+    "image_cta_pdqQx7",
+    "spacer_YYepQ8"
   ]
 }
