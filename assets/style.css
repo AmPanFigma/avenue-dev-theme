@@ -1200,6 +1200,10 @@ footer {
 .icid-left h3 {
     max-width: 44ch;
 }
+.icid-right {
+    display: flex;
+    justify-content: flex-end;
+}
 /* Homepage CSS */
 
 /* Collection Page CSS */
@@ -1436,6 +1440,109 @@ footer {
     color: var(--text-tertiary);
     max-width: 31ch;
 }
+/* ---------------- FAQ Section ---------------- */
+.faq-section { 
+    padding: 85px 0;
+    background-color: var(--bg-light);
+}
+.faq-in {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: stretch;
+}
+.faq-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.faq-foot p { margin: 0; line-height: 1.6; }
+.faq-foot a { color: inherit; text-decoration: underline; }
 
+.faq-item {
+    border-bottom: 1px solid #d9d6cf;
+    padding: 22px 0;
+}
+.faq-item:first-child { padding-top: 0; }
+
+.faq-q {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #111;
+}
+
+.faq-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    transition: transform 0.8s ease;
+}
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #111;
+}
+.faq-icon::before { 
+    width: 15px;
+    height: 1.5px;
+    transform: translate(-50%, -50%);
+}
+.faq-icon::after {
+    width: 1.5px;
+    height: 15px;
+    transform: translate(-50%, -50%);
+}
+.faq-item.active .faq-icon { 
+    transform: rotate(45deg);
+}
+.faq-a {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+    max-width: 90%;
+    transition: .2s ease all;
+}
+.faq-item.active .faq-a { 
+    grid-template-rows: 1fr;
+}
+.faq-a-in {
+    overflow: hidden;
+    min-height: 0;
+    transition: .2s ease all;
+    /* padding-top: 16px; */
+}
+.faq-a-in p { 
+    margin: 0; 
+    line-height: 1.7; 
+    color: #4a4a4a; 
+    transition: .2s ease all;
+}
+.faq-item.active .faq-a-in p {
+    padding-top: 16px;
+}
+
+@media (max-width: 991px) {
+    .faq-section { padding: 60px 0; }
+    .faq-in { grid-template-columns: 1fr; gap: 40px; }
+    .faq-foot { margin-top: 24px; }
+}
 
 /* Service Page CSS */
