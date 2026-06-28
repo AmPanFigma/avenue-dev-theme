@@ -26,6 +26,45 @@
     .avb-left .avbl-image {
         height: 100%;
     }
+    .hi-left > ul > li, .right-menu > ul > li {
+        padding: 0 5px;
+    }
+    .account-link .account-text,
+    .cart .cart-text {
+        display: none;
+    }
+    .account-link svg,
+    .cart svg {
+        display: flex;
+        width: auto;
+        height: auto;
+        max-width: 21px;
+        max-height: 18px;
+    }
+    .cart svg {
+        margin-right: 5px;
+    }
+    .service-banner-in .sbi {
+        gap: 60px;
+    }
+    .sbi-right .sbir-image {
+        width: 50%;
+    }
+    .sbi-header {
+        gap: 100px;
+    }
+    .sbi-left {
+        gap: 80px;
+    }
+    .belief .belief-in {
+        gap: 150px;
+    }
+    .iconsec-in {
+        gap: 30px;
+    }
+    .sb-background img {
+        object-fit: none;
+    }
 }
 
 /* ---------------- Mobile navigation ---------------- */
@@ -37,6 +76,12 @@
 }/* off-canvas drawer, shown on mobile */
 
 @media (max-width: 991px) {
+    h2 {
+        font-size: 26px;
+    }
+    h3 {
+        font-size: 20px;
+    }
     header, .header-in {
         height: 60px;
     }
@@ -70,21 +115,6 @@
     }
     header.active .header-logo, header.filled .header-logo {
         top: 12px;
-    }
-    .account-link .account-text,
-    .cart .cart-text {
-        display: none;
-    }
-    .account-link svg,
-    .cart svg {
-        display: flex;
-        width: auto;
-        height: auto;
-        max-width: 21px;
-        max-height: 18px;
-    }
-    .cart svg {
-        margin-right: 5px;
     }
     /* drawer shell */
     .h-nav {
@@ -315,6 +345,43 @@
     .cwarp-in .cwarp-head {
         flex-direction: column;
     }
+    .service-banner {
+        padding-bottom: 20px;
+    }
+    .sb-background img {
+        object-fit: cover;
+        object-position: 0 0;
+    }
+    .sbi-right .sbir-image {
+        width: 70%;
+    }
+    .belief .belief-in {
+        gap: 30px;
+    }
+    .diitext-bottom p {
+        font-size: 12px;
+    }
+    .dii-image .dii-text {
+        padding: 30px 20px;
+    }
+    .icon-item .ii-image {
+        max-width: 100px;
+        height: auto;
+    }
+    .ii-text {
+        gap: 14px;
+    }
+    .ii-text h3 {
+        margin-top: -5px;
+    }
+    .ici-data {
+        gap: 30px;
+    }
+    .address .open-text {
+        font-size: 16px;
+    }
+    .faq-in { grid-template-columns: 1fr; gap: 60px; }
+    .faq-foot { margin-top: 24px; }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -412,6 +479,34 @@
         display: none;
     }
     .cwarp-product-wrap {
+        grid-template-columns: 1fr;
+    }
+    .service-banner-in .sbi {
+        grid-template-columns: 1fr;
+    }
+    .service-banner .sb-background {
+        display: none;
+    }
+    .sbi-header, .sbi-left {
+        gap: 30px;
+    }
+    .sbi-right {
+        margin-top: 0px;
+    }
+    .sbi-right .sbir-image {
+        width: 100%;
+    }
+    .belief .belief-in {
+        grid-template-columns: 1fr;
+    }
+    .dual-image .dualimage-in {
+        grid-template-columns: 1fr;
+    }
+    .iconsec-in {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .ici-data {
         grid-template-columns: 1fr;
     }
 }

@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "ServiceBanner": {
+      "type": "service-banner",
+      "settings": {
+        "background_image": "shopify://shop_images/dot-background.svg",
+        "background_image_alt": "Background Image",
+        "heading": "Medical Services",
+        "subheading": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
+        "button_text": "get referral form",
+        "button_link": "#",
+        "para": "If you’re unsure whether your concern is medical or aesthetic, your referring physician can help guide this, and our team is always happy to clarify next steps once your medical referral is received.",
+        "sbi_image": "shopify://shop_images/453abf181f95cab60a37f89e8df0f52709fe67ed_1.png",
+        "sbi_image_alt": "Service Image"
+      }
+    },
+  },
+  "order": [
+    "ServiceBanner",
+  ]
+}

@@ -1,0 +1,107 @@
+<section class="offering">
+    <div class="container">
+        <div class="heading center">
+            {% if section.settings.highlight != blank %}
+                <div class="subheading">
+                    <p>{{ section.settings.highlight }}</p>
+                </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+                <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="offering-scroll" id="OfferingScroll-{{ section.id }}">
+        <div class="os-track">
+            {% for block in section.blocks %}
+                <div class="os-item" {{ block.shopify_attributes }}>
+                    <div class="os-card os-text">
+                        {% if block.settings.title != blank %}
+                            <h3>{{ block.settings.title }}</h3>
+                        {% endif %}
+                        {% if block.settings.text != blank %}
+                            <p class="os-desc">{{ block.settings.text }}</p>
+                        {% endif %}
+                        {% if block.settings.services != blank %}
+                            <div class="os-services">
+                                <span class="os-services__label">{{ block.settings.services_label | default: 'Services :' }}</span>
+                                <ul>
+                                    {% assign service_lines = block.settings.services | newline_to_br | split: '<br />' %}
+                                    {% for line in service_lines %}
+                                        {% assign clean = line | strip %}
+                                        {% if clean != blank %}<li>{{ clean }}</li>{% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="os-card os-image">
+                        {% if block.settings.image != blank %}
+                            <img src="{{ block.settings.image | image_url: width: 800 }}"
+                                 alt="{{ block.settings.title | escape }}"
+                                 width="{{ block.settings.image.width }}"
+                                 height="{{ block.settings.image.height }}"
+                                 loading="lazy">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+  (function () {
+    var scroller = document.querySelector('#OfferingScroll-{{ section.id }} .os-track');
+    if (!scroller) return;
+    // drag-to-scroll for desktop mouse users
+    var down = false, startX, startLeft;
+    scroller.addEventListener('mousedown', function (e) {
+      down = true; scroller.classList.add('is-dragging');
+      startX = e.pageX; startLeft = scroller.scrollLeft;
+    });
+    window.addEventListener('mouseup', function () { down = false; scroller.classList.remove('is-dragging'); });
+    scroller.addEventListener('mouseleave', function () { down = false; scroller.classList.remove('is-dragging'); });
+    scroller.addEventListener('mousemove', function (e) {
+      if (!down) return;
+      e.preventDefault();
+      scroller.scrollLeft = startLeft - (e.pageX - startX);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Offerings",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text", "default": "Offerings" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Serving your Skin Needs" }
+  ],
+  "blocks": [
+    {
+      "type": "offering",
+      "name": "Offering",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Description" },
+        { "type": "text", "id": "services_label", "label": "Services label", "default": "Services :" },
+        { "type": "textarea", "id": "services", "label": "Services (one per line)" },
+        { "type": "image_picker", "id": "image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offerings",
+      "blocks": [
+        { "type": "offering" },
+        { "type": "offering" },
+        { "type": "offering" },
+        { "type": "offering" }
+      ]
+    }
+  ]
+}
+{% endschema %}
