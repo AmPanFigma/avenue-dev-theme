@@ -774,6 +774,9 @@ footer {
     display: inline-block;
     width: 18ch;
 }
+.heading.center {
+    align-items: center;
+}
 
 /* Service Section */
 /* .service-in {
@@ -1185,13 +1188,17 @@ footer {
     object-fit: cover;
 }
 .ici-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.ici-data .icid-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: flex-start;
 }
-.ici-data h3 {
-    max-width: 50ch;
+.icid-left h3 {
+    max-width: 44ch;
 }
 /* Homepage CSS */
 
@@ -1339,4 +1346,96 @@ footer {
     color: var(--text-tertiary);
     max-width: 43ch;
 }
+.dual-image .dualimage-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+.dualimage-in .dii-image {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.dii-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dii-image .dii-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 40px;
+}
+.dii-text .diitext-top h2 {
+    text-align: center;
+    color: var(--white);
+}
+.diitext-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    justify-content: center;
+}
+.diitext-bottom p {
+    text-align: center;
+    color: var(--white);
+}
+.iconsec-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
+    margin-top: 90px;
+}
+.iconsec-in .icon-item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.icon-item .ii-image {
+    max-width: 128px;
+    width: 100%;
+    max-height: 85px;
+    height: auto;
+}
+.ii-image img {
+    width: 100%;
+    height: auto;
+}
+.ii-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.ii-text .iit-num {
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 4.16px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+.ii-text h3 {
+    margin-top: -15px;
+}
+.ii-text p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.48px;
+    color: var(--text-tertiary);
+    max-width: 31ch;
+}
+
+
 /* Service Page CSS */

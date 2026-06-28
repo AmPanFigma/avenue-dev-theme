@@ -5,9 +5,29 @@
                 <img src="{{ section.settings.cta-image | image_url }}" alt="{{ section.settings.cta-alt }}">
             </div>
             <div class="ici-data">
-                <h3>{{ section.settings.cta-heading }}</h3>
-                <div class="ici-btn">
-                    <a href="{{ section.settings.button_link | default: '#' }}" class="custom-btn grey">{{ section.settings.button_text }}</a>
+                <div class="icid-left">
+                  <h3>{{ section.settings.cta-heading }}</h3>
+                  <div class="ici-btn">
+                      <a href="{{ section.settings.button_link | default: '#' }}" class="custom-btn grey">{{ section.settings.button_text }}</a>
+                  </div>
+                </div>
+                <div class="icid-right">
+                    {% if section.settings.open-para != blank %}
+                    <div class="avbr-bottom">
+                        <div class="address">
+                            <p class="open-text">{{ section.settings.open-para }}</p>
+                            <p>{{ section.settings.addres-para }}</p>
+                        </div>
+                        <div class="num-mail">
+                            <a href="tel:{{ section.settings.number }}">{{ section.settings.number }}</a>
+                            <span>|</span>
+                            <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+                        </div>
+                        <div class="custom-link">
+                            <a href="{{ section.settings.direction_link }}">{{ section.settings.direction_link_text }}</a>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -42,6 +62,36 @@
       "type": "url",
       "id": "button_link",
       "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "open-para",
+      "label": "Open Paragraph Text"
+    },
+    {
+      "type": "text",
+      "id": "addres-para",
+      "label": "Address Paragraph Text"
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "Enter Mobile Number"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Enter Email"
+    },
+    {
+      "type": "url",
+      "id": "direction_link",
+      "label": "Enter Direction Link"
+    },
+    {
+      "type": "text",
+      "id": "direction_link_text",
+      "label": "Enter Direction Link Text"
     }
   ],
   "presets": [
