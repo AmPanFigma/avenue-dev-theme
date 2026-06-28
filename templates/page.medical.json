@@ -22,9 +22,23 @@
         "sbi_image": "shopify://shop_images/453abf181f95cab60a37f89e8df0f52709fe67ed_1.png",
         "sbi_image_alt": "Service Image"
       }
+    },
+    "Belief": {
+        "type": "belief",
+        "settings": {
+
+        }
+    },
+    "DualImage": {
+        "type": "dual-image",
+        "settings": {
+
+        }
     }
   },
   "order": [
-    "ServiceBanner"
+    "ServiceBanner",
+    "Belief",
+    "DualImage"
   ]
 }

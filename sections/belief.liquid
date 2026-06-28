@@ -1,0 +1,73 @@
+<section class="belief">
+    <div class="container-fluid">
+        <div class="belief-in">
+            <div class="belief-left">
+                <div class="heading">
+                    <div class="subheading">
+                        <p>{{ section.settings.highlight }}</p>
+                    </div>
+                    <h2>{{ section.settings.heading }}</h2>
+                </div>
+            </div>
+            <div class="belief-right">
+                <div class="belief-images">
+                    <div class="bi-image">
+                        <img src="{{ section.settings.bi_image | image_url }}" alt="{{ section.settings.bi_image_alt }}">
+                    </div>
+                    <div class="bi-image">
+                        <img src="{{ section.settings.bii_image | image_url }}" alt="{{ section.settings.bii_image_alt }}">
+                    </div>
+                </div>
+                <div class="belief-para">
+                    <p>{{ section.settings.image_para }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Belief",
+  "settings": [
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "bi_image",
+      "label": "Belief section first image"
+    },
+    {
+      "type": "text",
+      "id": "bi-alt",
+      "label": "Belief first image alt text"
+    },
+    {
+      "type": "image_picker",
+      "id": "bii_image",
+      "label": "Belief section second image"
+    },
+    {
+      "type": "text",
+      "id": "bii-alt",
+      "label": "Belief second image alt text"
+    },
+    {
+      "type": "text",
+      "id": "image_para",
+      "label": "Paragraph after image"
+    },
+  ],
+  "presets": [
+    { "name": "Belief" }
+  ]
+}
+{% endschema %}
