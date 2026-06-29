@@ -1,0 +1,235 @@
+<section class="clinical-trials" id="CT-{{ section.id }}">
+
+    <div class="container">
+        <div class="ct-head heading center">
+            {% if section.settings.highlight != blank %}
+                <div class="subheading">
+                    <p>{{ section.settings.highlight }}</p>
+                </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+                <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.intro != blank %}
+                <p class="ct-intro">{{ section.settings.intro }}</p>
+            {% endif %}
+        </div>
+
+        {% if section.blocks.size > 0 %}
+            <div class="ct-tabs">
+                {% for block in section.blocks %}
+                    <button type="button"
+                            class="ct-tab {% if forloop.first %}active{% endif %}"
+                            data-ct-tab="{{ forloop.index0 }}"
+                            {{ block.shopify_attributes }}>
+                        {{ block.settings.tab_label }}
+                    </button>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="ct-panels">
+        <div class="container">
+            {% for block in section.blocks %}
+                <div class="ct-panel {% if forloop.first %}active{% endif %}" data-ct-panel="{{ forloop.index0 }}">
+
+                    <div class="ct-left">
+                        {% if block.settings.heading != blank %}
+                            <h3 class="ct-panel-title">{{ block.settings.heading }}</h3>
+                        {% endif %}
+                        {% if block.settings.description != blank %}
+                            <div class="ct-panel-desc">{{ block.settings.description }}</div>
+                        {% endif %}
+                        {% if block.settings.button_label != blank %}
+                            <button type="button" class="ct-btn ct-join">{{ block.settings.button_label }}</button>
+                        {% endif %}
+                        <button type="button" class="ct-btn ct-back">&lsaquo; Go Back</button>
+                        {% if block.settings.footer_text != blank %}
+                            <div class="ct-panel-foot">{{ block.settings.footer_text }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="ct-right">
+
+                        <div class="ct-cards">
+                            {% for i in (1..4) %}
+                                {% assign label_key = 'card' | append: i | append: '_label' %}
+                                {% assign content_key = 'card' | append: i | append: '_content' %}
+                                {% assign card_label = block.settings[label_key] %}
+                                {% assign card_content = block.settings[content_key] %}
+                                {% if card_label != blank or card_content != blank %}
+                                    <div class="ct-card">
+                                        {% if card_label != blank %}
+                                            <p class="ct-card-label">{{ card_label }}</p>
+                                        {% endif %}
+                                        {% if card_content != blank %}
+                                            <div class="ct-card-content">{{ card_content }}</div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+                        <div class="ct-form">
+                            {% if section.settings.form_heading != blank %}
+                                <h4 class="ct-form-title">{{ section.settings.form_heading }}</h4>
+                            {% endif %}
+                            {% form 'contact', class: 'ct-form-el' %}
+                                {% if form.posted_successfully? %}
+                                    <p class="ct-form-success">{{ section.settings.success_text | default: 'Thanks — we will be in touch.' }}</p>
+                                {% endif %}
+                                <input type="hidden" name="contact[trial]" value="{{ block.settings.tab_label }}">
+
+                                <div class="ct-field-row">
+                                    <div class="ct-field">
+                                        <label>First Name*</label>
+                                        <input type="text" name="contact[first_name]" required>
+                                    </div>
+                                    <div class="ct-field">
+                                        <label>Last Name*</label>
+                                        <input type="text" name="contact[last_name]" required>
+                                    </div>
+                                </div>
+
+                                <div class="ct-field">
+                                    <label>Email</label>
+                                    <input type="email" name="contact[email]">
+                                </div>
+
+                                <div class="ct-field">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="contact[phone]">
+                                </div>
+
+                                <div class="ct-field">
+                                    <label>Skin Condition</label>
+                                    <select name="contact[skin_condition]">
+                                        <option value="">Skin Condition</option>
+                                        {% for b in section.blocks %}
+                                            {% if b.settings.tab_label != blank %}
+                                                <option value="{{ b.settings.tab_label | escape }}" {% if b.id == block.id %}selected{% endif %}>{{ b.settings.tab_label }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                {% if section.settings.consent_one != blank %}
+                                    <label class="ct-consent">
+                                        <input type="checkbox" name="contact[consent_screening]" value="yes">
+                                        <span>{{ section.settings.consent_one }}</span>
+                                    </label>
+                                {% endif %}
+                                {% if section.settings.consent_two != blank %}
+                                    <label class="ct-consent">
+                                        <input type="checkbox" name="contact[consent_marketing]" value="yes">
+                                        <span>{{ section.settings.consent_two }}</span>
+                                    </label>
+                                {% endif %}
+
+                                <button type="submit" class="ct-submit">{{ section.settings.submit_label | default: 'Submit' }}</button>
+                            {% endform %}
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('CT-{{ section.id }}');
+    if (!root) return;
+    var tabs = root.querySelectorAll('.ct-tab');
+    var panels = root.querySelectorAll('.ct-panel');
+
+    root.addEventListener('click', function (e) {
+      // tab switching
+      var tab = e.target.closest('.ct-tab');
+      if (tab) {
+        var index = tab.getAttribute('data-ct-tab');
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        panels.forEach(function (p) { p.classList.remove('active'); p.classList.remove('form-open'); });
+        tab.classList.add('active');
+        var panel = root.querySelector('.ct-panel[data-ct-panel="' + index + '"]');
+        if (panel) panel.classList.add('active');
+        return;
+      }
+      // open the form
+      if (e.target.closest('.ct-join')) {
+        e.target.closest('.ct-panel').classList.add('form-open');
+        return;
+      }
+      // go back to the details
+      if (e.target.closest('.ct-back')) {
+        e.target.closest('.ct-panel').classList.remove('form-open');
+        return;
+      }
+    });
+
+    // if a form was just submitted, keep that panel's form view open
+    var submitted = root.querySelector('.ct-form-success');
+    if (submitted) {
+      var openPanel = submitted.closest('.ct-panel');
+      if (openPanel) openPanel.classList.add('form-open');
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Clinical Trials",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text", "default": "Clinical Trials" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Recruiting Clinical Trials" },
+    { "type": "textarea", "id": "intro", "label": "Intro paragraph" },
+    { "type": "header", "content": "Form" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Fill Out The Clinical Trial Form" },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Submit" },
+    { "type": "text", "id": "success_text", "label": "Success message", "default": "Thanks — we will be in touch." },
+    { "type": "textarea", "id": "consent_one", "label": "Consent checkbox 1" },
+    { "type": "textarea", "id": "consent_two", "label": "Consent checkbox 2" }
+  ],
+  "blocks": [
+    {
+      "type": "trial",
+      "name": "Trial",
+      "settings": [
+        { "type": "text", "id": "tab_label", "label": "Tab label" },
+        { "type": "header", "content": "Left column" },
+        { "type": "text", "id": "heading", "label": "Trial title" },
+        { "type": "richtext", "id": "description", "label": "Description" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Join the trial" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        { "type": "richtext", "id": "footer_text", "label": "Footer text" },
+        { "type": "header", "content": "Info card 1" },
+        { "type": "text", "id": "card1_label", "label": "Card 1 label" },
+        { "type": "richtext", "id": "card1_content", "label": "Card 1 content" },
+        { "type": "header", "content": "Info card 2" },
+        { "type": "text", "id": "card2_label", "label": "Card 2 label" },
+        { "type": "richtext", "id": "card2_content", "label": "Card 2 content" },
+        { "type": "header", "content": "Info card 3" },
+        { "type": "text", "id": "card3_label", "label": "Card 3 label" },
+        { "type": "richtext", "id": "card3_content", "label": "Card 3 content" },
+        { "type": "header", "content": "Info card 4" },
+        { "type": "text", "id": "card4_label", "label": "Card 4 label" },
+        { "type": "richtext", "id": "card4_content", "label": "Card 4 content" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clinical Trials",
+      "blocks": [
+        { "type": "trial" },
+        { "type": "trial" },
+        { "type": "trial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

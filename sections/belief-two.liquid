@@ -1,0 +1,60 @@
+<section class="biwt-sec">
+    <div class="biwt-image">
+        <img src="{{ section.settings.big_image | image_url }}" alt="{{ section.settings.image_alt }}">
+    </div>
+    <div class="biwt-content">
+        <div class="biwtc-in">
+            <div class="biwtc-top">
+                <div class="heading">
+                    <div class="subheading">
+                        <p>{{ section.settings.highlight }}</p>
+                    </div>
+                    <h2>{{ section.settings.heading }}</h2>
+                </div>
+            </div>
+            <div class="biwtc-bottom">
+                <p>{{ section.settings.para }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Big Image With Text",
+  "tag": "section",
+  "class": "big-image-with-text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "big_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "para",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Big Image With Text"
+    }
+  ]
+}
+{% endschema %}
