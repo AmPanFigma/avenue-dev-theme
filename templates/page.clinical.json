@@ -1,0 +1,13 @@
+{
+    "sections": {
+        "ClinicalBanner": {
+            "type": "clinical-banner",
+            "settings": {
+                
+            }
+        },
+    },
+    "order": [
+        "ClinicalBanner"
+    ]
+}
