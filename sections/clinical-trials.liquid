@@ -99,7 +99,9 @@
 
                                 <div class="ct-field">
                                     <label>Phone Number</label>
-                                    <input type="tel" name="contact[phone]">
+                                    <input type="tel" class="ct-phone">
+                                    {% comment %} full international number is written here on submit {% endcomment %}
+                                    <input type="hidden" name="contact[phone]">
                                 </div>
 
                                 <div class="ct-field">
@@ -127,6 +129,14 @@
                                     </label>
                                 {% endif %}
 
+                                {% comment %}
+                                  Spam / captcha placeholder — drop your widget here.
+                                  e.g. Shopify's built-in: enable in Settings, then add
+                                  {% raw %}{{ form | captcha }}{% endraw %}, or paste a
+                                  reCAPTCHA/hCaptcha/Turnstile div inside this wrapper.
+                                {% endcomment %}
+                                <div class="ct-captcha"></div>
+
                                 <button type="submit" class="ct-submit">{{ section.settings.submit_label | default: 'Submit' }}</button>
                             {% endform %}
                         </div>
@@ -140,12 +150,37 @@
 
 </section>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js" defer></script>
+
 <script>
   (function () {
     var root = document.getElementById('CT-{{ section.id }}');
     if (!root) return;
     var tabs = root.querySelectorAll('.ct-tab');
     var panels = root.querySelectorAll('.ct-panel');
+
+    // ---- Phone field: intl-tel-input with flag / dial-code selector ----
+    function initPhones() {
+      if (typeof window.intlTelInput === 'undefined') { return setTimeout(initPhones, 60); }
+      root.querySelectorAll('.ct-phone').forEach(function (input) {
+        if (input.dataset.itiReady) return;
+        input.dataset.itiReady = '1';
+        var iti = window.intlTelInput(input, {
+          initialCountry: 'ca',
+          separateDialCode: true,
+          utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+        });
+        var form = input.closest('form');
+        var hidden = form && form.querySelector('input[name="contact[phone]"]');
+        if (form && hidden) {
+          form.addEventListener('submit', function () {
+            hidden.value = iti.getNumber(); // full +E.164 number
+          });
+        }
+      });
+    }
+    initPhones();
 
     root.addEventListener('click', function (e) {
       // tab switching
