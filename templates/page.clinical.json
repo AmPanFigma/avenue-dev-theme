@@ -12,16 +12,183 @@
     "ClinicalBanner": {
       "type": "clinical-banner",
       "settings": {
-        "bg_color": "#D9D9D9",
+        "bg_color": "#d9d9d9",
         "background_image": "shopify://shop_images/Group_427323422.svg",
         "heading": "Clinical Trials",
         "highlight": "Dermatology is an ever-evolving science. Ongoing clinical research continues to expand our understanding of skin conditions and drive the development of new treatments designed to improve patient outcomes.",
         "button_text": "check eligibility",
         "button_link": "#"
       }
+    },
+    "spacer_9dUyLy": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 100
+      }
+    },
+    "belief_two_E9mcbw": {
+      "type": "belief-two",
+      "name": "Big Image With Text",
+      "settings": {
+        "big_image": "shopify://shop_images/80e7e3012f00e039ee351e58e9e14ae4d6a71f8e.png",
+        "image_alt": "Our Belief",
+        "highlight": "Our Belief",
+        "heading": "We believe in helping you achieve your skin goals through evidence based care.",
+        "para": "<p>Lorem ipsum dolor sit amet consectetur. Turpis diam purus et habitasse suspendisse enim commodo bibendum sed. Odio nulla eu in varius velit quisque semper purus. </p>"
+      }
+    },
+    "spacer_hkcydL": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "clinical_trials_9WKyLD": {
+      "type": "clinical-trials",
+      "blocks": {
+        "trial_gDpEJR": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Hidradenitis Suppurativa",
+            "heading": "Hidradenitis Suppurativa",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        },
+        "trial_zVTVR3": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Atopic Dermatitis",
+            "heading": "Atopic Dermatitis",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        },
+        "trial_8iVdQc": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Hidradenitis Suppurativa",
+            "heading": "Hidradenitis Suppurativa",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        },
+        "trial_3r7Cgz": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Atopic Dermatitis",
+            "heading": "Atopic Dermatitis",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        },
+        "trial_4Jt4nA": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Hidradenitis Suppurativa",
+            "heading": "Hidradenitis Suppurativa",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        },
+        "trial_bC3aCh": {
+          "type": "trial",
+          "settings": {
+            "tab_label": "Atopic Dermatitis",
+            "heading": "Atopic Dermatitis",
+            "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
+            "button_label": "Join the trial",
+            "button_link": "",
+            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "card1_label": "Who can participate?",
+            "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
+            "card2_label": "How long will it last? ",
+            "card2_content": "<p>Around 67 weeks</p>",
+            "card3_label": "What are the benefits?",
+            "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
+            "card4_label": "What is the inclusion criteria?",
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "trial_gDpEJR",
+        "trial_zVTVR3",
+        "trial_8iVdQc",
+        "trial_3r7Cgz",
+        "trial_4Jt4nA",
+        "trial_bC3aCh"
+      ],
+      "name": "Clinical Trials",
+      "settings": {
+        "highlight": "Clinical Trials",
+        "heading": "Recruiting Clinical Trials",
+        "intro": "Lorem ipsum dolor sit amet consectetur. Turpis diam purus et habitasse suspendisse enim commodo bibendum sed. Odio nulla eu in varius velit.",
+        "form_heading": "Fill Out The Clinical Trial Form",
+        "submit_label": "Submit",
+        "success_text": "Thanks — we will be in touch.",
+        "consent_one": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling.",
+        "consent_two": "By providing my contact information I also consent to receiving marketing emails and SMS texts from Avenue Dermatology Group regarding promotions, services and more. (For SMS, Message and data rates may apply)"
+      }
     }
   },
   "order": [
-    "ClinicalBanner"
+    "ClinicalBanner",
+    "spacer_9dUyLy",
+    "belief_two_E9mcbw",
+    "spacer_hkcydL",
+    "clinical_trials_9WKyLD"
   ]
 }
