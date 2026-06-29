@@ -63,7 +63,11 @@
         gap: 30px;
     }
     .sb-background img {
-        object-fit: none;
+        object-fit: cover;
+    }
+    .service-pill {
+        padding: 12px 24px;
+        font-size: 18px;
     }
 }
 
@@ -382,6 +386,27 @@
     }
     .faq-in { grid-template-columns: 1fr; gap: 60px; }
     .faq-foot { margin-top: 24px; }
+    .os-track {
+        /*scroll-snap-type: x mandatory;       one card at a time on mobile */
+        gap: 16px;
+        padding-inline: 20px;
+        cursor: default;
+    }
+    .os-item { gap: 16px; }
+    .os-card { scroll-snap-align: start; }
+    .os-text { width: 40vw; padding: 30px; }
+    .os-image { width: 40vw; }
+    .sl-in { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+        padding: 0; 
+    }
+    .sl-left { gap: 30px; }
+    .sl-pills { justify-content: flex-start; gap: 12px; }
+    .service-pill { padding: 14px 24px; font-size: 14px; }
+    .service-pill:nth-child(4) {
+        margin-left: 0;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -508,5 +533,17 @@
     }
     .ici-data {
         grid-template-columns: 1fr;
+    }
+    .belief-in .belief-left {
+        padding-top: 0;
+    }
+    .os-item {
+        flex-direction: column;
+    }
+    .os-text, .os-image {
+        width: 80vw;
+    }
+    .os-card {
+        min-height: 300px;
     }
 }

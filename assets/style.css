@@ -1643,7 +1643,13 @@ footer {
     justify-content: space-between;
 }
 .os-text h3 { margin-bottom: 24px; }
-.os-desc { color: var(--text-tertiary); line-height: 1.6; max-width: 300px; }
+.os-desc { 
+    color: var(--text-tertiary); 
+    line-height: 1.6;
+    max-width: 300px; 
+    font-size: 14px;
+    font-weight: 400;
+}
 .os-services { margin-top: auto; }
 .os-services__label {
     display: block;
@@ -1653,24 +1659,23 @@ footer {
     font-family: var(--ppneue);
     margin-bottom: 16px;
 }
-.os-services ul { list-style: disc; padding-left: 18px; margin: 0; }
-.os-services li { line-height: 1.9; color: var(--text-tertiary); }
+.os-services ul { 
+    list-style: disc;
+    padding-left: 18px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.os-services li { 
+    color: var(--text-tertiary); 
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: var(--letter-spacing-3);
+}
 
 .os-image { width: 320px; }
 .os-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-@media (max-width: 991px) {
-    .os-track {
-        scroll-snap-type: x mandatory;      /* one card at a time on mobile */
-        gap: 16px;
-        padding-inline: 20px;
-        cursor: default;
-    }
-    .os-item { gap: 16px; }
-    .os-card { height: 440px; scroll-snap-align: start; }
-    .os-text { width: 80vw; padding: 30px; }
-    .os-image { width: 80vw; }
-}
 
 /* ---------------- Services List ---------------- */
 .sl-in {
@@ -1716,12 +1721,4 @@ a.service-pill:hover {
     background: var(--bg-primary);
     color: var(--white);
     transform: translateY(-2px);
-}
-
-@media (max-width: 991px) {
-    .services-list { padding: 60px 0; }
-    .sl-in { grid-template-columns: 1fr; gap: 40px; }
-    .sl-left { gap: 30px; }
-    .sl-pills { justify-content: flex-start; gap: 12px; }
-    .service-pill { padding: 14px 24px; font-size: 14px; }
 }
