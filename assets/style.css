@@ -1631,14 +1631,16 @@ footer {
 }
 .os-card {
     flex: 0 0 auto;
-    height: 540px;
+    min-height: 400px;
 }
 .os-text {
     width: 420px;
     background: var(--white);
-    padding: 50px 50px 50px 40px;
+    padding: 40px 50px 40px 30px;
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
 }
 .os-text h3 { margin-bottom: 24px; }
 .os-desc { color: var(--text-tertiary); line-height: 1.6; max-width: 300px; }

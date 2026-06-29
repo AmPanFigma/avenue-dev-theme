@@ -17,24 +17,28 @@
             {% for block in section.blocks %}
                 <div class="os-item" {{ block.shopify_attributes }}>
                     <div class="os-card os-text">
-                        {% if block.settings.title != blank %}
-                            <h3>{{ block.settings.title }}</h3>
-                        {% endif %}
-                        {% if block.settings.text != blank %}
-                            <p class="os-desc">{{ block.settings.text }}</p>
-                        {% endif %}
-                        {% if block.settings.services != blank %}
-                            <div class="os-services">
-                                <span class="os-services__label">{{ block.settings.services_label | default: 'Services :' }}</span>
-                                <ul>
-                                    {% assign service_lines = block.settings.services | newline_to_br | split: '<br />' %}
-                                    {% for line in service_lines %}
-                                        {% assign clean = line | strip %}
-                                        {% if clean != blank %}<li>{{ clean }}</li>{% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endif %}
+                        <div class="oc-text-top">
+                            {% if block.settings.title != blank %}
+                                <h3>{{ block.settings.title }}</h3>
+                            {% endif %}
+                            {% if block.settings.text != blank %}
+                                <p class="os-desc">{{ block.settings.text }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="os-text-bottom">
+                            {% if block.settings.services != blank %}
+                                <div class="os-services">
+                                    <span class="os-services__label">{{ block.settings.services_label | default: 'Services :' }}</span>
+                                    <ul>
+                                        {% assign service_lines = block.settings.services | newline_to_br | split: '<br />' %}
+                                        {% for line in service_lines %}
+                                            {% assign clean = line | strip %}
+                                            {% if clean != blank %}<li>{{ clean }}</li>{% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
 
                     <div class="os-card os-image">
