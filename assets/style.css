@@ -1606,16 +1606,19 @@ footer {
 }
 
 /* ---------------- Offerings horizontal scroll ---------------- */
-.offering { padding: 80px 0; overflow: hidden; }
-.offering .heading.center { margin-bottom: 50px; }
-
+.offering {
+    overflow: hidden;
+}
+.offering .heading.center {
+    margin-bottom: 50px;
+}
 .os-track {
     display: flex;
     gap: 24px;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: none;                 /* free scroll on desktop */
-    padding-inline: max(20px, calc((100% - 1200px) / 2 + 20px));
+    padding-inline: max(20px, calc((100% - 1400px) / 2 + 20px));
     scrollbar-width: none;
     cursor: grab;
 }
@@ -1655,7 +1658,6 @@ footer {
 .os-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 @media (max-width: 991px) {
-    .offering { padding: 50px 0; }
     .os-track {
         scroll-snap-type: x mandatory;      /* one card at a time on mobile */
         gap: 16px;
@@ -1669,12 +1671,12 @@ footer {
 }
 
 /* ---------------- Services List ---------------- */
-.services-list { padding: 100px 0; }
 .sl-in {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 3fr 5fr;
     gap: 80px;
     align-items: start;
+    padding: 0 40px;
 }
 .sl-left {
     display: flex;
@@ -1688,19 +1690,24 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 16px 14px;
 }
 .service-pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: var(--white);
-    padding: 16px 32px;
-    font-size: 16px;
+    padding: 12px 40px;
+    font-family: var(--ppneue);
+    font-size: 20px;
+    line-height: 120%;
     color: var(--text-primary);
     text-decoration: none;
     white-space: nowrap;
     transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.service-pill:nth-child(4) {
+    margin-left: 60px;
 }
 a.service-pill { cursor: pointer; }
 a.service-pill:hover {

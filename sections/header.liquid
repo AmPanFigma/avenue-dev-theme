@@ -1,4 +1,6 @@
-{% if template contains 'collection' or page.handle == 'medical-services' %}
+{% assign filled_pages = 'medical-services,asthetic-services' | split: ',' %}
+
+{% if template contains 'collection' or filled_pages contains page.handle %}
   <header class="filled" data-ajax-cart-section>
 {% else %}
   <header class="transparent" data-ajax-cart-section>
