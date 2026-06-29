@@ -12,7 +12,7 @@
     "page_background": {
       "type": "page-background",
       "settings": {
-        "bg_color": "#F8F7F3"
+        "bg_color": "#f8f7f3"
       }
     },
     "ServiceBanner": {
@@ -205,7 +205,7 @@
           "type": "icon_item",
           "settings": {
             "image": "shopify://shop_images/Group_427323644.svg",
-            "number": "01",
+            "number": "02",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
           }
@@ -214,7 +214,7 @@
           "type": "icon_item",
           "settings": {
             "image": "shopify://shop_images/Group_427323644.svg",
-            "number": "01",
+            "number": "03",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
           }
@@ -268,48 +268,49 @@
         "faq_item_Hr6BUp": {
           "type": "faq_item",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
           }
         },
-        "faq_item_tmFhwU": {
+        "faq_item_txKM76": {
           "type": "faq_item",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
           }
         },
-        "faq_item_GQHxqh": {
+        "faq_item_h7PbzW": {
           "type": "faq_item",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
           }
         },
-        "faq_item_EPTcUe": {
+        "faq_item_fd7CjY": {
           "type": "faq_item",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
           }
         },
-        "faq_item_M8QxVA": {
+        "faq_item_yqKxeE": {
           "type": "faq_item",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
           }
         }
       },
       "block_order": [
         "faq_item_Hr6BUp",
-        "faq_item_tmFhwU",
-        "faq_item_GQHxqh",
-        "faq_item_EPTcUe",
-        "faq_item_M8QxVA"
+        "faq_item_txKM76",
+        "faq_item_h7PbzW",
+        "faq_item_fd7CjY",
+        "faq_item_yqKxeE"
       ],
       "name": "FAQ",
       "settings": {
+        "bg_color": "#FFFFFF",
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
         "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
