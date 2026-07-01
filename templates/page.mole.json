@@ -1,17 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "ClinicalBanner": {
       "type": "clinical-banner",
       "settings": {
-        "bg_color": "#d9d9d9",
-        "background_image": "shopify://shop_images/Group_427323422.svg",
-        "heading": "Clinical Trials",
-        "highlight": "Dermatology is an ever-evolving science. Ongoing clinical research continues to expand our understanding of skin conditions and drive the development of new treatments designed to improve patient outcomes.",
-        "button_text": "check eligibility",
+        "bg_color": "#2D344B",
+        "background_image": "shopify://shop_images/Group_427323422_1.svg",
+        "heading": "Mole Mapping",
+        "highlight": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
+        "button_text": "book an appointment",
         "button_link": "#"
       }
-    },
-},
+    }
+  },
   "order": [
     "ClinicalBanner"
   ]
