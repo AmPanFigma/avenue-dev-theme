@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "ClinicalBanner": {
+      "type": "clinical-banner",
+      "settings": {
+        "bg_color": "#d9d9d9",
+        "background_image": "shopify://shop_images/Group_427323422.svg",
+        "heading": "Clinical Trials",
+        "highlight": "Dermatology is an ever-evolving science. Ongoing clinical research continues to expand our understanding of skin conditions and drive the development of new treatments designed to improve patient outcomes.",
+        "button_text": "check eligibility",
+        "button_link": "#"
+      }
+    },
+},
+  "order": [
+    "ClinicalBanner"
+  ]
+}

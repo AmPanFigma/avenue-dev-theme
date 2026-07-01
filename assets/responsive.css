@@ -609,8 +609,13 @@
     .biwt-sec {
         grid-template-columns: 1fr;
     }
+    .biwt-content {
+        height: auto;
+        padding: 0 20px;
+    }
     .biwt-content .biwtc-in {
         align-items: center;
+        gap: 20px;
     }
     .ct-tabs {
         flex-wrap: nowrap;
