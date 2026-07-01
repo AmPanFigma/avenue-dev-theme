@@ -30,121 +30,123 @@
     </div>
 
     <div class="ct-panels">
-        <div class="container">
-            {% for block in section.blocks %}
-                <div class="ct-panel {% if forloop.first %}active{% endif %}" data-ct-panel="{{ forloop.index0 }}">
+        <div class="container-fluid">
+            <div class="ctpanels-in">
+                {% for block in section.blocks %}
+                    <div class="ct-panel {% if forloop.first %}active{% endif %}" data-ct-panel="{{ forloop.index0 }}">
 
-                    <div class="ct-left">
-                        {% if block.settings.heading != blank %}
-                            <h3 class="ct-panel-title">{{ block.settings.heading }}</h3>
-                        {% endif %}
-                        {% if block.settings.description != blank %}
-                            <div class="ct-panel-desc">{{ block.settings.description }}</div>
-                        {% endif %}
-                        {% if block.settings.button_label != blank %}
-                            <button type="button" class="ct-btn ct-join">{{ block.settings.button_label }}</button>
-                        {% endif %}
-                        <button type="button" class="ct-btn ct-back">&lsaquo; Go Back</button>
-                        {% if block.settings.footer_text != blank %}
-                            <div class="ct-panel-foot">{{ block.settings.footer_text }}</div>
-                        {% endif %}
-                    </div>
-
-                    <div class="ct-right">
-
-                        <div class="ct-cards">
-                            {% for i in (1..4) %}
-                                {% assign label_key = 'card' | append: i | append: '_label' %}
-                                {% assign content_key = 'card' | append: i | append: '_content' %}
-                                {% assign card_label = block.settings[label_key] %}
-                                {% assign card_content = block.settings[content_key] %}
-                                {% if card_label != blank or card_content != blank %}
-                                    <div class="ct-card">
-                                        {% if card_label != blank %}
-                                            <p class="ct-card-label">{{ card_label }}</p>
-                                        {% endif %}
-                                        {% if card_content != blank %}
-                                            <div class="ct-card-content">{{ card_content }}</div>
-                                        {% endif %}
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-
-                        <div class="ct-form">
-                            {% if section.settings.form_heading != blank %}
-                                <h4 class="ct-form-title">{{ section.settings.form_heading }}</h4>
+                        <div class="ct-left">
+                            {% if block.settings.heading != blank %}
+                                <h3 class="ct-panel-title">{{ block.settings.heading }}</h3>
                             {% endif %}
-                            {% form 'contact', class: 'ct-form-el' %}
-                                {% if form.posted_successfully? %}
-                                    <p class="ct-form-success">{{ section.settings.success_text | default: 'Thanks — we will be in touch.' }}</p>
-                                {% endif %}
-                                <input type="hidden" name="contact[trial]" value="{{ block.settings.tab_label }}">
+                            {% if block.settings.description != blank %}
+                                <div class="ct-panel-desc">{{ block.settings.description }}</div>
+                            {% endif %}
+                            {% if block.settings.button_label != blank %}
+                                <button type="button" class="custom-btn ct-btn black ct-join">{{ block.settings.button_label }}</button>
+                            {% endif %}
+                            <button type="button" class="custom-btn ct-btn black ct-back">&lsaquo; Go Back</button>
+                            {% if block.settings.footer_text != blank %}
+                                <div class="ct-panel-foot">{{ block.settings.footer_text }}</div>
+                            {% endif %}
+                        </div>
 
-                                <div class="ct-field-row">
-                                    <div class="ct-field">
-                                        <label>First Name*</label>
-                                        <input type="text" name="contact[first_name]" required>
-                                    </div>
-                                    <div class="ct-field">
-                                        <label>Last Name*</label>
-                                        <input type="text" name="contact[last_name]" required>
-                                    </div>
-                                </div>
+                        <div class="ct-right">
 
-                                <div class="ct-field">
-                                    <label>Email</label>
-                                    <input type="email" name="contact[email]">
-                                </div>
-
-                                <div class="ct-field">
-                                    <label>Phone Number</label>
-                                    <input type="tel" class="ct-phone">
-                                    {% comment %} full international number is written here on submit {% endcomment %}
-                                    <input type="hidden" name="contact[phone]">
-                                </div>
-
-                                <div class="ct-field">
-                                    <label>Skin Condition</label>
-                                    <select name="contact[skin_condition]">
-                                        <option value="">Skin Condition</option>
-                                        {% for b in section.blocks %}
-                                            {% if b.settings.tab_label != blank %}
-                                                <option value="{{ b.settings.tab_label | escape }}" {% if b.id == block.id %}selected{% endif %}>{{ b.settings.tab_label }}</option>
+                            <div class="ct-cards">
+                                {% for i in (1..4) %}
+                                    {% assign label_key = 'card' | append: i | append: '_label' %}
+                                    {% assign content_key = 'card' | append: i | append: '_content' %}
+                                    {% assign card_label = block.settings[label_key] %}
+                                    {% assign card_content = block.settings[content_key] %}
+                                    {% if card_label != blank or card_content != blank %}
+                                        <div class="ct-card">
+                                            {% if card_label != blank %}
+                                                <p class="ct-card-label">{{ card_label }}</p>
                                             {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
+                                            {% if card_content != blank %}
+                                                <div class="ct-card-content">{{ card_content }}</div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
 
-                                {% if section.settings.consent_one != blank %}
-                                    <label class="ct-consent">
-                                        <input type="checkbox" name="contact[consent_screening]" value="yes">
-                                        <span>{{ section.settings.consent_one }}</span>
-                                    </label>
+                            <div class="ct-form">
+                                {% if section.settings.form_heading != blank %}
+                                    <h4 class="ct-form-title">{{ section.settings.form_heading }}</h4>
                                 {% endif %}
-                                {% if section.settings.consent_two != blank %}
-                                    <label class="ct-consent">
-                                        <input type="checkbox" name="contact[consent_marketing]" value="yes">
-                                        <span>{{ section.settings.consent_two }}</span>
-                                    </label>
-                                {% endif %}
+                                {% form 'contact', class: 'ct-form-el' %}
+                                    {% if form.posted_successfully? %}
+                                        <p class="ct-form-success">{{ section.settings.success_text | default: 'Thanks — we will be in touch.' }}</p>
+                                        {% if section.settings.thankyou_url != blank %}
+                                            <script>window.location.href = {{ section.settings.thankyou_url | json }};</script>
+                                        {% endif %}
+                                    {% endif %}
+                                    <input type="hidden" name="contact[trial]" value="{{ block.settings.tab_label }}">
 
-                                {% comment %}
-                                  Spam / captcha placeholder — drop your widget here.
-                                  e.g. Shopify's built-in: enable in Settings, then add
-                                  {% raw %}{{ form | captcha }}{% endraw %}, or paste a
-                                  reCAPTCHA/hCaptcha/Turnstile div inside this wrapper.
-                                {% endcomment %}
-                                <div class="ct-captcha"></div>
+                                    <div class="ct-field-row">
+                                        <div class="ct-field">
+                                            <input type="text" name="contact[first_name]" placeholder="First Name*" required>
+                                        </div>
+                                        <div class="ct-field">
+                                            <input type="text" name="contact[last_name]" placeholder="Last Name*" required>
+                                        </div>
+                                    </div>
 
-                                <button type="submit" class="ct-submit">{{ section.settings.submit_label | default: 'Submit' }}</button>
-                            {% endform %}
+                                    <div class="ct-field">
+                                        <input type="email" placeholder="Email" name="contact[email]">
+                                    </div>
+
+                                    <div class="ct-field" data-lenis-prevent>
+                                        <input type="tel" class="ct-phone" placeholder="Phone Number">
+                                        {% comment %} full international number is written here on submit {% endcomment %}
+                                        <input type="hidden" name="contact[phone]">
+                                    </div>
+
+                                    <div class="ct-field">
+                                        <select name="contact[skin_condition]">
+                                            <option value="">Skin Condition</option>
+                                            {% for b in section.blocks %}
+                                                {% if b.settings.tab_label != blank %}
+                                                    <option value="{{ b.settings.tab_label | escape }}" {% if b.id == block.id %}selected{% endif %}>{{ b.settings.tab_label }}</option>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class="form-consent">
+                                        {% if section.settings.consent_one != blank %}
+                                            <label class="ct-consent">
+                                                <input type="checkbox" name="contact[consent_screening]" value="yes">
+                                                <span>{{ section.settings.consent_one }}</span>
+                                            </label>
+                                        {% endif %}
+                                        {% if section.settings.consent_two != blank %}
+                                            <label class="ct-consent">
+                                                <input type="checkbox" name="contact[consent_marketing]" value="yes">
+                                                <span>{{ section.settings.consent_two }}</span>
+                                            </label>
+                                        {% endif %}
+                                    </div>
+
+                                    {% comment %}
+                                    Spam / captcha placeholder — drop your widget here.
+                                    e.g. Shopify's built-in: enable in Settings, then add
+                                    {% raw %}{{ form | captcha }}{% endraw %}, or paste a
+                                    reCAPTCHA/hCaptcha/Turnstile div inside this wrapper.
+                                    {% endcomment %}
+                                    <div class="ct-captcha"></div>
+
+                                    <button type="submit" class="ct-submit custom-btn grey">{{ section.settings.submit_label | default: 'Submit' }}</button>
+                                {% endform %}
+                            </div>
+
                         </div>
 
                     </div>
-
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 
@@ -226,6 +228,7 @@
     { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Fill Out The Clinical Trial Form" },
     { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Submit" },
     { "type": "text", "id": "success_text", "label": "Success message", "default": "Thanks — we will be in touch." },
+    { "type": "url", "id": "thankyou_url", "label": "Redirect to page on success", "info": "e.g. your Thank You page. Leave blank to just show the success message." },
     { "type": "textarea", "id": "consent_one", "label": "Consent checkbox 1" },
     { "type": "textarea", "id": "consent_two", "label": "Consent checkbox 2" }
   ],

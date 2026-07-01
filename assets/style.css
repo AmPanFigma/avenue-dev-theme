@@ -116,6 +116,16 @@ h6 {
     border-color: var(--text-primary);
     color: var(--white);
 }
+.custom-btn.black {
+    color: var(--white);
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+.custom-btn.black:hover {
+    color: var(--white);
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+}
 .link-btn {
     display: inline-flex;
     align-items: center;
@@ -776,6 +786,40 @@ footer {
 }
 .heading.center {
     align-items: center;
+}
+.heading.center > p {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
+    line-height: 140%;
+    max-width: 76ch;
+    text-align: center;
+}
+.ct-tabs {
+    margin-top: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.ct-tabs .ct-tab {
+    padding: 14px 20px;
+    min-width: 270px;
+    text-align: center;
+    background-color: #F8F7F3;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    transition: .3s ease all;
+    cursor: pointer;
+    letter-spacing: 0;
+}
+.ct-tabs .ct-tab.active {
+    background-color: #978F87;
+    color: var(--white);
 }
 
 /* Service Section */
@@ -1779,4 +1823,253 @@ a.service-pill:hover {
     letter-spacing: 0.16px;
     line-height: 133%;
     max-width: 90ch;
+}
+.biwt-sec {
+    display: grid;
+    grid-template-columns: 5.8fr 4.2fr;
+    gap: 24px;
+}
+.biwt-sec .biwt-image {
+    overflow: hidden;
+    aspect-ratio: 8/7;
+}
+.biwt-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.biwt-content {
+    height: 100%;
+}
+.biwt-content .biwtc-in {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+}
+.biwtc-in .biwtc-top {
+    max-width: 43ch;
+}
+.biwtc-bottom p {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
+    line-height: 140%;
+    max-width: 48ch;
+}
+
+
+p.ct-intro {
+
+}
+.ct-panel {
+    display: none;
+    animation: fadeEffect 1s;
+    background-color: var(--bg-light);
+    padding: 60px 50px;
+    align-items: flex-start;
+    justify-content: space-between;
+} 
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.ct-panel.active { 
+    display: flex;
+}
+.ct-form {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: .3s ease all;
+}
+.ct-panel.form-open .ct-cards { 
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: .3s ease all;
+ }
+.ct-panel.form-open .ct-form  { 
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+ }
+.ct-panel.form-open .ct-join  { 
+    display: none;
+}
+.ct-back {
+    display: none;
+}
+.ct-panel.form-open .ct-back {
+    display: inline-block;
+}
+.ct-panels {
+    margin-top: 30px;
+}
+.ct-panels .ctpanels-in {
+    padding: 0 40px;
+}
+.ct-panel .ct-left {
+    width: 43%;
+}
+.ct-panel .ct-right {
+    width: 57%;
+}
+.ct-left .ct-panel-title {
+    margin-bottom: 26px;
+}
+.ct-left .ct-panel-desc {
+    max-width: 38ch;
+    margin-bottom: 85px;
+}
+.ct-panel-desc p {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-3);
+    line-height: 140%;
+}
+.ct-left .ct-btn {}
+.ct-left .ct-panel-foot {
+    margin-top: 30px;
+}
+.ct-panel-foot p {
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+}
+.ct-panel-foot p a {
+    text-decoration: underline;
+    color: var(--text-tertiary);
+    transition: .2s ease all;
+}
+.ct-panel-foot p a:hover {
+    color: var(--bg-primary);
+}
+.ct-right .ct-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.ct-cards .ct-card {
+    background-color: var(--white);
+    padding: 30px 24px 40px 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.ct-card-label {
+    font-family: var(--ppneue);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.88px;
+    color: var(--text-primary);
+}
+.ct-card-content p {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-3);
+    line-height: 140%;
+    color: var(--text-tertiary);
+}
+.ct-card-content ul {
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ct-card-content ul li {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-3);
+    line-height: 140%;
+    color: var(--text-tertiary);
+}
+.ct-right .ct-form {
+    background-color: var(--white);
+    padding: 34px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.ct-form-title {
+    font-size: 18px;
+}
+.ct-form form {
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+.ct-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.ct-field input,
+.ct-field select {
+    border: none;
+    border-bottom: 1px solid #808080;
+    padding: 7px 0;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #000;
+    width: 100%;
+}
+.ct-field input:focus,
+.ct-field select:focus {
+    outline: none;
+}
+.ct-field input::placeholder {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #000;
+}
+.ct-field .iti {
+    width: 100%;
+}
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent!important;
+    padding-right: 10px;
+}
+.iti__selected-dial-code {
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #000;
+}
+.form-consent {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.ct-form .ct-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+}
+.ct-form .ct-consent input {
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+}
+.ct-form .ct-consent span {
+    width: calc(100% - 25px);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    color: #444444;
+}
+.ct-form .ct-submit {
+    max-width: 200px;
+    margin-bottom: 10px;
 }

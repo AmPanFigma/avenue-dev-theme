@@ -182,6 +182,37 @@
         "consent_one": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling.",
         "consent_two": "By providing my contact information I also consent to receiving marketing emails and SMS texts from Avenue Dermatology Group regarding promotions, services and more. (For SMS, Message and data rates may apply)"
       }
+    },
+    "spacer_upcoming": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "upcoming_trials_1": {
+      "type": "upcoming-trials",
+      "blocks": {
+        "box_1": { "type": "trial_box", "settings": { "title": "Psoriasis", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } },
+        "box_2": { "type": "trial_box", "settings": { "title": "Eczema", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } },
+        "box_3": { "type": "trial_box", "settings": { "title": "Psoriasis", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } },
+        "box_4": { "type": "trial_box", "settings": { "title": "Psoriasis", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } },
+        "box_5": { "type": "trial_box", "settings": { "title": "Eczema", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } },
+        "box_6": { "type": "trial_box", "settings": { "title": "Psoriasis", "text": "<p>Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare..</p>" } }
+      },
+      "block_order": [ "box_1", "box_2", "box_3", "box_4", "box_5", "box_6" ],
+      "name": "Upcoming Trials",
+      "settings": {
+        "highlight": "Upcoming Trials",
+        "heading": "Upcoming Clinical Trials",
+        "intro": "Lorem ipsum dolor sit amet consectetur. Turpis diam purus et habitasse suspendisse enim commodo bibendum sed. Odio nulla eu in varius velit.",
+        "form_heading": "Interested in participating in an upcoming clinical trial?",
+        "form_subheading": "Fill the form below.",
+        "submit_label": "Submit",
+        "success_text": "Thanks — we will be in touch.",
+        "consent_one": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling.",
+        "consent_two": "By providing my contact information I also consent to receiving marketing emails and SMS texts from Avenue Dermatology Group regarding promotions, services and more. (For SMS, Message and data rates may apply)"
+      }
     }
   },
   "order": [
@@ -189,6 +220,8 @@
     "spacer_9dUyLy",
     "belief_two_E9mcbw",
     "spacer_hkcydL",
-    "clinical_trials_9WKyLD"
+    "clinical_trials_9WKyLD",
+    "spacer_upcoming",
+    "upcoming_trials_1"
   ]
 }

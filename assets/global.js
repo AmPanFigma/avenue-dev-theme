@@ -76,7 +76,7 @@ images.forEach((image)=>{
   }
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  document.querySelectorAll('.about-avenue .avi-image, .about-avenue .avbl-image, .ici-image, .bi-image').forEach(function (el) {
+  document.querySelectorAll('.about-avenue .avi-image, .about-avenue .avbl-image, .ici-image, .bi-image, .uct-bg').forEach(function (el) {
     gsap.fromTo(el,
       { clipPath: 'inset(0 0 100% 0)' },
       {
