@@ -259,6 +259,79 @@
         "consent_one": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling.",
         "consent_two": "By providing my contact information I also consent to receiving marketing emails and SMS texts from Avenue Dermatology Group regarding promotions, services and more. (For SMS, Message and data rates may apply)"
       }
+    },
+    "spacer_DTNAFt": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "icon_section_BBD6eA": {
+      "type": "icon-section",
+      "blocks": {
+        "icon_item_wbdwTg": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_dqJ78N": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "02",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_whYPNc": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "03",
+            "heading": "Approach Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_wbdwTg",
+        "icon_item_dqJ78N",
+        "icon_item_whYPNc"
+      ],
+      "name": "Icon Section",
+      "settings": {
+        "highlight": "",
+        "heading": ""
+      }
+    },
+    "spacer_jrqmYt": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_iKegJN": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/Rectangle_25152.jpg",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "book an appointment",
+        "button_link": "#",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
+      }
     }
   },
   "order": [
@@ -268,6 +341,10 @@
     "spacer_hkcydL",
     "clinical_trials_9WKyLD",
     "spacer_upcoming",
-    "upcoming_trials_1"
+    "upcoming_trials_1",
+    "spacer_DTNAFt",
+    "icon_section_BBD6eA",
+    "spacer_jrqmYt",
+    "image_cta_iKegJN"
   ]
 }
