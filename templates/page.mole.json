@@ -19,9 +19,106 @@
         "button_text": "book an appointment",
         "button_link": "#"
       }
+    },
+    "spacer_ceBW4P": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "faq_xmegMt": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_GE9F44": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_DJrbiq": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_D4Vzct": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_Di9Ec9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_G3p4Tn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_GE9F44",
+        "faq_item_DJrbiq",
+        "faq_item_D4Vzct",
+        "faq_item_Di9Ec9",
+        "faq_item_G3p4Tn"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "highlight": "Frequently Asked",
+        "heading": "Common Concerns",
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+      }
+    },
+    "spacer_X4tm99": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_da3TGb": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/Rectangle_25152.jpg",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "book an appointment",
+        "button_link": "",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "",
+        "direction_link_text": "Get Directions"
+      }
+    },
+    "spacer_iYa9Ba": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
-    "ClinicalBanner"
+    "ClinicalBanner",
+    "spacer_ceBW4P",
+    "faq_xmegMt",
+    "spacer_X4tm99",
+    "image_cta_da3TGb",
+    "spacer_iYa9Ba"
   ]
 }
