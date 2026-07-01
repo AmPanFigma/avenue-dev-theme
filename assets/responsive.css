@@ -69,6 +69,12 @@
         padding: 12px 24px;
         font-size: 18px;
     }
+    .ct-panels .ctpanels-in {
+        padding: 0;
+    }
+    .ct-form form {
+        padding: 0 20px;
+    }
 }
 
 /* ---------------- Mobile navigation ---------------- */
@@ -407,6 +413,60 @@
     .service-pill:nth-child(4) {
         margin-left: 0;
     }
+    .cb-data h1 {
+        font-size: 60px;
+    }
+    .cb-in .cb-data {
+        gap: 50px;
+        padding-top: 100px;
+    }
+    .ct-tabs .ct-tab {
+        min-width: 220px;
+        font-size: 16px;
+    }
+    .ct-panel {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .ct-right .ct-form {
+        padding: 30px 20px;
+    }
+    .ct-form form {
+        padding: 0 10px;
+    }
+    .ct-right .ct-cards {
+        grid-template-columns: 1fr;
+    }
+    .ct-cards .ct-card {
+        min-height: 160px;
+    }
+    .ct-field-row {
+        grid-template-columns: 1fr;
+    }
+    .upcoming-trials .uct-grid {
+        gap: 15px;
+    }
+    .uct-grid .uct-box {
+        padding: 26px 40px 50px 24px;
+        gap: 16px;
+    }
+    .uct-box .uct-box-text p {
+        font-size: 13px;
+    }
+    .heading.center > p {
+        font-size: 14px;
+    }
+    .upcoming-trials .uct-form {
+        margin-top: 70px;
+        width: 70%;
+        padding: 40px 40px;
+    }
+    .uct-form .uct-form-head {
+        margin-bottom: 30px;
+    }
+    .upcoming-trials .uct-bg {
+        top: 18%;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -545,5 +605,49 @@
     }
     .os-card {
         min-height: 300px;
+    }
+    .biwt-sec {
+        grid-template-columns: 1fr;
+    }
+    .biwt-content .biwtc-in {
+        align-items: center;
+    }
+    .ct-tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .ct-panel {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .ct-panel .ct-left,
+    .ct-panel .ct-right {
+        width: 100%;
+    }
+    .ct-left .ct-panel-desc {
+        margin-bottom: 35px;
+    }
+    .upcoming-trials .uct-grid {
+        grid-template-columns: 1fr;
+    }
+    .upcoming-trials .uct-form {
+        margin-top: 50px;
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .cb-data h1 {
+        font-size: 46px;
+    }
+    .cbdata-bottom p {
+        font-size: 14px;
+    }
+    .cb-in .cb-data {
+        gap: 30px;
+        padding-top: 0px;
+    }
+    .clinical-banner {
+        min-height: 500px;
     }
 }

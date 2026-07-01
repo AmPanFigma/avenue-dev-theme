@@ -58,22 +58,18 @@
 
                 <div class="ct-field-row">
                     <div class="ct-field">
-                        <label>First Name*</label>
-                        <input type="text" name="contact[first_name]" required>
+                        <input type="text" name="contact[first_name]" placeholder="First Name*" required>
                     </div>
                     <div class="ct-field">
-                        <label>Last Name*</label>
-                        <input type="text" name="contact[last_name]" required>
+                        <input type="text" placeholder="Last Name*" name="contact[last_name]" required>
                     </div>
                 </div>
 
                 <div class="ct-field">
-                    <label>Email</label>
-                    <input type="email" name="contact[email]">
+                    <input type="email" placeholder="Email" name="contact[email]">
                 </div>
 
                 <div class="ct-field">
-                    <label>Skin Condition</label>
                     <select name="contact[skin_condition]">
                         <option value="">Skin Condition</option>
                         {% for block in section.blocks %}
@@ -84,18 +80,20 @@
                     </select>
                 </div>
 
-                {% if section.settings.consent_one != blank %}
-                    <label class="ct-consent">
-                        <input type="checkbox" name="contact[consent_screening]" value="yes">
-                        <span>{{ section.settings.consent_one }}</span>
-                    </label>
-                {% endif %}
-                {% if section.settings.consent_two != blank %}
-                    <label class="ct-consent">
-                        <input type="checkbox" name="contact[consent_marketing]" value="yes">
-                        <span>{{ section.settings.consent_two }}</span>
-                    </label>
-                {% endif %}
+                <div class="form-consent">
+                    {% if section.settings.consent_one != blank %}
+                        <label class="ct-consent">
+                            <input type="checkbox" name="contact[consent_screening]" value="yes">
+                            <span>{{ section.settings.consent_one }}</span>
+                        </label>
+                    {% endif %}
+                    {% if section.settings.consent_two != blank %}
+                        <label class="ct-consent">
+                            <input type="checkbox" name="contact[consent_marketing]" value="yes">
+                            <span>{{ section.settings.consent_two }}</span>
+                        </label>
+                    {% endif %}
+                </div>
 
                 {% comment %}
                   Spam / captcha placeholder — drop your widget here.
@@ -104,7 +102,7 @@
                 {% endcomment %}
                 <div class="ct-captcha"></div>
 
-                <button type="submit" class="ct-submit">{{ section.settings.submit_label | default: 'Submit' }}</button>
+                <button type="submit" class="ct-submit custom-btn grey">{{ section.settings.submit_label | default: 'Submit' }}</button>
             {% endform %}
         </div>
     </div>

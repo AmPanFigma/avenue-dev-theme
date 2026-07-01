@@ -2052,24 +2052,96 @@ p.ct-intro {
     flex-direction: column;
     gap: 24px;
 }
-.ct-form .ct-consent {
+.ct-consent {
     display: flex;
     align-items: flex-start;
     gap: 7px;
 }
-.ct-form .ct-consent input {
+.ct-consent input {
     margin-top: 2px;
     width: 18px;
     height: 18px;
 }
-.ct-form .ct-consent span {
+.ct-consent span {
     width: calc(100% - 25px);
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.16px;
     color: #444444;
 }
-.ct-form .ct-submit {
+.ct-submit {
     max-width: 200px;
     margin-bottom: 10px;
 }
+.upcoming-trials {
+    position: relative;
+}
+.upcoming-trials .uct-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 54px;
+}
+.uct-grid .uct-box {
+    background-color: #F8F7F3;
+    padding: 44px 50px 70px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.uct-box .uct-box-text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
+}
+.upcoming-trials .uct-bg {
+    position: absolute;
+    width: 100%;
+    height: 49%;
+    z-index: -1;
+    top: 24%;
+}
+.uct-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.upcoming-trials .uct-form {
+    margin-top: 90px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F8F7F3;
+    padding: 50px 60px;
+}
+.uct-form .uct-form-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 70px;
+}
+.uct-form-head .uct-form-title {
+    text-align: center;
+    max-width: 22ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+.uct-form-head .uct-form-sub {
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.16px;
+    color: var(--text-tertiary);
+}
+.uct-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.uct-form .ct-field input, .uct-form .ct-field select {
+    background-color: transparent;
+}
+
