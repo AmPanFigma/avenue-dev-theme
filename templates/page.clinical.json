@@ -332,6 +332,67 @@
         "direction_link": "#",
         "direction_link_text": "Get Directions"
       }
+    },
+    "spacer_rNkTEW": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "faq_AzEC4p": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_bGdhCC": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_7RUHcn": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_MBFNbD": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_ggzDtp": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        },
+        "faq_item_fbJUGk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "question statement",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_bGdhCC",
+        "faq_item_7RUHcn",
+        "faq_item_MBFNbD",
+        "faq_item_ggzDtp",
+        "faq_item_fbJUGk"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "bg_color": "#F8F7F3",
+        "highlight": "Frequently Asked",
+        "heading": "Common Concerns",
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+      }
     }
   },
   "order": [
@@ -345,6 +406,8 @@
     "spacer_DTNAFt",
     "icon_section_BBD6eA",
     "spacer_jrqmYt",
-    "image_cta_iKegJN"
+    "image_cta_iKegJN",
+    "spacer_rNkTEW",
+    "faq_AzEC4p"
   ]
 }
