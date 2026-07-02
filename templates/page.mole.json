@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "ClinicalBanner": {
-      "type": "clinical-banner",
+    "MoleBanner": {
+      "type": "mole-banner",
       "settings": {
         "bg_color": "#2D344B",
         "background_image": "shopify://shop_images/Group_427323422_1.svg",
@@ -114,7 +114,7 @@
     }
   },
   "order": [
-    "ClinicalBanner",
+    "MoleBanner",
     "spacer_ceBW4P",
     "faq_xmegMt",
     "spacer_X4tm99",

@@ -1824,6 +1824,9 @@ a.service-pill:hover {
     line-height: 133%;
     max-width: 90ch;
 }
+.mole .cbdata-bottom p {
+    color: var(--white);
+}
 .biwt-sec {
     display: grid;
     grid-template-columns: 5.8fr 4.2fr;

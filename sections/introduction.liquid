@@ -1,0 +1,66 @@
+<section class="introduction">
+    <div class="container">
+        <div class="intro-in">
+            <div class="intro-left">
+                <div class="heading with-btn">
+                    <div class="subheading">
+                        <p>{{ section.settings.highlight }}</p>
+                    </div>
+                    <h2>{{ section.settings.heading }}</h2>
+                    <p>{{ section.seetings.para }}</p>
+                </div>
+            </div>
+            <div class="intro-right">
+                <div class="ir-images">
+                    <div class="ir-image small">
+                        <img src="{{ section.settings.ir-small-image | image_url }}" alt="{{ section.settings.ir-small-alt }}">
+                    </div>
+                    <div class="ir-image big">
+                        <img src="{{ section.settings.ir-big-image | image_url }}" alt="{{ section.settings.ir-big-alt }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Introduction",
+  "settings": [
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "ir-small-image",
+      "label": "Small Image"
+    },
+    {
+      "type": "text",
+      "id": "ir-small-alt",
+      "label": "Small Image Alt Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "ir-big-image",
+      "label": "Big Image"
+    },
+    {
+      "type": "text",
+      "id": "ir-big-alt",
+      "label": "Big Image Alt Text"
+    }
+  ],
+  "presets": [
+    { "name": "Introduction" }
+  ]
+}
+{% endschema %}
