@@ -1,0 +1,127 @@
+<section class="clinical-trials usecase-tabs" id="UC-{{ section.id }}">
+
+    <div class="container">
+        <div class="ct-head heading center">
+            {% if section.settings.highlight != blank %}
+                <div class="subheading">
+                    <p>{{ section.settings.highlight }}</p>
+                </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+                <h2>{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.intro != blank %}
+                <p class="ct-intro">{{ section.settings.intro }}</p>
+            {% endif %}
+        </div>
+
+        {% if section.blocks.size > 0 %}
+            <div class="ct-tabs">
+                {% for block in section.blocks %}
+                    <button type="button"
+                            class="ct-tab {% if forloop.first %}active{% endif %}"
+                            data-ct-tab="{{ forloop.index0 }}"
+                            {{ block.shopify_attributes }}>
+                        {{ block.settings.tab_label }}
+                    </button>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="ct-panels">
+        <div class="container">
+            {% for block in section.blocks %}
+                <div class="ct-panel {% if forloop.first %}active{% endif %}" data-ct-panel="{{ forloop.index0 }}">
+
+                    <div class="ct-left">
+                        {% if block.settings.heading != blank %}
+                            <h3 class="ct-panel-title">{{ block.settings.heading }}</h3>
+                        {% endif %}
+                        {% if block.settings.description != blank %}
+                            <div class="ct-panel-desc">{{ block.settings.description }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="ct-right">
+                        {% for i in (1..6) %}
+                            {% assign image_key = 'image_' | append: i %}
+                            {% assign uc_image = block.settings[image_key] %}
+                            {% if uc_image != blank %}
+                                <div class="uc-image">
+                                    <img src="{{ uc_image | image_url: width: 1200 }}"
+                                         alt="{{ block.settings.heading | escape }}"
+                                         width="{{ uc_image.width }}"
+                                         height="{{ uc_image.height }}"
+                                         loading="lazy">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('UC-{{ section.id }}');
+    if (!root) return;
+    var tabs = root.querySelectorAll('.ct-tab');
+    var panels = root.querySelectorAll('.ct-panel');
+
+    root.addEventListener('click', function (e) {
+      var tab = e.target.closest('.ct-tab');
+      if (!tab) return;
+      var index = tab.getAttribute('data-ct-tab');
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = root.querySelector('.ct-panel[data-ct-panel="' + index + '"]');
+      if (panel) panel.classList.add('active');
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Usecase Tabs",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text", "default": "Usecase" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Mole Mapping Solutions" },
+    { "type": "textarea", "id": "intro", "label": "Intro paragraph" }
+  ],
+  "blocks": [
+    {
+      "type": "usecase",
+      "name": "Usecase",
+      "settings": [
+        { "type": "text", "id": "tab_label", "label": "Tab label" },
+        { "type": "header", "content": "Content" },
+        { "type": "text", "id": "heading", "label": "Title" },
+        { "type": "richtext", "id": "description", "label": "Description" },
+        { "type": "header", "content": "Images" },
+        { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+        { "type": "image_picker", "id": "image_2", "label": "Image 2" },
+        { "type": "image_picker", "id": "image_3", "label": "Image 3" },
+        { "type": "image_picker", "id": "image_4", "label": "Image 4" },
+        { "type": "image_picker", "id": "image_5", "label": "Image 5" },
+        { "type": "image_picker", "id": "image_6", "label": "Image 6" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Usecase Tabs",
+      "blocks": [
+        { "type": "usecase" },
+        { "type": "usecase" },
+        { "type": "usecase" }
+      ]
+    }
+  ]
+}
+{% endschema %}
