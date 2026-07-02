@@ -12,7 +12,7 @@
     "MoleBanner": {
       "type": "mole-banner",
       "settings": {
-        "bg_color": "#2D344B",
+        "bg_color": "#2d344b",
         "background_image": "shopify://shop_images/Group_427323422_1.svg",
         "heading": "Mole Mapping",
         "highlight": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
@@ -21,6 +21,25 @@
       }
     },
     "spacer_ceBW4P": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "introduction_ymVTxr": {
+      "type": "introduction",
+      "name": "Introduction",
+      "settings": {
+        "highlight": "introduction",
+        "heading": "What is Mole Mapping?",
+        "ir-small-image": "shopify://shop_images/b31a874c3229095854fa8c891c5a28ba67d74ccc.png",
+        "ir-small-alt": "",
+        "ir-big-image": "shopify://shop_images/ec370232cbb3850318aca30cf8d9db191f28794a.png",
+        "ir-big-alt": ""
+      }
+    },
+    "spacer_eAQ4Ga": {
       "type": "spacer",
       "name": "Spacer",
       "settings": {
@@ -75,7 +94,7 @@
       ],
       "name": "FAQ",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
         "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
@@ -116,6 +135,8 @@
   "order": [
     "MoleBanner",
     "spacer_ceBW4P",
+    "introduction_ymVTxr",
+    "spacer_eAQ4Ga",
     "faq_xmegMt",
     "spacer_X4tm99",
     "image_cta_da3TGb",
