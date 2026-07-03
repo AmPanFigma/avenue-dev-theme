@@ -816,6 +816,7 @@ footer {
     transition: .3s ease all;
     cursor: pointer;
     letter-spacing: 0;
+    text-transform: capitalize;
 }
 .ct-tabs .ct-tab.active {
     background-color: #978F87;
@@ -1875,6 +1876,21 @@ p.ct-intro {
     align-items: flex-start;
     justify-content: space-between;
 } 
+.usecase-tabs .ct-panel {
+    position: relative;
+    background-color: transparent;
+    padding-bottom: 0;
+}
+.usecase-tabs .ct-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: var(--bg-light);
+    z-index: -1;
+}
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -1920,12 +1936,20 @@ p.ct-intro {
 .ct-panel .ct-right {
     width: 57%;
 }
+.usecase-tabs .ct-panel .ct-left,
+.usecase-tabs .ct-panel .ct-right {
+    width: 50%;
+}
 .ct-left .ct-panel-title {
     margin-bottom: 26px;
 }
 .ct-left .ct-panel-desc {
     max-width: 38ch;
     margin-bottom: 85px;
+}
+.usecase-tabs .ct-left .ct-panel-desc {
+    max-width: 46ch;
+    margin-bottom: 0;
 }
 .ct-panel-desc p {
     font-weight: 400;
@@ -2076,6 +2100,13 @@ p.ct-intro {
     max-width: 200px;
     margin-bottom: 10px;
 }
+.ct-right .uc-image {
+    overflow: hidden;
+}
+.uc-image img {
+    width: 100%;
+    height: auto;
+}
 .upcoming-trials {
     position: relative;
 }
@@ -2181,4 +2212,37 @@ p.ct-intro {
     height: 100%;
     object-fit: cover;
 }
+/* ---------------- How It Works ---------------- */
+.hiw-in {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+}
+.hiw-left .heading h2 {
+    max-width: 12ch;
+}
+.hiw-left .heading-btn { 
+    margin-top: 40px;
+}
 
+.hiw-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.hiw-step-label {
+    font-family: var(--ppneue);
+    text-transform: uppercase;
+    letter-spacing: 1.92px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0 0 20px;
+}
+.hiw-step-text p { margin: 0; line-height: 1.6; color: var(--text-tertiary); }
+
+@media (max-width: 991px) {
+    .how-it-works { padding: 60px 0; }
+    .hiw-in { grid-template-columns: 1fr; gap: 40px; }
+    .hiw-steps { grid-template-columns: 1fr; gap: 30px; }
+}

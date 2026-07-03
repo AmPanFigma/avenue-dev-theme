@@ -97,6 +97,29 @@
         "spacer_height": 170
       }
     },
+    "how_it_works_1": {
+      "type": "how-it-works",
+      "blocks": {
+        "step_1": { "type": "step", "settings": { "label": "Step 01", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } },
+        "step_2": { "type": "step", "settings": { "label": "Step 02", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } },
+        "step_3": { "type": "step", "settings": { "label": "Step 03", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } }
+      },
+      "block_order": [ "step_1", "step_2", "step_3" ],
+      "name": "How It Works",
+      "settings": {
+        "highlight": "How it works",
+        "heading": "How Does Mole Mapping Work?",
+        "button_text": "Book an appointment",
+        "button_link": ""
+      }
+    },
+    "spacer_hiw": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
     "faq_xmegMt": {
       "type": "faq",
       "blocks": {
@@ -190,6 +213,8 @@
     "spacer_eAQ4Ga",
     "usecase_tabs_VQTwnw",
     "spacer_dBnBKt",
+    "how_it_works_1",
+    "spacer_hiw",
     "faq_xmegMt",
     "spacer_X4tm99",
     "image_cta_da3TGb",

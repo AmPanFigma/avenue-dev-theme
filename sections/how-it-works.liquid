@@ -1,0 +1,72 @@
+<section class="how-it-works">
+    <div class="container">
+        <div class="hiw-in">
+
+            <div class="hiw-left">
+                <div class="heading with-btn">
+                    {% if section.settings.highlight != blank %}
+                        <div class="subheading">
+                            <p>{{ section.settings.highlight }}</p>
+                        </div>
+                    {% endif %}
+                    {% if section.settings.heading != blank %}
+                        <h2>{{ section.settings.heading }}</h2>
+                    {% endif %}
+                    {% if section.settings.button_text != blank %}
+                        <div class="heading-btn">
+                            <a href="{{ section.settings.button_link | default: '#' }}" class="custom-btn grey">{{ section.settings.button_text }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="hiw-right">
+                <div class="hiw-steps">
+                    {% for block in section.blocks %}
+                        <div class="hiw-step" {{ block.shopify_attributes }}>
+                            {% if block.settings.label != blank %}
+                                <p class="hiw-step-label">{{ block.settings.label }}</p>
+                            {% endif %}
+                            {% if block.settings.text != blank %}
+                                <div class="hiw-step-text">{{ block.settings.text }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text", "default": "How it works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How Does Mole Mapping Work?" },
+    { "type": "text", "id": "button_text", "label": "Button label", "default": "Book an appointment" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Step label", "default": "Step 01" },
+        { "type": "richtext", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        { "type": "step", "settings": { "label": "Step 01" } },
+        { "type": "step", "settings": { "label": "Step 02" } },
+        { "type": "step", "settings": { "label": "Step 03" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
