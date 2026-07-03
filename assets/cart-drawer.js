@@ -8,6 +8,9 @@
   const emptyEl    = drawer.querySelector('[data-cart-empty]');
   const footerEl   = drawer.querySelector('[data-cart-footer]');
   const subtotalEl = drawer.querySelector('[data-cart-subtotal]');
+  const routineEl  = drawer.querySelector('[data-cart-routine]');
+  const upsellEl   = drawer.querySelector('[data-cart-upsell]');
+  const recommendUrl = drawer.getAttribute('data-recommend-url');
 
   const money = (cents) =>
     (window.Shopify && Shopify.formatMoney)
@@ -33,6 +36,7 @@
       itemsEl.innerHTML = '';
       emptyEl.hidden = false;
       footerEl.hidden = true;
+      if (routineEl) routineEl.hidden = true;
       return;
     }
     emptyEl.hidden = true;
@@ -41,28 +45,53 @@
 
     itemsEl.innerHTML = cart.items.map((item) => {
       const img = item.image
-        ? item.image.replace(/(\.[^.]+)(\?.*)?$/, '_160x$1$2')
+        ? item.image.replace(/(\.[^.]+)(\?.*)?$/, '_200x$1$2')
         : 'https://cdn.shopify.com/s/files/1/0752/8015/4881/files/jf-placeholder.png?v=1769522647';
       const variant = (item.variant_title && item.variant_title !== 'Default Title')
         ? `<p class="cart-item__variant">${item.variant_title}</p>` : '';
       return `
         <div class="cart-item" data-line-key="${item.key}">
-          <img class="cart-item__img" src="${img}" alt="${item.product_title}" width="72" height="90">
-          <div>
+          <a class="cart-item__media" href="${item.url}">
+            <img class="cart-item__img" src="${img}" alt="${item.product_title}">
+          </a>
+          <div class="cart-item__details">
             <h3 class="cart-item__title"><a href="${item.url}">${item.product_title}</a></h3>
             ${variant}
             <p class="cart-item__price">${money(item.final_line_price)}</p>
             <div class="cart-item__qty">
+              <span class="cart-item__qty-label">Quantity :</span>
               <button type="button" data-qty-down aria-label="Decrease quantity">&minus;</button>
               <input type="number" min="0" value="${item.quantity}" data-qty-input aria-label="Quantity">
               <button type="button" data-qty-up aria-label="Increase quantity">+</button>
             </div>
-          </div>
-          <div class="cart-item__right">
             <button type="button" class="cart-item__remove" data-remove>Remove</button>
           </div>
         </div>`;
     }).join('');
+
+    // Recommendation ("Complete your routine") based on the first cart item
+    loadRoutine(cart.items[0] && cart.items[0].product_id);
+  }
+
+  let lastRoutineFor = null;
+  function loadRoutine(productId) {
+    if (!routineEl || !upsellEl || !recommendUrl || !productId) return;
+    if (lastRoutineFor === productId) return; // already loaded for this product
+    lastRoutineFor = productId;
+    const url = recommendUrl + '?section_id=product-upsell&product_id=' + productId + '&limit=1';
+    fetch(url)
+      .then((r) => r.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const content = doc.querySelector('[data-upsell-content]');
+        if (content && content.innerHTML.trim()) {
+          upsellEl.innerHTML = content.innerHTML;
+          routineEl.hidden = false;
+        } else {
+          routineEl.hidden = true;
+        }
+      })
+      .catch(() => { routineEl.hidden = true; });
   }
 
   /* ---------- API calls ---------- */

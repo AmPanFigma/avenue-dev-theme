@@ -1,0 +1,28 @@
+{% comment %}
+  Compact single-product recommendation, fetched via the Product
+  Recommendations API (section_id=product-upsell&product_id=...).
+  Reused by the PDP "Complete your routine" and the cart drawer.
+{% endcomment %}
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  {%- assign rec = recommendations.products.first -%}
+  <div data-upsell-content>
+    <div class="upsell-item">
+      <a class="upsell-media" href="{{ rec.url }}">
+        <img src="{{ rec.featured_image | image_url: width: 160 }}" alt="{{ rec.title | escape }}">
+      </a>
+      <div class="upsell-info">
+        <a class="upsell-title" href="{{ rec.url }}">{{ rec.title }}</a>
+        <p class="upsell-price">{{ rec.price | money }}</p>
+      </div>
+      <button class="upsell-add" type="button" data-variant-id="{{ rec.selected_or_first_available_variant.id }}" aria-label="Add to cart">
+        {% render 'cart-icon' %}
+      </button>
+    </div>
+  </div>
+{%- else -%}
+  <div data-upsell-content></div>
+{%- endif -%}
+
+{% schema %}
+{ "name": "Product Upsell" }
+{% endschema %}

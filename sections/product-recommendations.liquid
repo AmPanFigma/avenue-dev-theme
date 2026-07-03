@@ -1,0 +1,58 @@
+{% comment %}
+  "Complete your skincare routine" — full-width related products carousel/grid.
+  Loads via the Product Recommendations API on the client.
+{% endcomment %}
+<div class="pdp-related"
+     data-section-id="{{ section.id }}"
+     data-product-id="{{ product.id }}"
+     data-url="{{ routes.product_recommendations_url }}">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <div class="container-fluid">
+      <div class="heading center pdp-related-head">
+        {%- if section.settings.highlight != blank -%}
+          <div class="subheading"><p>{{ section.settings.highlight }}</p></div>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+      </div>
+      <div class="pdp-related-grid">
+        {%- for product in recommendations.products -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .pdp-related { padding: 80px 0; }
+  .pdp-related-head { margin-bottom: 50px; }
+  .pdp-related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  @media (max-width: 991px) {
+    .pdp-related { padding: 50px 0; }
+    .pdp-related-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+</style>
+
+<script>
+  (function () {
+    var el = document.querySelector('.pdp-related[data-section-id="{{ section.id }}"]');
+    if (!el || el.querySelector('.pdp-related-grid')) return; // already has content
+    var url = el.getAttribute('data-url') + '?section_id={{ section.id }}&product_id=' + el.getAttribute('data-product-id') + '&limit=4';
+    fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var inner = doc.querySelector('.pdp-related');
+      if (inner) el.innerHTML = inner.innerHTML;
+    }).catch(function () {});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text", "default": "Similar Items" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Complete your skincare routine" }
+  ],
+  "presets": [ { "name": "Product Recommendations" } ]
+}
+{% endschema %}

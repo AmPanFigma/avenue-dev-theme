@@ -1,6 +1,8 @@
 {% assign filled_pages = 'medical-services,asthetic-services,clinical-trials' | split: ',' %}
 
-{% if template contains 'collection' or filled_pages contains page.handle %}
+{% if template.name == 'collection'
+   or template.name == 'product'
+   or filled_pages contains page.handle %}
   <header class="filled" data-ajax-cart-section>
 {% else %}
   <header class="transparent" data-ajax-cart-section>

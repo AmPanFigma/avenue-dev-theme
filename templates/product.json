@@ -12,9 +12,17 @@
     "main": {
       "type": "product",
       "settings": {}
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "highlight": "Similar Items",
+        "heading": "Complete your skincare routine"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "recommendations"
   ]
 }

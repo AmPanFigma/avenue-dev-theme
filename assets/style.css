@@ -2283,3 +2283,8 @@ p.ct-intro {
 /* banner spans the full width of the product grid */
 .cwarp-product-wrap .cwp-banner { grid-column: 1 / -1; position: relative; }
 .cwp-banner__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* PDP Page CSS */
+.pdp {
+    margin-top: 90px;
+}
