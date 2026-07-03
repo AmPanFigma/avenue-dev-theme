@@ -2272,3 +2272,14 @@ p.ct-intro {
     letter-spacing: var(--letter-spacing-3);
     color: var(--text-tertiary);
 }
+
+/* ---------------- Collection filtering + in-grid banner ---------------- */
+.cwp-item.is-hidden,
+.cwp-banner.is-hidden { display: none; }
+
+.collection-filters .cfilter { cursor: pointer; }
+.collection-filters .cfilter.active { text-decoration: underline; }
+
+/* banner spans the full width of the product grid */
+.cwarp-product-wrap .cwp-banner { grid-column: 1 / -1; position: relative; }
+.cwp-banner__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }

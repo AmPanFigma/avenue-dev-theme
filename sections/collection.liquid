@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<div class="collection-wrap">
+<div class="collection-wrap" id="Collection-{{ section.id }}">
     <div class="container-fluid">
         <div class="cwarp-in">
             <div class="cwarp-head">
@@ -18,10 +18,19 @@
                 <div class="cwh-center">
                     <div class="collection-filters">
                         <ul>
-                            <li>moisturizers <span>22</span></li>
-                            <li>cleansers <span>22</span></li>
-                            <li>serums <span>22</span></li>
-                            <li>masks <span>22</span></li>
+                            {% for block in section.blocks %}
+                                {%- assign fval = block.settings.value | handle -%}
+                                {%- comment -%} count products matching this type/tag {%- endcomment -%}
+                                {%- assign fcount = 0 -%}
+                                {%- for product in collection.products -%}
+                                    {%- capture ptokens -%} {{ product.type | handle }} {% for tag in product.tags %}{{ tag | handle }} {% endfor %} {%- endcapture -%}
+                                    {%- assign needle = ' ' | append: fval | append: ' ' -%}
+                                    {%- if ptokens contains needle -%}{%- assign fcount = fcount | plus: 1 -%}{%- endif -%}
+                                {%- endfor -%}
+                                <li class="cfilter" data-filter="{{ fval }}" role="button" tabindex="0" {{ block.shopify_attributes }}>
+                                    {{ block.settings.label }} <span>{{ fcount }}</span>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -31,14 +40,122 @@
                     </div>
                 </div>
             </div>
-            <div class="cwarp-product-wrap">
-                {% for product in collection.products %}
-                    {% render 'product-card', product: product %}
-                {% endfor %}
-            </div>
+
+            {% paginate collection.products by section.settings.products_per_page %}
+                <div class="cwarp-product-wrap">
+                    {% for product in collection.products %}
+                        {%- capture tokens -%}{{ product.type | handle }} {% for tag in product.tags %}{{ tag | handle }} {% endfor %}{%- endcapture -%}
+                        <div class="cwp-item" data-tokens="{{ tokens | strip }}">
+                            {% render 'product-card', product: product %}
+                        </div>
+
+                        {%- comment -%} Insert the promo banner after N products, once, on the first page {%- endcomment -%}
+                        {% if section.settings.banner_enable and paginate.current_page == 1 and forloop.index == section.settings.banner_position and forloop.last == false %}
+                            <div class="cwp-banner">
+                                {% if section.settings.banner_image != blank %}
+                                    <div class="cwp-banner__bg">
+                                        <img src="{{ section.settings.banner_image | image_url: width: 2200 }}" alt="{{ section.settings.banner_heading | escape }}" loading="lazy">
+                                    </div>
+                                {% endif %}
+                                <div class="cwp-banner__content">
+                                    {% if section.settings.banner_heading != blank %}
+                                        <h2 class="cwp-banner__title">{{ section.settings.banner_heading }}</h2>
+                                    {% endif %}
+                                    {% if section.settings.banner_text != blank %}
+                                        <p class="cwp-banner__text">{{ section.settings.banner_text }}</p>
+                                    {% endif %}
+                                    {% if section.settings.banner_button_text != blank %}
+                                        <a href="{{ section.settings.banner_button_link | default: '#' }}" class="custom-btn filled">{{ section.settings.banner_button_text }}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+                {% if paginate.next %}
+                    <div class="collection-more" data-next-url="{{ paginate.next.url }}">
+                        <a href="{{ paginate.next.url }}" class="collection-more__link" rel="next">Load more</a>
+                    </div>
+                {% endif %}
+            {% endpaginate %}
         </div>
     </div>
 </div>
+
+<script>
+  (function () {
+    var root = document.getElementById('Collection-{{ section.id }}');
+    if (!root) return;
+    var grid = root.querySelector('.cwarp-product-wrap');
+    var filters = root.querySelectorAll('.cfilter');
+    var banner = root.querySelector('.cwp-banner');
+    var activeValue = null;
+
+    function applyOne(item) {
+      var tokens = (item.getAttribute('data-tokens') || '').split(/\s+/);
+      var show = !activeValue || tokens.indexOf(activeValue) !== -1;
+      item.classList.toggle('is-hidden', !show);
+    }
+    function apply() {
+      root.querySelectorAll('.cwp-item').forEach(applyOne);
+      if (banner) banner.classList.toggle('is-hidden', !!activeValue); // banner only in unfiltered view
+    }
+
+    function activate(el) {
+      var already = el.classList.contains('active');
+      filters.forEach(function (f) { f.classList.remove('active'); });
+      activeValue = already ? null : el.getAttribute('data-filter');
+      if (!already) el.classList.add('active');
+      apply();
+    }
+
+    filters.forEach(function (el) {
+      el.addEventListener('click', function () { activate(el); });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(el); }
+      });
+    });
+
+    // ---- Infinite scroll: auto-load next page and append products ----
+    var loading = false;
+    function loadNext() {
+      var more = root.querySelector('.collection-more');
+      if (!more || loading) return;
+      var url = more.getAttribute('data-next-url');
+      if (!url) return;
+      loading = true;
+      fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          // append the new product items (pages 2+ contain no banner)
+          doc.querySelectorAll('.cwarp-product-wrap .cwp-item').forEach(function (node) {
+            grid.appendChild(node);
+            applyOne(node);           // keep any active filter applied to new items
+          });
+          // update or remove the sentinel with the next page's link
+          var nextMore = doc.querySelector('.collection-more');
+          if (nextMore) { more.setAttribute('data-next-url', nextMore.getAttribute('data-next-url')); }
+          else { more.remove(); }
+          loading = false;
+          if (observer && root.querySelector('.collection-more')) {
+            observer.observe(root.querySelector('.collection-more'));
+          }
+        })
+        .catch(function () { loading = false; });
+    }
+
+    var observer = null;
+    if ('IntersectionObserver' in window) {
+      observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { if (entry.isIntersecting) loadNext(); });
+      }, { rootMargin: '400px' });
+      var sentinel = root.querySelector('.collection-more');
+      if (sentinel) observer.observe(sentinel);
+    }
+  })();
+</script>
 
 {% schema %}
 {
@@ -56,7 +173,93 @@
             "id": "cb_alt",
             "label": "Banner Image Alt Text",
             "default": "Collection Banner"
+        },
+        {
+            "type": "range",
+            "id": "products_per_page",
+            "label": "Products per page (auto-loads more on scroll)",
+            "min": 4,
+            "max": 24,
+            "step": 1,
+            "default": 12
+        },
+        {
+            "type": "header",
+            "content": "In-grid promo banner"
+        },
+        {
+            "type": "checkbox",
+            "id": "banner_enable",
+            "label": "Show promo banner in grid",
+            "default": true
+        },
+        {
+            "type": "range",
+            "id": "banner_position",
+            "label": "Show after this many products",
+            "min": 2,
+            "max": 40,
+            "step": 1,
+            "default": 8
+        },
+        {
+            "type": "image_picker",
+            "id": "banner_image",
+            "label": "Banner background image"
+        },
+        {
+            "type": "text",
+            "id": "banner_heading",
+            "label": "Banner heading",
+            "default": "Discover New Glow Regimen"
+        },
+        {
+            "type": "textarea",
+            "id": "banner_text",
+            "label": "Banner text"
+        },
+        {
+            "type": "text",
+            "id": "banner_button_text",
+            "label": "Banner button label",
+            "default": "Explore Routine"
+        },
+        {
+            "type": "url",
+            "id": "banner_button_link",
+            "label": "Banner button link"
         }
     ],
+    "blocks": [
+        {
+            "type": "filter",
+            "name": "Filter",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label",
+                    "info": "Shown on the pill, e.g. Moisturizers"
+                },
+                {
+                    "type": "text",
+                    "id": "value",
+                    "label": "Match value",
+                    "info": "A product type or tag handle, e.g. sun-protection, hydration, masks. Lowercase, hyphenated."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collection",
+            "blocks": [
+                { "type": "filter" },
+                { "type": "filter" },
+                { "type": "filter" },
+                { "type": "filter" }
+            ]
+        }
+    ]
 }
 {% endschema %}

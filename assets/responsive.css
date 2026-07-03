@@ -363,6 +363,7 @@
     }
     .cwarp-in .cwarp-head {
         flex-direction: column;
+        gap: 20px;
     }
     .service-banner {
         padding-bottom: 20px;
@@ -707,5 +708,15 @@
     }
     .ri-right {
         padding: 0;
+    }
+    .collection-filters ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .collection-wrap .cwarp-in {
+        gap: 30px;
+    }
+    .collection-filters ul li {
+        white-space: nowrap;
     }
 }
