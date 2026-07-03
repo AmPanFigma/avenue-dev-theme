@@ -76,7 +76,7 @@ images.forEach((image)=>{
   }
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  document.querySelectorAll('.about-avenue .avi-image, .about-avenue .avbl-image, .ici-image, .bi-image, .uct-bg, .introduction .ir-image').forEach(function (el) {
+  document.querySelectorAll('.about-avenue .avi-image, .about-avenue .avbl-image, .ici-image, .bi-image, .uct-bg, .introduction .ir-image, .ri-left').forEach(function (el) {
     gsap.fromTo(el,
       { clipPath: 'inset(0 0 100% 0)' },
       {
@@ -98,7 +98,7 @@ images.forEach((image)=>{
   }
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.querySelectorAll('h1, h2, h3, .subheading p').forEach(function (h) {
+  document.querySelectorAll('h1, h2, h3, .subheading p, .heading > p').forEach(function (h) {
     // skip already-processed, empty, or markup-containing headings (e.g. logo image)
     if (h.dataset.reveal || h.children.length > 0) return;
     var text = h.textContent.trim();

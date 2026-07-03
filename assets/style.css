@@ -2241,8 +2241,34 @@ p.ct-intro {
 }
 .hiw-step-text p { margin: 0; line-height: 1.6; color: var(--text-tertiary); }
 
-@media (max-width: 991px) {
-    .how-it-works { padding: 60px 0; }
-    .hiw-in { grid-template-columns: 1fr; gap: 40px; }
-    .hiw-steps { grid-template-columns: 1fr; gap: 30px; }
+.requirements {
+    padding: 100px 0;
+    background-color: #F8F7F3;
+}
+.requirements-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.requirements-in .ri-left {
+    aspect-ratio: 6/4.5;
+    overflow: hidden;
+}
+.ri-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ri-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 60px;
+}
+.ri-right .heading > p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
 }
