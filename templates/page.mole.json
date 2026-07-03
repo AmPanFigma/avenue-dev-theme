@@ -100,11 +100,33 @@
     "how_it_works_1": {
       "type": "how-it-works",
       "blocks": {
-        "step_1": { "type": "step", "settings": { "label": "Step 01", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } },
-        "step_2": { "type": "step", "settings": { "label": "Step 02", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } },
-        "step_3": { "type": "step", "settings": { "label": "Step 03", "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>" } }
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "Step 01",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "Step 02",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "Step 03",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. In sagittis id velit pellentesque.</p>"
+          }
+        }
       },
-      "block_order": [ "step_1", "step_2", "step_3" ],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "name": "How It Works",
       "settings": {
         "highlight": "How it works",
@@ -114,6 +136,24 @@
       }
     },
     "spacer_hiw": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "requirements_JkzyHD": {
+      "type": "requirements",
+      "name": "Requirement",
+      "settings": {
+        "ri-image": "shopify://shop_images/2119764a0447aca9f319aa9078825bac3550ab8a.png",
+        "ri-alt": "",
+        "highlight": "requirements",
+        "heading": "What is a Good Candidate?",
+        "para": "Lorem ipsum dolor sit amet consectetur. Turpis diam purus et habitasse suspendisse enim commodo bibendum sed. Odio nulla eu in varius velit quisque semper purus."
+      }
+    },
+    "spacer_KPdVd8": {
       "type": "spacer",
       "name": "Spacer",
       "settings": {
@@ -215,6 +255,8 @@
     "spacer_dBnBKt",
     "how_it_works_1",
     "spacer_hiw",
+    "requirements_JkzyHD",
+    "spacer_KPdVd8",
     "faq_xmegMt",
     "spacer_X4tm99",
     "image_cta_da3TGb",
