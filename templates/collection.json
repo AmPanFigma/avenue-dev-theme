@@ -11,9 +11,52 @@
   "sections": {
     "main": {
       "type": "collection",
+      "blocks": {
+        "filter_Niwpr4": {
+          "type": "filter",
+          "settings": {
+            "label": "Anti-Aging",
+            "value": "anti-aging"
+          }
+        },
+        "filter_YWzTLK": {
+          "type": "filter",
+          "settings": {
+            "label": "Hydration",
+            "value": "hydration"
+          }
+        },
+        "filter_fDcYMr": {
+          "type": "filter",
+          "settings": {
+            "label": "Masks",
+            "value": "masks"
+          }
+        },
+        "filter_Qwm8yY": {
+          "type": "filter",
+          "settings": {
+            "label": "Sun Protection",
+            "value": "sun-protection"
+          }
+        }
+      },
+      "block_order": [
+        "filter_Niwpr4",
+        "filter_YWzTLK",
+        "filter_fDcYMr",
+        "filter_Qwm8yY"
+      ],
       "settings": {
         "cb_image": "shopify://shop_images/Rectangle_25184.png",
-        "cb_alt": "Collection Banner"
+        "cb_alt": "Collection Banner",
+        "products_per_page": 12,
+        "banner_enable": true,
+        "banner_position": 8,
+        "banner_heading": "Discover New Glow Regimen",
+        "banner_text": "",
+        "banner_button_text": "Explore Routine",
+        "banner_button_link": ""
       }
     },
     "spacer_9XbW9K": {
