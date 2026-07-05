@@ -305,8 +305,8 @@
       ],
       "name": "Icon Section",
       "settings": {
-        "highlight": "",
-        "heading": ""
+        "highlight": "our approach",
+        "heading": "Evidence Based. Always."
       }
     },
     "spacer_jrqmYt": {
@@ -388,7 +388,8 @@
       ],
       "name": "FAQ",
       "settings": {
-        "bg_color": "#F8F7F3",
+        "bg_color": "#f8f7f3",
+        "remove_padding": false,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
         "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
