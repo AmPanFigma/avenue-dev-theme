@@ -3,6 +3,8 @@
 {% if template.name == 'collection'
    or template.name == 'product'
    or template.name == '404'
+   or template.name == 'blog'
+   or template.name == 'article'
    or filled_pages contains page.handle %}
   <header class="filled" data-ajax-cart-section>
 {% else %}
