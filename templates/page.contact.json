@@ -1,8 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "contact-us",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/39aab655561f9193377e32caf9e8444aa64d9ff1.png",
+        "heading": "Get in Touch",
+        "description": "<p>Pellentesque bibendum dolor tortor diam. Cursus in metus egestas sollicitudin.</p>",
+        "email": "info@avenuedermatologygroup.com",
+        "linkedin": "#",
+        "instagram": "#",
+        "facebook": "#",
+        "form_heading": "Fill The Form For Aesthetic Enquiries",
+        "submit_label": "Submit",
+        "success_text": "Thanks — we will be in touch.",
+        "thankyou_url": "",
+        "consent_text": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling."
+      }
     }
   },
   "order": [
