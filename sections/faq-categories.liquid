@@ -1,0 +1,169 @@
+<section class="faqcat" id="Faq-{{ section.id }}">
+    <div class="container-fluid">
+        <div class="faqcat-in">
+
+            <div class="faqcat-left">
+                {% if section.settings.heading != blank %}
+                    <h2 class="faqcat-heading">{{ section.settings.heading }}</h2>
+                {% endif %}
+            </div>
+
+            <div class="faqcat-tabs">
+                <ul class="faqcat-tablist">
+                    {% if section.settings.show_all %}
+                        <li class="faqcat-tab active" data-cat="all" role="button" tabindex="0">{{ section.settings.all_label | default: 'All' }}</li>
+                    {% endif %}
+                    {% for block in section.blocks %}
+                        {% if block.type == 'category' %}
+                            <li class="faqcat-tab {% unless section.settings.show_all %}{% if forloop.first %}active{% endif %}{% endunless %}"
+                                data-cat="{{ block.settings.label | handle }}"
+                                role="button" tabindex="0" {{ block.shopify_attributes }}>
+                                {{ block.settings.label }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="faqcat-list">
+                {% assign item_index = 0 %}
+                {% for block in section.blocks %}
+                    {% if block.type == 'faq_item' %}
+                        {% assign item_index = item_index | plus: 1 %}
+                        <div class="faq-item {% if item_index == 1 %}active{% endif %}"
+                             data-cat="{{ block.settings.category | handle }}" {{ block.shopify_attributes }}>
+                            <button class="faq-q" type="button" aria-expanded="{% if item_index == 1 %}true{% else %}false{% endif %}">
+                                <span>{{ block.settings.question }}</span>
+                                <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="faq-a">
+                                <div class="faq-a-in">{{ block.settings.answer }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+  #Faq-{{ section.id }} { padding: 90px 0; }
+  #Faq-{{ section.id }} .faqcat-in { display: grid; grid-template-columns: 1.1fr 0.8fr 1.6fr; gap: 40px; align-items: start; }
+  #Faq-{{ section.id }} .faqcat-heading { font-size: clamp(40px, 4vw, 64px); line-height: 1.05; }
+
+  #Faq-{{ section.id }} .faqcat-tablist { list-style: none; margin: 0; padding: 0; }
+  #Faq-{{ section.id }} .faqcat-tab {
+    display: block;
+    position: relative;
+    padding: 6px 0 6px 20px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    transition: color .2s ease;
+  }
+  #Faq-{{ section.id }} .faqcat-tab::before { content: "\2022"; position: absolute; left: 0; top: 6px; }
+  #Faq-{{ section.id }} .faqcat-tab:hover { color: var(--text-primary); }
+  #Faq-{{ section.id }} .faqcat-tab.active { color: var(--text-primary); }
+
+  #Faq-{{ section.id }} .faq-item.is-hidden { display: none; }
+
+  @media (max-width: 991px) {
+    #Faq-{{ section.id }} .faqcat-in { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('Faq-{{ section.id }}');
+    if (!root) return;
+    var tabs = root.querySelectorAll('.faqcat-tab');
+    var items = Array.prototype.slice.call(root.querySelectorAll('.faq-item'));
+
+    function openFirstVisible() {
+      items.forEach(function (i) {
+        i.classList.remove('active');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      var first = items.find(function (i) { return !i.classList.contains('is-hidden'); });
+      if (first) { first.classList.add('active'); first.querySelector('.faq-q').setAttribute('aria-expanded', 'true'); }
+    }
+
+    function selectTab(tab) {
+      var cat = tab.getAttribute('data-cat');
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      items.forEach(function (i) {
+        var show = cat === 'all' || i.getAttribute('data-cat') === cat;
+        i.classList.toggle('is-hidden', !show);
+      });
+      openFirstVisible();
+    }
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () { selectTab(tab); });
+      tab.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectTab(tab); }
+      });
+    });
+
+    // Accordion (single open among visible items)
+    root.addEventListener('click', function (e) {
+      var btn = e.target.closest('.faq-q');
+      if (!btn) return;
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('active');
+      items.forEach(function (i) {
+        i.classList.remove('active');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) { item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Categories",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
+    { "type": "checkbox", "id": "show_all", "label": "Show \"All\" tab", "default": true },
+    { "type": "text", "id": "all_label", "label": "\"All\" tab label", "default": "All" }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category tab",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Category name", "info": "FAQ items are assigned to a category by matching this name." }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "category", "label": "Category", "info": "Must match a Category tab name (e.g. Category 01)." },
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Categories",
+      "blocks": [
+        { "type": "category", "settings": { "label": "Category 01" } },
+        { "type": "category", "settings": { "label": "Category 02" } },
+        { "type": "category", "settings": { "label": "Category 03" } },
+        { "type": "faq_item", "settings": { "category": "Category 01" } },
+        { "type": "faq_item", "settings": { "category": "Category 01" } },
+        { "type": "faq_item", "settings": { "category": "Category 02" } },
+        { "type": "faq_item", "settings": { "category": "Category 03" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

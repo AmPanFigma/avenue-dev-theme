@@ -91,6 +91,17 @@
     .mtg-right .mtgr-image {
         height: 50%;
     }
+    .team-main-in .team-main-item {
+        width: 90%;
+        /* align-items: flex-start; */
+        gap: 40px;
+    }
+    .tmi-social {
+        margin-top: 40px;
+    }
+    .team-grid .team-grid-wrap {
+        gap: 70px 25px;
+    }
 }
 
 /* ---------------- Mobile navigation ---------------- */
@@ -527,6 +538,26 @@
     .heading.half {
         width: 90%;
     }
+    .team-banner .team-bg {
+        min-height: 550px;
+    }
+    .team-main-in .team-main-item {
+        width: 100%;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .tmi-details p {
+        font-size: 13px;
+    }
+    .tmi-content .tmi-name {
+        margin-bottom: 10px;
+    }
+    .tmi-details {
+        margin-top: 20px;
+    }
+    .team-grid .team-grid-wrap {
+        grid-template-columns: 1fr 1fr;
+    } 
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -779,5 +810,12 @@
     }
     .mtg-right {
         height: fit-content;
+    }
+    .team-main-in .team-main-item {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .team-grid .team-grid-wrap {
+        grid-template-columns: 1fr;
     }
 }

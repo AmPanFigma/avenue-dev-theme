@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq-categories",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "show_all": true,
+        "all_label": "All"
+      }
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}
