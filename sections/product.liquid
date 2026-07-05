@@ -105,9 +105,9 @@
 
           {%- comment -%} Accordions {%- endcomment -%}
           <div class="pdp-accordions">
-            {%- assign how_to_use = product.metafields.custom.how_to_use.value -%}
-            {%- assign ingredients = product.metafields.custom.ingredients.value -%}
-            {%- assign shipping = product.metafields.custom.shipping_returns.value | default: section.settings.shipping_default -%}
+            {%- assign how_to_use = product.metafields.custom.how_to_use -%}
+            {%- assign ingredients = product.metafields.custom.ingredients -%}
+            {%- assign shipping = product.metafields.custom.shipping_returns -%}
 
             <div class="pdp-acc active">
               <button type="button" class="pdp-acc-head"><span>Product Details</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
@@ -117,21 +117,26 @@
             {%- if how_to_use != blank -%}
               <div class="pdp-acc">
                 <button type="button" class="pdp-acc-head"><span>How To Use</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
-                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ how_to_use }}</div></div>
+                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ how_to_use | metafield_tag }}</div></div>
               </div>
             {%- endif -%}
 
             {%- if ingredients != blank -%}
               <div class="pdp-acc">
                 <button type="button" class="pdp-acc-head"><span>Ingredients</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
-                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ ingredients }}</div></div>
+                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ ingredients | metafield_tag }}</div></div>
               </div>
             {%- endif -%}
 
             {%- if shipping != blank -%}
               <div class="pdp-acc">
                 <button type="button" class="pdp-acc-head"><span>Shipping and Returns</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
-                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ shipping }}</div></div>
+                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ shipping | metafield_tag }}</div></div>
+              </div>
+            {%- elsif section.settings.shipping_default != blank -%}
+              <div class="pdp-acc">
+                <button type="button" class="pdp-acc-head"><span>Shipping and Returns</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
+                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ section.settings.shipping_default }}</div></div>
               </div>
             {%- endif -%}
           </div>

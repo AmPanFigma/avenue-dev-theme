@@ -46,6 +46,7 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
     font-size: clamp(50px, 5vw, 90px);
     letter-spacing: 0.16px;
+    font-weight: 400;    
 }
 h2 {
     font-size: 30px;
@@ -200,7 +201,7 @@ header.transparent {
     background-color: transparent;
 }
 header.active {
-    background-color: var(--bg-light);
+    background-color: var(--white);
     border-bottom: 1px solid #E1E1E1;
 }
 .header-in {
@@ -809,18 +810,25 @@ footer {
     min-width: 270px;
     text-align: center;
     background-color: #F8F7F3;
+    font-family: var(--ppneue);
     color: var(--text-primary);
     font-size: 18px;
+    line-height: 120%;
     font-weight: 400;
     border: none;
     transition: .3s ease all;
     cursor: pointer;
     letter-spacing: 0;
     text-transform: capitalize;
+    border: 1px solid transparent;
+}
+.ct-tabs .ct-tab:hover {
+    border-color: #978F87;
 }
 .ct-tabs .ct-tab.active {
     background-color: #978F87;
     color: var(--white);
+    border-color: #978F87;
 }
 
 /* Service Section */
@@ -1340,7 +1348,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 120px;
+    gap: 180px;
 }
 .sbi-header {
     display: flex;
@@ -1349,6 +1357,7 @@ footer {
 }
 .sbih-top h1 {
     max-width: 8ch;
+    line-height: 98%;
 }
 .sbih-bottom {
     display: flex;
