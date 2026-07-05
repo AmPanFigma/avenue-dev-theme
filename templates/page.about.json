@@ -115,6 +115,62 @@
         "direction_link": "#",
         "direction_link_text": "Get Directions"
       }
+    },
+    "spacer_iMJec3": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "icon_section_xeTg8p": {
+      "type": "icon-section",
+      "blocks": {
+        "icon_item_a9nKNE": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_dpeqQb": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "02",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_qq8e9z": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "03",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_a9nKNE",
+        "icon_item_dpeqQb",
+        "icon_item_qq8e9z"
+      ],
+      "name": "Icon Section",
+      "settings": {
+        "highlight": "our approcah",
+        "heading": "We operate our clinic on a set of values to ensure we never lose sight of what matters."
+      }
+    },
+    "spacer_gDGBz4": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
@@ -125,6 +181,9 @@
     "spacer_cteY4g",
     "image_cta_dm3VqT",
     "spacer_6aqUby",
-    "meet_team_c8dABy"
+    "meet_team_c8dABy",
+    "spacer_iMJec3",
+    "icon_section_xeTg8p",
+    "spacer_gDGBz4"
   ]
 }
