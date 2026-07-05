@@ -1,15 +1,183 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "faq": {
       "type": "faq-categories",
+      "blocks": {
+        "category_ccVzQY": {
+          "type": "category",
+          "settings": {
+            "label": "Category 01"
+          }
+        },
+        "category_RpikXT": {
+          "type": "category",
+          "settings": {
+            "label": "Category 02"
+          }
+        },
+        "category_GzNRBf": {
+          "type": "category",
+          "settings": {
+            "label": "Category 03"
+          }
+        },
+        "faq_item_KB3PWh": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 01",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_N6qCC4": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 01",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_XQWGjk": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 01",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_hy33YM": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 01",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_irebke": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 01",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_FrAJpP": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 02",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_6qdpy9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 02",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_cnXD9B": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 02",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_bNEHfk": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 02",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_rpq4rT": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 02",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_gKhAn9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 03",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_rTKRmw": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 03",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_PHqGCH": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 03",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        },
+        "faq_item_pGCkpQ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Category 03",
+            "question": "Frequently asked question?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Amet enim quam hendrerit scelerisque morbi. Tortor sed sit tempus sit lobortis magna scelerisque urna adipiscing. Malesuada aliquam duis vestibulum quis magnis convallis nam mauris. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_ccVzQY",
+        "category_RpikXT",
+        "category_GzNRBf",
+        "faq_item_KB3PWh",
+        "faq_item_N6qCC4",
+        "faq_item_XQWGjk",
+        "faq_item_hy33YM",
+        "faq_item_irebke",
+        "faq_item_FrAJpP",
+        "faq_item_6qdpy9",
+        "faq_item_cnXD9B",
+        "faq_item_bNEHfk",
+        "faq_item_rpq4rT",
+        "faq_item_gKhAn9",
+        "faq_item_rTKRmw",
+        "faq_item_PHqGCH",
+        "faq_item_pGCkpQ"
+      ],
       "settings": {
         "heading": "Frequently Asked Questions",
         "show_all": true,
         "all_label": "All"
       }
+    },
+    "spacer_whEbE4": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
-    "faq"
+    "faq",
+    "spacer_whEbE4"
   ]
 }
