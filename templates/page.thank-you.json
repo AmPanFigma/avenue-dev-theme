@@ -1,8 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "thank-you",
-      "settings": {}
+      "settings": {
+        "bg_color": "#E7E1DA",
+        "background_image": "shopify://shop_images/Group_427323422_2.svg",
+        "heading": "Thank You",
+        "highlight": "We have received your request and will get back to you shortly.",
+        "button_text": "back to home",
+        "button_link": ""
+      }
     }
   },
   "order": [
