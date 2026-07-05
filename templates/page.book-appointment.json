@@ -11,7 +11,19 @@
   "sections": {
     "main": {
       "type": "book-appointment",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/d2dfc6d1a725059641bf155050617ec9c2836d4c.png",
+        "heading": "Book an Aesthetic Consult",
+        "description": "<p>Pellentesque bibendum dolor tortor diam. Cursus in metus egestas sollicitudin.</p>",
+        "referral_text": "<p>Looking for a medical appointment? Fill out our referral form.</p>",
+        "referral_button_text": "Book Cosmetic Appointment",
+        "referral_button_link": "",
+        "form_heading": "Fill The Form To Book A Aesthetic Consult",
+        "submit_label": "Submit",
+        "success_text": "Thanks — we will be in touch.",
+        "thankyou_url": "",
+        "consent_text": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling."
+      }
     }
   },
   "order": [
