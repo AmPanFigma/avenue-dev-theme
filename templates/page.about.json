@@ -12,16 +12,67 @@
     "page_background": {
       "type": "page-background",
       "settings": {
-        "bg_color": "#f8f7f3"
+        "bg_color": "#FFFFFF"
       }
     },
     "about_banner": {
       "type": "about-banner",
-      "settings": {}
+      "settings": {
+        "abi_first_image": "shopify://shop_images/a10ff69019d2255d654142bafa41c20db51f914c.png",
+        "abi_first_alt": "",
+        "abi_sec_image": "shopify://shop_images/5b245ab9ca2aab13aed541550414c8f8319a87c3.png",
+        "abi_second_alt": "",
+        "abi_text": "Lorem ipsum dolor sit amet consectetur. Non est posuere eget auctor semper ornare risus. Blandit mattis amet facilisis eget mollis massa ultricies.",
+        "heading": "Healthy skin goes beyond appearance.",
+        "bg_image": "shopify://shop_images/dot-background.svg"
+      }
+    },
+    "spacer_xfDaTc": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "team_JL6iHE": {
+      "type": "team",
+      "blocks": {
+        "member_HqVtRF": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/786894df789da57fdce033597dfb97a9f2def996.png",
+            "name": "Dr Valerie Yanofsky MD, FRCPC, DABD",
+            "designation": "Co Founder, Onco - Dermatologist",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_6y7Pxa": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/e11142b4d468297e4801074a2514e5e4109a8583.png",
+            "name": "Dr Maxwell Sauder MD, FRCPC, DABD",
+            "designation": "Co Founder, Onco - Dermatologist",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        }
+      },
+      "block_order": [
+        "member_HqVtRF",
+        "member_6y7Pxa"
+      ],
+      "name": "Team",
+      "settings": {
+        "highlight": "Meet the Team",
+        "heading": "A comprehensive approach that ensures every patient receives safe, effective, and evidence-based care.",
+        "button_text": "View all",
+        "button_link": "#"
+      }
     }
   },
   "order": [
     "page_background",
-    "about_banner"
+    "about_banner",
+    "spacer_xfDaTc",
+    "team_JL6iHE"
   ]
 }
