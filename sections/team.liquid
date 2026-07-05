@@ -17,20 +17,12 @@
             <div class="team-right">
                 <div class="team-wrap">
                     {% for block in section.blocks %}
-                        <div class="team-item">
-                            <div class="teamitem-image">
-
-                            </div>
-                            <div class="teamitem-content">
-                                <div class="tc-top">
-                                    <h3>{{ block.settings.name }}</h3>
-                                    <p class="desig">{{ block.settings.designation }}</p>
-                                </div>
-                                <div class="tc-bottom">
-                                    <p>{{ block.settings.details }}</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% render 'team-card',
+                            image: block.settings.image,
+                            name: block.settings.name,
+                            designation: block.settings.designation,
+                            details: block.settings.details,
+                            attrs: block.shopify_attributes %}
                     {% endfor %}
                 </div>
             </div>

@@ -1,0 +1,68 @@
+<section class="meet-team">
+    <div class="container-fluid">
+        <div class="meetteam-in">
+            <div class="heading">
+                <div class="subheading">
+                    <p>{{ section.settings.subheading }}</p>
+                </div>
+                <h2>{{ section.settings.heading }}</h2>
+            </div>
+            <div class="meetteam-grid">
+                <div class="mtg-left">
+                    <div class="mtgl-image">
+                        <img src="{{ section.settings.team_first_image | image_url }}" alt="{{ section.settings.team_first_image_alt }}">
+                    </div>
+                </div>
+                <div class="mtg-right">
+                    <div class="mtgr-image">
+                        <img src="{{ section.settings.team_sec_image | image_url }}" alt="{{ section.settings.team_sec_image_alt }}">
+                    </div>
+                    <div class="mtgr-content">
+                        {% if section.settings.open_para != blank %}
+                            <div class="avbr-bottom">
+                                <div class="address">
+                                    <p class="open-text">{{ section.settings.open_para }}</p>
+                                    <p>{{ section.settings.addres_para }}</p>
+                                </div>
+                                <div class="num-mail">
+                                    <a href="tel:{{ section.settings.number }}">{{ section.settings.number }}</a>
+                                    <span>|</span>
+                                    <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+                                </div>
+                                <div class="custom-link">
+                                    <a href="{{ section.settings.direction_link }}">{{ section.settings.direction_link_text }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Meet the Team",
+  "settings": [
+    { "type": "header", "content": "Heading" },
+    { "type": "text", "id": "subheading", "label": "Highlight Text", "default": "Our Team" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meet the team" },
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "team_first_image", "label": "First image" },
+    { "type": "text", "id": "team_first_image_alt", "label": "First image alt text" },
+    { "type": "image_picker", "id": "team_sec_image", "label": "Second image" },
+    { "type": "text", "id": "team_sec_image_alt", "label": "Second image alt text" },
+    { "type": "header", "content": "Contact / Address" },
+    { "type": "text", "id": "open_para", "label": "Opening hours text" },
+    { "type": "textarea", "id": "addres_para", "label": "Address" },
+    { "type": "text", "id": "number", "label": "Phone number" },
+    { "type": "text", "id": "email", "label": "Email" },
+    { "type": "url", "id": "direction_link", "label": "Directions link" },
+    { "type": "text", "id": "direction_link_text", "label": "Directions link text", "default": "Get Directions" }
+  ],
+  "presets": [
+    { "name": "Meet the Team" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{% comment %}
+  Team member card. Reusable anywhere.
+
+  Params:
+    image        - image object
+    name         - string
+    designation  - string
+    details      - string
+    attrs        - (optional) extra attributes, e.g. block.shopify_attributes
+{% endcomment %}
+<div class="team-item" {{ attrs }}>
+    <div class="teamitem-image">
+        {% if image != blank %}
+            <img src="{{ image | image_url: width: 700 }}"
+                 alt="{{ name | escape }}"
+                 width="{{ image.width }}" height="{{ image.height }}"
+                 loading="lazy">
+        {% endif %}
+    </div>
+    <div class="teamitem-content">
+        <div class="tc-top">
+            {% if name != blank %}<h3>{{ name }}</h3>{% endif %}
+            {% if designation != blank %}<p class="desig">{{ designation }}</p>{% endif %}
+        </div>
+        {% if details != blank %}
+            <div class="tc-bottom">
+                <p>{{ details }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
