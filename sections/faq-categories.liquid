@@ -4,7 +4,7 @@
 
             <div class="faqcat-left">
                 {% if section.settings.heading != blank %}
-                    <h2 class="faqcat-heading">{{ section.settings.heading }}</h2>
+                    <h1 class="faqcat-heading">{{ section.settings.heading }}</h1>
                 {% endif %}
             </div>
 
@@ -47,34 +47,6 @@
         </div>
     </div>
 </section>
-
-<style>
-  #Faq-{{ section.id }} { padding: 90px 0; }
-  #Faq-{{ section.id }} .faqcat-in { display: grid; grid-template-columns: 1.1fr 0.8fr 1.6fr; gap: 40px; align-items: start; }
-  #Faq-{{ section.id }} .faqcat-heading { font-size: clamp(40px, 4vw, 64px); line-height: 1.05; }
-
-  #Faq-{{ section.id }} .faqcat-tablist { list-style: none; margin: 0; padding: 0; }
-  #Faq-{{ section.id }} .faqcat-tab {
-    display: block;
-    position: relative;
-    padding: 6px 0 6px 20px;
-    cursor: pointer;
-    font-size: 12px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    transition: color .2s ease;
-  }
-  #Faq-{{ section.id }} .faqcat-tab::before { content: "\2022"; position: absolute; left: 0; top: 6px; }
-  #Faq-{{ section.id }} .faqcat-tab:hover { color: var(--text-primary); }
-  #Faq-{{ section.id }} .faqcat-tab.active { color: var(--text-primary); }
-
-  #Faq-{{ section.id }} .faq-item.is-hidden { display: none; }
-
-  @media (max-width: 991px) {
-    #Faq-{{ section.id }} .faqcat-in { grid-template-columns: 1fr; gap: 30px; }
-  }
-</style>
 
 <script>
   (function () {

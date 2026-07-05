@@ -1,0 +1,88 @@
+{% comment %}
+  Shared enquiry / booking form. Reuses the clinical-trials ct-* field classes.
+  Params:
+    heading       - form heading
+    consent_text  - consent checkbox label
+    submit_label  - submit button text
+    success_text  - message shown after submit
+    thankyou_url  - redirect URL on success (optional)
+{% endcomment %}
+<div class="enquiry-form">
+  {% if heading != blank %}
+    <h3 class="enquiry-form__title">{{ heading }}</h3>
+  {% endif %}
+
+  {% form 'contact', class: 'ct-form-el' %}
+    {% if form.posted_successfully? %}
+      <p class="ct-form-success">{{ success_text | default: 'Thanks — we will be in touch.' }}</p>
+      {% if thankyou_url != blank %}
+        <script>window.location.href = {{ thankyou_url | json }};</script>
+      {% endif %}
+    {% endif %}
+
+    <div class="ct-field-row">
+      <div class="ct-field">
+        <label>First Name*</label>
+        <input type="text" name="contact[first_name]" required>
+      </div>
+      <div class="ct-field">
+        <label>Last Name*</label>
+        <input type="text" name="contact[last_name]" required>
+      </div>
+    </div>
+
+    <div class="ct-field">
+      <label>Email</label>
+      <input type="email" name="contact[email]">
+    </div>
+
+    <div class="ct-field">
+      <label>Phone Number</label>
+      <input type="tel" class="ct-phone">
+      <input type="hidden" name="contact[phone]">
+    </div>
+
+    <div class="ct-field">
+      <label>Message</label>
+      <textarea name="contact[body]" rows="3"></textarea>
+    </div>
+
+    {% if consent_text != blank %}
+      <label class="ct-consent">
+        <input type="checkbox" name="contact[consent]" value="yes">
+        <span>{{ consent_text }}</span>
+      </label>
+    {% endif %}
+
+    {% comment %} Spam / captcha placeholder — drop your widget here. {% endcomment %}
+    <div class="ct-captcha"></div>
+
+    <button type="submit" class="ct-submit">{{ submit_label | default: 'Submit' }}</button>
+  {% endform %}
+</div>
+
+{%- comment -%} intl-tel-input for the phone field {%- endcomment -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js" defer></script>
+<script>
+  (function () {
+    function init() {
+      if (typeof window.intlTelInput === 'undefined') { return setTimeout(init, 60); }
+      document.querySelectorAll('.enquiry-form .ct-phone').forEach(function (input) {
+        if (input.dataset.itiReady) return;
+        input.dataset.itiReady = '1';
+        var iti = window.intlTelInput(input, {
+          initialCountry: 'ca',
+          separateDialCode: true,
+          utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+        });
+        var form = input.closest('form');
+        var hidden = form && form.querySelector('input[name="contact[phone]"]');
+        if (form && hidden) {
+          form.addEventListener('submit', function () { hidden.value = iti.getNumber(); });
+        }
+      });
+    }
+    init();
+  })();
+</script>

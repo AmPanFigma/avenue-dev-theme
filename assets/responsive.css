@@ -558,6 +558,16 @@
     .team-grid .team-grid-wrap {
         grid-template-columns: 1fr 1fr;
     } 
+    .faqcat-heading {
+        max-width: inherit;
+    }
+    .faqcat-tablist {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .faqcat-list {
+        margin-top: 0;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,

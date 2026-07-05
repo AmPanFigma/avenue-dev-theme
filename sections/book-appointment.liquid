@@ -1,0 +1,65 @@
+<section class="book-appt enquiry-page">
+  <div class="ep-grid">
+
+    <div class="ep-image">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 1200 }}" alt="{{ section.settings.image.alt | escape }}">
+      {% endif %}
+    </div>
+
+    <div class="ep-content">
+      <div class="ep-content-in">
+        {% if section.settings.heading != blank %}
+          <h1 class="ep-title">{{ section.settings.heading }}</h1>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="ep-desc">{{ section.settings.description }}</div>
+        {% endif %}
+
+        {% if section.settings.referral_text != blank or section.settings.referral_button_text != blank %}
+          <div class="ep-referral">
+            {% if section.settings.referral_text != blank %}
+              <p class="ep-referral-text">{{ section.settings.referral_text }}</p>
+            {% endif %}
+            {% if section.settings.referral_button_text != blank %}
+              <a href="{{ section.settings.referral_button_link | default: '#' }}" class="custom-btn ep-referral-btn">{{ section.settings.referral_button_text }}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ep-form">
+      <div class="ep-form-in">
+        {% render 'enquiry-form',
+          heading: section.settings.form_heading,
+          consent_text: section.settings.consent_text,
+          submit_label: section.settings.submit_label,
+          success_text: section.settings.success_text,
+          thankyou_url: section.settings.thankyou_url %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Book an Appointment",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Left image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Book an Aesthetic Consult" },
+    { "type": "richtext", "id": "description", "label": "Description", "default": "<p>Pellentesque bibendum dolor tortor diam. Cursus in metus egestas sollicitudin.</p>" },
+    { "type": "header", "content": "Referral" },
+    { "type": "richtext", "id": "referral_text", "label": "Referral text", "default": "<p>Looking for a medical appointment? Fill out our referral form.</p>" },
+    { "type": "text", "id": "referral_button_text", "label": "Referral button label", "default": "Book Cosmetic Appointment" },
+    { "type": "url", "id": "referral_button_link", "label": "Referral button link" },
+    { "type": "header", "content": "Form" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Fill The Form To Book A Aesthetic Consult" },
+    { "type": "text", "id": "submit_label", "label": "Submit label", "default": "Submit" },
+    { "type": "text", "id": "success_text", "label": "Success message", "default": "Thanks — we will be in touch." },
+    { "type": "url", "id": "thankyou_url", "label": "Redirect to page on success" },
+    { "type": "textarea", "id": "consent_text", "label": "Consent checkbox", "default": "I consent to being contacted by Avenue Dermatology Group for clinical trial screenings. By providing my contact information, I agree to receive further information about appointment availability and scheduling." }
+  ]
+}
+{% endschema %}

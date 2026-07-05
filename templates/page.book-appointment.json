@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "book-appointment",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
