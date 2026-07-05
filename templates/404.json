@@ -7,11 +7,18 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "404",
-      "settings": {}
+      "settings": {
+        "bg_color": "#E7E1DA",
+        "background_image": "shopify://shop_images/Group_427323422_2.svg",
+        "heading": "Page not found",
+        "highlight": "Sorry, the page you were looking for could not be found.",
+        "button_text": "back to home",
+        "button_link": ""
+      }
     }
   },
   "order": [
