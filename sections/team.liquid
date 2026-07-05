@@ -1,0 +1,108 @@
+<section class="team">
+    <div class="container-fluid">
+        <div class="team-in">
+            <div class="team-left">
+                <div class="heading">
+                    <div class="subheading">
+                        <p>{{ section.settings.highlight }}</p>
+                    </div>
+                    <h2>{{ section.settings.heading }}</h2>
+                    <div class="heading-btn">
+                        <a href="{{ section.settings.button_link | default: '#' }}" class="link-btn">
+                            {{ section.settings.button_text }} <span><img src="https://cdn.shopify.com/s/files/1/0886/1895/8882/files/arrow-right.svg?v=1781359734" alt=""></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-right">
+                <div class="team-wrap">
+                    {% for block in section.blocks %}
+                        <div class="team-item">
+                            <div class="teamitem-image">
+
+                            </div>
+                            <div class="teamitem-content">
+                                <div class="tc-top">
+                                    <h3>{{ block.settings.name }}</h3>
+                                    <p class="desig">{{ block.settings.designation }}</p>
+                                </div>
+                                <div class="tc-bottom">
+                                    <p>{{ block.settings.details }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Team",
+  "settings": [
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight Text",
+      "default": "Our Team"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet the team"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "designation",
+          "label": "Designation"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Details"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Team",
+      "blocks": [
+        { "type": "member" },
+        { "type": "member" },
+        { "type": "member" }
+      ]
+    }
+  ]
+}
+{% endschema %}

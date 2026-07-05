@@ -1,0 +1,73 @@
+<section class="about-banner">
+    <div class="container-fluid">
+        <div class="abanner-in">
+            <div class="abanner-top">
+                <div class="abi-images">
+                    <div class="abi-image small">
+                        <img src="{{ section.settings.abi_first_image | image_url }}" alt="{{ section.settings.abi_first_alt }}">
+                    </div>
+                    <div class="abi-image big">
+                        <img src="{{ section.settings.abi_sec_image | image_url }}" alt="{{ section.settings.abi_second_alt }}">
+                    </div>
+                </div>
+                <div class="abi-text">
+                    <p>{{ section.settings.abi_text }}</p>
+                </div>
+                <div class="about-bg">
+                    <img src="{{ section.settings.bg_image | image_url }}" alt="background dots">
+                </div>
+            </div>
+            <div class="abanner-bottom">
+                <h1>{{ section.settings.heading }}</h1>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% schema %}
+{
+  "name": "About Banner",
+  "settings": [
+    { "type": "header", "content": "Images" },
+    {
+      "type": "image_picker",
+      "id": "abi_first_image",
+      "label": "First image (small)"
+    },
+    {
+      "type": "text",
+      "id": "abi_first_alt",
+      "label": "First image alt text"
+    },
+    {
+      "type": "image_picker",
+      "id": "abi_sec_image",
+      "label": "Second image (big)"
+    },
+    {
+      "type": "text",
+      "id": "abi_second_alt",
+      "label": "Second image alt text"
+    },
+    {
+      "type": "textarea",
+      "id": "abi_text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image (dots)"
+    }
+  ],
+  "presets": [
+    { "name": "About Banner" }
+  ]
+}
+{% endschema %}
