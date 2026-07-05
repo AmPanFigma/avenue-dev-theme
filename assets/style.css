@@ -484,6 +484,7 @@ header.active .right-menu > ul > li > a,
 header.filled .hi-left > ul > li > a,
 header.filled .right-menu > ul > li > a {
     color: var(--text-primary);
+    outline: none;
 }
 header.active .menu-item.has-mega-menu > a::before,
 header.filled .menu-item.has-mega-menu > a::before {
@@ -2052,7 +2053,7 @@ p.ct-intro {
 .ct-form-title {
     font-size: 18px;
 }
-.ct-form form {
+.ct-form form, .enquiry-form form {
     padding: 0 32px;
     display: flex;
     flex-direction: column;
@@ -2064,7 +2065,8 @@ p.ct-intro {
     gap: 20px;
 }
 .ct-field input,
-.ct-field select {
+.ct-field select,
+.ct-field textarea {
     border: none;
     border-bottom: 1px solid #808080;
     padding: 7px 0;
@@ -2073,12 +2075,15 @@ p.ct-intro {
     letter-spacing: 1px;
     color: #000;
     width: 100%;
+    font-family: var(--switzer);
 }
 .ct-field input:focus,
-.ct-field select:focus {
+.ct-field select:focus,
+.ct-field textarea:focus {
     outline: none;
 }
-.ct-field input::placeholder {
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 1px;
@@ -2671,7 +2676,7 @@ p.ct-intro {
 /* ---------------- Enquiry pages (Book Appointment / Contact) ---------------- */
 .enquiry-page .ep-grid {
     display: grid;
-    grid-template-columns: 0.85fr 1fr 1.05fr;
+    grid-template-columns: 0.6fr 0.9fr 1.5fr;
     min-height: 100vh;
     align-items: stretch;
 }
@@ -2683,16 +2688,43 @@ p.ct-intro {
 }
 .enquiry-page .ep-content {
     display: flex;
-    align-items: center;
-    padding: 120px 60px;
+    /* align-items: center; */
+    padding: 180px 48px;
 }
-.enquiry-page .ep-content-in { width: 100%; max-width: 440px; }
-.enquiry-page .ep-title { font-size: clamp(36px, 3.5vw, 52px); line-height: 1.08; margin-bottom: 24px; }
+.enquiry-page .ep-content-in { 
+    width: 100%;
+    max-width: 440px;
+}
+.enquiry-page .ep-title { 
+    font-size: clamp(36px, 3.5vw, 42px); 
+    line-height: 110%; 
+    margin-bottom: 24px; 
+    max-width: 7ch;
+}
+.book-appt.enquiry-page .ep-title  {
+    max-width: inherit;
+}
 .enquiry-page .ep-desc { color: var(--text-tertiary); line-height: 1.7; }
-.enquiry-page .ep-desc p { margin: 0; }
+.enquiry-page .ep-desc p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
+}
 
 /* referral block (book appointment) */
-.enquiry-page .ep-referral { margin-top: 90px; }
+.enquiry-page .ep-referral {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.ep-referral p {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-3);
+    color: var(--text-tertiary);
+}
 .enquiry-page .ep-referral-text { color: var(--text-tertiary); line-height: 1.6; margin: 0 0 24px; }
 .enquiry-page .ep-referral-text p { margin: 0; }
 .enquiry-page .ep-referral-btn {
@@ -2706,34 +2738,65 @@ p.ct-intro {
 }
 
 /* contact info block */
-.enquiry-page .ep-info { margin-top: 50px; }
+.enquiry-page .ep-info {
+    margin-top: 90px;
+}
 .enquiry-page .ep-info-label {
     text-transform: uppercase;
-    letter-spacing: 0.24em;
+    letter-spacing: 1.28px;
     font-size: 12px;
-    font-family: var(--ppneue);
     margin: 0 0 14px;
+    color: var(--text-primary);
 }
-.enquiry-page .ep-info-value { color: var(--text-tertiary); text-decoration: none; }
-.enquiry-page .ep-social-list { list-style: none; margin: 0; padding: 0; }
-.enquiry-page .ep-social-list li { margin-bottom: 6px; }
-.enquiry-page .ep-social-list a { color: var(--text-tertiary); text-decoration: none; }
+.enquiry-page .ep-info-value {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--text-primary);
+    letter-spacing: var(--letter-spacing-3);
+}
+.enquiry-page .ep-social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.enquiry-page .ep-social-list li {
+    margin-bottom: 2px;
+}
+.enquiry-page .ep-social-list a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--text-primary);
+    letter-spacing: var(--letter-spacing-3);
+}
 .enquiry-page .ep-social-list a:hover { color: var(--text-primary); }
 
 /* form column */
 .enquiry-page .ep-form {
     display: flex;
     align-items: center;
-    padding: 80px 40px;
+    padding: 160px 0px;
 }
 .enquiry-page .ep-form-in {
     width: 100%;
     background: var(--bg-light);
-    padding: 55px 55px 60px;
+    padding: 60px 40px;
 }
 .enquiry-page .enquiry-form__title {
     font-family: var(--ppneue);
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 36px;
+}
+.ep-form-in input,
+.ep-form-in textarea {
+    border-color: #7C7C7A;
+    background-color: transparent;
+}
+.error .cb-background img {
+    object-position: 100% 24%;
+}
+.error .cb-data h1 {
+    color: var(--text-primary);
 }

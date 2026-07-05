@@ -10,8 +10,11 @@
 {
   "sections": {
     "main": {
-      "type": "blog",
-      "settings": {}
+      "type": "blog-main",
+      "settings": {
+        "show_featured": true,
+        "featured_label": "Featured"
+      }
     }
   },
   "order": [

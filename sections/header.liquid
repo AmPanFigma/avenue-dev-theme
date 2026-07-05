@@ -1,7 +1,8 @@
-{% assign filled_pages = 'medical-services,asthetic-services,clinical-trials,about-us,faqs' | split: ',' %}
+{% assign filled_pages = 'medical-services,asthetic-services,clinical-trials,about-us,faqs,contact-us,book-an-appointment' | split: ',' %}
 
 {% if template.name == 'collection'
    or template.name == 'product'
+   or template.name == '404'
    or filled_pages contains page.handle %}
   <header class="filled" data-ajax-cart-section>
 {% else %}

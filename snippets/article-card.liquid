@@ -1,0 +1,23 @@
+{% comment %}
+  Article card for the blog grid.
+  Params: article (required)
+{% endcomment %}
+{%- assign card_category = article.tags | first -%}
+<article class="blog-card"
+         data-tags="{{ article.tags | join: ',' | downcase }}"
+         data-date="{{ article.published_at | date: '%s' }}"
+         data-title="{{ article.title | escape | downcase }}">
+  <a href="{{ article.url }}" class="blog-card__media">
+    {% if article.image %}
+      <img src="{{ article.image | image_url: width: 800 }}"
+           alt="{{ article.image.alt | escape | default: article.title }}"
+           width="{{ article.image.width }}" height="{{ article.image.height }}" loading="lazy">
+    {% endif %}
+  </a>
+  <div class="blog-card__body">
+    {% if card_category != blank %}
+      <p class="blog-card__cat">{{ card_category }}</p>
+    {% endif %}
+    <h3 class="blog-card__title"><a href="{{ article.url }}">{{ article.title }}</a></h3>
+  </div>
+</article>

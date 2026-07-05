@@ -1,0 +1,209 @@
+{%- assign blog = blogs[section.settings.blog] | default: blog -%}
+
+{%- comment -%} Featured = most recent article with the featured tag, else the newest {%- endcomment -%}
+{%- assign featured_tag = section.settings.featured_tag | default: 'featured' -%}
+{%- for a in blog.articles -%}
+  {%- if a.tags contains featured_tag -%}{%- assign featured = a -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- unless featured -%}{%- assign featured = blog.articles.first -%}{%- endunless -%}
+
+<section class="blog-main" id="Blog-{{ section.id }}">
+
+  {%- if featured and section.settings.show_featured -%}
+    <div class="blog-featured">
+      <div class="bf-content">
+        <p class="bf-label">{{ section.settings.featured_label | default: 'Featured' }}</p>
+        <h2 class="bf-title"><a href="{{ featured.url }}">{{ featured.title }}</a></h2>
+        <p class="bf-excerpt">{{ featured.excerpt_or_content | strip_html | truncatewords: 32 }}</p>
+        <a href="{{ featured.url }}" class="bf-more link-btn">Read More <span>&rarr;</span></a>
+      </div>
+      <a href="{{ featured.url }}" class="bf-image">
+        {% if featured.image %}
+          <img src="{{ featured.image | image_url: width: 1400 }}" alt="{{ featured.title | escape }}">
+        {% endif %}
+      </a>
+    </div>
+  {%- endif -%}
+
+  <div class="container-fluid">
+    <div class="blog-toolbar">
+      <div class="blog-filters">
+        <ul class="blog-filter-list">
+          <li class="blog-filter active" data-filter="all" role="button" tabindex="0">{{ section.settings.all_label | default: 'All' }}</li>
+          {%- for tag in blog.all_tags -%}
+            <li class="blog-filter" data-filter="{{ tag | handle }}" role="button" tabindex="0">{{ tag }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="blog-sort">
+        <label class="blog-sort-label" for="BlogSort-{{ section.id }}">Sort by</label>
+        <select id="BlogSort-{{ section.id }}" class="blog-sort-select" data-blog-sort>
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+          <option value="az">A - Z</option>
+          <option value="za">Z - A</option>
+        </select>
+      </div>
+    </div>
+
+    {% paginate blog.articles by section.settings.per_page %}
+      <div class="blog-grid" data-blog-grid>
+        {%- for article in blog.articles -%}
+          {%- if section.settings.hide_featured_in_grid and article.id == featured.id -%}{%- continue -%}{%- endif -%}
+          {% render 'article-card', article: article %}
+        {%- else -%}
+          <p class="blog-empty">No posts yet.</p>
+        {%- endfor -%}
+      </div>
+
+      {% if paginate.next %}
+        <div class="blog-more" data-blog-more data-next-url="{{ paginate.next.url }}">
+          <a href="{{ paginate.next.url }}" class="blog-more__link custom-btn grey" rel="next">Load More</a>
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+
+</section>
+
+<style>
+  #Blog-{{ section.id }} { padding-bottom: 100px; }
+
+  /* Featured */
+  #Blog-{{ section.id }} .blog-featured { display: grid; grid-template-columns: 1fr 1fr; align-items: center; margin-bottom: 80px; }
+  #Blog-{{ section.id }} .bf-content { padding: 40px 60px; max-width: 520px; margin-left: auto; }
+  #Blog-{{ section.id }} .bf-label { text-transform: uppercase; letter-spacing: 0.24em; font-size: 12px; font-family: var(--ppneue); margin-bottom: 20px; }
+  #Blog-{{ section.id }} .bf-title { font-size: clamp(28px, 2.6vw, 40px); line-height: 1.15; margin-bottom: 20px; }
+  #Blog-{{ section.id }} .bf-title a { color: inherit; text-decoration: none; }
+  #Blog-{{ section.id }} .bf-excerpt { color: var(--text-tertiary); line-height: 1.7; margin-bottom: 30px; }
+  #Blog-{{ section.id }} .bf-image { display: block; }
+  #Blog-{{ section.id }} .bf-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Toolbar */
+  #Blog-{{ section.id }} .blog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+  #Blog-{{ section.id }} .blog-filter-list { display: flex; flex-wrap: wrap; gap: 26px; list-style: none; margin: 0; padding: 0; }
+  #Blog-{{ section.id }} .blog-filter { position: relative; padding-left: 16px; cursor: pointer; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-tertiary); transition: color .2s ease; }
+  #Blog-{{ section.id }} .blog-filter::before { content: "\2022"; position: absolute; left: 0; }
+  #Blog-{{ section.id }} .blog-filter:hover,
+  #Blog-{{ section.id }} .blog-filter.active { color: var(--text-primary); }
+  #Blog-{{ section.id }} .blog-sort { display: flex; align-items: center; gap: 10px; }
+  #Blog-{{ section.id }} .blog-sort-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-tertiary); font-family: var(--ppneue); }
+  #Blog-{{ section.id }} .blog-sort-select { border: 0; background: none; font-family: inherit; font-size: 14px; cursor: pointer; }
+
+  /* Grid */
+  #Blog-{{ section.id }} .blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 30px; }
+  #Blog-{{ section.id }} .blog-card.is-hidden { display: none; }
+  #Blog-{{ section.id }} .blog-card__media { display: block; background: var(--bg-light); aspect-ratio: 3 / 4; overflow: hidden; }
+  #Blog-{{ section.id }} .blog-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #Blog-{{ section.id }} .blog-card__body { padding-top: 18px; }
+  #Blog-{{ section.id }} .blog-card__cat { text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: var(--text-tertiary); margin: 0 0 8px; font-family: var(--ppneue); }
+  #Blog-{{ section.id }} .blog-card__title { font-size: 16px; line-height: 1.35; font-weight: 400; }
+  #Blog-{{ section.id }} .blog-card__title a { color: var(--text-primary); text-decoration: none; }
+
+  #Blog-{{ section.id }} .blog-more { display: flex; justify-content: center; margin-top: 60px; }
+  #Blog-{{ section.id }} .blog-more__link.is-loading { opacity: .6; pointer-events: none; }
+
+  @media (max-width: 991px) {
+    #Blog-{{ section.id }} .blog-featured { grid-template-columns: 1fr; }
+    #Blog-{{ section.id }} .bf-content { margin: 0; max-width: none; padding: 30px 20px; order: 2; }
+    #Blog-{{ section.id }} .blog-toolbar { flex-direction: column; align-items: flex-start; }
+    #Blog-{{ section.id }} .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('Blog-{{ section.id }}');
+    if (!root) return;
+    var grid = root.querySelector('[data-blog-grid]');
+    var filters = root.querySelectorAll('.blog-filter');
+    var sortSel = root.querySelector('[data-blog-sort]');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card'));
+
+    var filterValue = 'all';
+    var sortValue = 'latest';
+
+    function applyFilter() {
+      cards.forEach(function (card) {
+        var tags = (card.getAttribute('data-tags') || '').split(',');
+        var show = filterValue === 'all' || tags.indexOf(filterValue) !== -1;
+        card.classList.toggle('is-hidden', !show);
+      });
+    }
+
+    function applySort() {
+      var sorted = cards.slice().sort(function (a, b) {
+        if (sortValue === 'latest') return b.getAttribute('data-date') - a.getAttribute('data-date');
+        if (sortValue === 'oldest') return a.getAttribute('data-date') - b.getAttribute('data-date');
+        if (sortValue === 'az') return a.getAttribute('data-title').localeCompare(b.getAttribute('data-title'));
+        if (sortValue === 'za') return b.getAttribute('data-title').localeCompare(a.getAttribute('data-title'));
+        return 0;
+      });
+      sorted.forEach(function (c) { grid.appendChild(c); });
+    }
+
+    filters.forEach(function (f) {
+      function activate() {
+        filters.forEach(function (x) { x.classList.remove('active'); });
+        f.classList.add('active');
+        filterValue = f.getAttribute('data-filter');
+        applyFilter();
+      }
+      f.addEventListener('click', activate);
+      f.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
+    });
+
+    if (sortSel) sortSel.addEventListener('change', function () { sortValue = sortSel.value; applySort(); });
+
+    /* ---- Load more ---- */
+    var loading = false;
+    root.addEventListener('click', function (e) {
+      var link = e.target.closest('.blog-more__link');
+      if (!link) return;
+      e.preventDefault();
+      var wrap = root.querySelector('[data-blog-more]');
+      if (!wrap || loading) return;
+      var url = wrap.getAttribute('data-next-url');
+      if (!url) return;
+      loading = true;
+      link.classList.add('is-loading');
+      fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          doc.querySelectorAll('[data-blog-grid] .blog-card').forEach(function (node) {
+            grid.appendChild(node);
+            cards.push(node);
+          });
+          var nextMore = doc.querySelector('[data-blog-more]');
+          if (nextMore) { wrap.setAttribute('data-next-url', nextMore.getAttribute('data-next-url')); }
+          else { wrap.remove(); }
+          applyFilter();
+          applySort();
+          loading = false;
+          link.classList.remove('is-loading');
+        })
+        .catch(function () { loading = false; link.classList.remove('is-loading'); });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Blog Main",
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "header", "content": "Featured post" },
+    { "type": "checkbox", "id": "show_featured", "label": "Show featured post", "default": true },
+    { "type": "text", "id": "featured_label", "label": "Featured label", "default": "Featured" },
+    { "type": "text", "id": "featured_tag", "label": "Featured tag", "default": "featured", "info": "The most recent article with this tag is shown at the top. Leave blank / untagged to use the newest post." },
+    { "type": "checkbox", "id": "hide_featured_in_grid", "label": "Hide the featured post from the grid below", "default": false },
+    { "type": "header", "content": "Grid" },
+    { "type": "range", "id": "per_page", "label": "Posts per page (Load More)", "min": 4, "max": 24, "step": 2, "default": 8 },
+    { "type": "text", "id": "all_label", "label": "\"All\" filter label", "default": "All" }
+  ],
+  "presets": [
+    { "name": "Blog Main" }
+  ]
+}
+{% endschema %}

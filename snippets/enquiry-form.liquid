@@ -22,29 +22,24 @@
 
     <div class="ct-field-row">
       <div class="ct-field">
-        <label>First Name*</label>
-        <input type="text" name="contact[first_name]" required>
+        <input type="text" placeholder="First Name*" name="contact[first_name]" required>
       </div>
       <div class="ct-field">
-        <label>Last Name*</label>
-        <input type="text" name="contact[last_name]" required>
+        <input type="text" placeholder="Last Name*" name="contact[last_name]" required>
       </div>
     </div>
 
     <div class="ct-field">
-      <label>Email</label>
-      <input type="email" name="contact[email]">
+      <input type="email" placeholder="Email" name="contact[email]">
     </div>
 
     <div class="ct-field">
-      <label>Phone Number</label>
-      <input type="tel" class="ct-phone">
+      <input type="number" placeholder="Phone Number" class="ct-phone">
       <input type="hidden" name="contact[phone]">
     </div>
 
     <div class="ct-field">
-      <label>Message</label>
-      <textarea name="contact[body]" rows="3"></textarea>
+      <textarea name="contact[body]" placeholder="Message" rows="6"></textarea>
     </div>
 
     {% if consent_text != blank %}
@@ -57,7 +52,7 @@
     {% comment %} Spam / captcha placeholder — drop your widget here. {% endcomment %}
     <div class="ct-captcha"></div>
 
-    <button type="submit" class="ct-submit">{{ submit_label | default: 'Submit' }}</button>
+    <button type="submit" class="ct-submit custom-btn grey">{{ submit_label | default: 'Submit' }}</button>
   {% endform %}
 </div>
 

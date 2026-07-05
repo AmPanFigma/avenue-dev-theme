@@ -568,6 +568,27 @@
     .faqcat-list {
         margin-top: 0;
     }
+    .enquiry-page .ep-grid {
+        grid-template-columns: 1fr;
+    }
+    .ep-image {
+        height: 200px;
+    }
+    .enquiry-page .ep-content {
+        padding: 50px 20px;
+    }
+    .enquiry-page .ep-referral {
+        margin-top: 20px;
+    }
+    .enquiry-page .ep-form {
+        padding: 0;
+    }
+    .enquiry-page .ep-title {
+        max-width: inherit;
+    }
+    .enquiry-page .ep-info {
+        margin-top: 40px;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -827,5 +848,11 @@
     }
     .team-grid .team-grid-wrap {
         grid-template-columns: 1fr;
+    }
+    .enquiry-form form {
+        padding: 0;
+    }
+    .enquiry-page .ep-form-in {
+        padding: 50px 30px;
     }
 }
