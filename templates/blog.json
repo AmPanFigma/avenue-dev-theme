@@ -12,8 +12,13 @@
     "main": {
       "type": "blog-main",
       "settings": {
+        "blog": "news",
         "show_featured": true,
-        "featured_label": "Featured"
+        "featured_label": "Featured",
+        "featured_tag": "featured",
+        "hide_featured_in_grid": true,
+        "per_page": 8,
+        "all_label": "All"
       }
     }
   },
