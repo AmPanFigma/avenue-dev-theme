@@ -11,10 +11,233 @@
   "sections": {
     "main": {
       "type": "search",
+      "disabled": true,
       "settings": {}
+    },
+    "tram_banner_6EcRX8": {
+      "type": "tram-banner",
+      "name": "Team Banner",
+      "settings": {
+        "team_banner": "shopify://shop_images/331c3019f29003d899770ad64345dd6e7c261a35.png",
+        "team_banner_alt": "Team Banner Image",
+        "heading": "Restore confidence and wellbeing by providing trusted, evidence-based holistic dermatological care."
+      }
+    },
+    "spacer_dTE8Ka": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "team_main_LVLPfr": {
+      "type": "team-main",
+      "blocks": {
+        "member_7xcmMQ": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/786894df789da57fdce033597dfb97a9f2def996.png",
+            "name": "Dr Valerie Yanofsky MD, FRCPC, DABD",
+            "designation": "Co Founder, Onco - Dermatologist",
+            "details": "<p>Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Penatibus enim eleifend magna sollicitudin. Sed cursus nulla quisque vulputate hac ipsum arcu velit. Mollis volutpat pellentesque natoque quisque pretium facilisis. Ullamcorper odio tempus sodales egestas pellentesque non adipiscing.<br/><br/>Donec eleifend mi morbi cursus blandit. Eget elit lectus pharetra mi viverra. Turpis aliquam vitae diam cursus. Aliquam morbi augue purus felis diam. Arcu gravida diam dolor viverra pretium neque diam arcu vivamus. Quam id est malesuada ut cras aenean. Id purus placerat posuere placerat id in sed eu mi. Venenatis nisi lacus vestibulum elementum placerat.</p>",
+            "social_label": "Connect on :",
+            "linkedin": "#",
+            "instagram": "#",
+            "facebook": "#"
+          }
+        },
+        "member_zkMxMA": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/e11142b4d468297e4801074a2514e5e4109a8583.png",
+            "name": "Dr Maxwell Sauder MD, FRCPC, DABD",
+            "designation": "Co Founder, Onco - Dermatologist",
+            "details": "<p>Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Penatibus enim eleifend magna sollicitudin. Sed cursus nulla quisque vulputate hac ipsum arcu velit. Mollis volutpat pellentesque natoque quisque pretium facilisis. Ullamcorper odio tempus sodales egestas pellentesque non adipiscing.<br/><br/>Donec eleifend mi morbi cursus blandit. Eget elit lectus pharetra mi viverra. Turpis aliquam vitae diam cursus. Aliquam morbi augue purus felis diam. Arcu gravida diam dolor viverra pretium neque diam arcu vivamus. Quam id est malesuada ut cras aenean. Id purus placerat posuere placerat id in sed eu mi. Venenatis nisi lacus vestibulum elementum placerat.</p>",
+            "social_label": "Connect on :",
+            "linkedin": "#",
+            "instagram": "#",
+            "facebook": "#"
+          }
+        }
+      },
+      "block_order": [
+        "member_7xcmMQ",
+        "member_zkMxMA"
+      ],
+      "name": "Team Main",
+      "settings": {}
+    },
+    "spacer_PwcD9Q": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "team_grid_7WiTTP": {
+      "type": "team-grid",
+      "blocks": {
+        "member_rkiGfk": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/719766116e7f464f9a5e0c7f1c1a5a79304986e4.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_9aByAC": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/ae00c29e45116a5117e73e113b446abbf9b7f72c.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_9AVDK7": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/f47b1a1af3ac5796553ecebb214a3f736cbc4c27.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_LYbJGk": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/719766116e7f464f9a5e0c7f1c1a5a79304986e4.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_UjNjhK": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/ae00c29e45116a5117e73e113b446abbf9b7f72c.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        },
+        "member_BbbWmz": {
+          "type": "member",
+          "settings": {
+            "image": "shopify://shop_images/f47b1a1af3ac5796553ecebb214a3f736cbc4c27.png",
+            "name": "Doctor Name",
+            "designation": "Designation",
+            "details": "Lorem ipsum dolor sit amet consectetur. Molestie sed ultricies volutpat varius duis malesuada. Sed cursus nulla quisque vulputate hac ipsum arcu velit."
+          }
+        }
+      },
+      "block_order": [
+        "member_rkiGfk",
+        "member_9aByAC",
+        "member_9AVDK7",
+        "member_LYbJGk",
+        "member_UjNjhK",
+        "member_BbbWmz"
+      ],
+      "name": "Team Grid",
+      "settings": {
+        "highlight": "",
+        "heading": ""
+      }
+    },
+    "spacer_JCjiEP": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "icon_section_jLQQDn": {
+      "type": "icon-section",
+      "blocks": {
+        "icon_item_jN7KKH": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "01",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_JU7XFR": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "02",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        },
+        "icon_item_Jpc8LH": {
+          "type": "icon_item",
+          "settings": {
+            "image": "shopify://shop_images/Group_427323644.svg",
+            "number": "03",
+            "heading": "Philosophy Pillar",
+            "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_jN7KKH",
+        "icon_item_JU7XFR",
+        "icon_item_Jpc8LH"
+      ],
+      "name": "Icon Section",
+      "settings": {
+        "highlight": "Standards of Care & Ethics",
+        "heading": "We operate our clinic on a set of values to ensure we never lose sight of what matters."
+      }
+    },
+    "spacer_qtBUQp": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_BdyeJr": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/Rectangle_25152.jpg",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "Book an appointment",
+        "button_link": "#",
+        "open-para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": 6477889696,
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
+      }
+    },
+    "spacer_6D6Ahn": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "tram_banner_6EcRX8",
+    "spacer_dTE8Ka",
+    "team_main_LVLPfr",
+    "spacer_PwcD9Q",
+    "team_grid_7WiTTP",
+    "spacer_JCjiEP",
+    "icon_section_jLQQDn",
+    "spacer_qtBUQp",
+    "image_cta_BdyeJr",
+    "spacer_6D6Ahn"
   ]
 }
