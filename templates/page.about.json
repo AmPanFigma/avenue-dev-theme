@@ -12,7 +12,7 @@
     "page_background": {
       "type": "page-background",
       "settings": {
-        "bg_color": "#FFFFFF"
+        "bg_color": "#ffffff"
       }
     },
     "about_banner": {
@@ -67,12 +67,64 @@
         "button_text": "View all",
         "button_link": "#"
       }
+    },
+    "spacer_cteY4g": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "image_cta_dm3VqT": {
+      "type": "image-cta",
+      "name": "Image CTA",
+      "settings": {
+        "cta-image": "shopify://shop_images/ac7390f821e5429c6f9a9d4cfa06fda5a893518e.png",
+        "cta-alt": "",
+        "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
+        "button_text": "book an appointment",
+        "button_link": "#",
+        "open-para": "",
+        "addres-para": "",
+        "email": "",
+        "direction_link": "",
+        "direction_link_text": ""
+      }
+    },
+    "spacer_6aqUby": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
+    },
+    "meet_team_c8dABy": {
+      "type": "meet-team",
+      "name": "Meet the Team",
+      "settings": {
+        "subheading": "meet the team",
+        "heading": "We are a full-service dermatology centre based in Toronto focused on evidence-based treatment of your skin.",
+        "team_first_image": "shopify://shop_images/5b245ab9ca2aab13aed541550414c8f8319a87c3_1.png",
+        "team_first_image_alt": "",
+        "team_sec_image": "shopify://shop_images/65641b18edcb0a66319e6638f3b80b74e8642d4b.jpg",
+        "team_sec_image_alt": "",
+        "open_para": "We are open from Mon - Fri from 9am to 6pm.",
+        "addres_para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
+        "number": "647 788 9696",
+        "email": "info@avenuedermatologygroup.com",
+        "direction_link": "#",
+        "direction_link_text": "Get Directions"
+      }
     }
   },
   "order": [
     "page_background",
     "about_banner",
     "spacer_xfDaTc",
-    "team_JL6iHE"
+    "team_JL6iHE",
+    "spacer_cteY4g",
+    "image_cta_dm3VqT",
+    "spacer_6aqUby",
+    "meet_team_c8dABy"
   ]
 }
