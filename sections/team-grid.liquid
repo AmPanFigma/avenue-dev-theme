@@ -1,0 +1,60 @@
+<section class="team-grid">
+    <div class="container-fluid">
+        {% if section.settings.heading != blank or section.settings.highlight != blank %}
+            <div class="heading">
+                {% if section.settings.highlight != blank %}
+                    <div class="subheading"><p>{{ section.settings.highlight }}</p></div>
+                {% endif %}
+                {% if section.settings.heading != blank %}
+                    <h2>{{ section.settings.heading }}</h2>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="team-grid-wrap">
+            {% for block in section.blocks %}
+                {% render 'team-card',
+                    image: block.settings.image,
+                    name: block.settings.name,
+                    designation: block.settings.designation,
+                    details: block.settings.details,
+                    attrs: block.shopify_attributes %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Team Grid",
+  "settings": [
+    { "type": "text", "id": "highlight", "label": "Highlight Text" },
+    { "type": "text", "id": "heading", "label": "Heading" }
+  ],
+  "blocks": [
+    {
+      "type": "member",
+      "name": "Team Member",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Doctor Name" },
+        { "type": "text", "id": "designation", "label": "Designation", "default": "Designation" },
+        { "type": "textarea", "id": "details", "label": "Details" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Team Grid",
+      "blocks": [
+        { "type": "member" },
+        { "type": "member" },
+        { "type": "member" },
+        { "type": "member" },
+        { "type": "member" },
+        { "type": "member" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,38 @@
+<section class="team-banner">
+    <div class="team-bg">
+        <img src="{{ section.settings.team_banner | image_url }}" alt="{{ section.settings.team_banner_alt }}">
+    </div>
+    <div class="teambanner-in">
+        <div class="container-fluid">
+            <div class="tbi-heading">
+                <h1>{{ section.settings.heading }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Team Banner",
+  "settings": [
+    { 
+        "type": "image_picker", 
+        "id": "team_banner", 
+        "label": "Banner image" 
+    },
+    { 
+        "type": "text", 
+        "id": "team_banner_alt", 
+        "label": "Banner image alt text" 
+    },
+    { 
+        "type": "text", 
+        "id": "heading", 
+        "label": "Heading" 
+    }
+  ],
+  "presets": [
+    { "name": "Team Banner" }
+  ]
+}
+{% endschema %}

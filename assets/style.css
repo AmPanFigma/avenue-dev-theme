@@ -12,6 +12,7 @@
     --text-primary: #191919;
     --text-secondary: #F8F7F3;
     --text-tertiary: #444444;
+    --letter-spacing-24: 3.84px;
   }
 * {
     box-sizing: border-box;
@@ -44,7 +45,7 @@ h1,h2,h3,h4,h5,h6 {
     font-family: var(--ppneue);
 }
 h1 {
-    font-size: clamp(50px, 5vw, 90px);
+    font-size: clamp(44px, 5vw, 90px);
     letter-spacing: 0.16px;
     font-weight: 400;    
 }
@@ -175,6 +176,7 @@ h6 {
     color: var(--text-tertiary);
     font-size: 14px;
     text-transform: capitalize;
+    transition: .3s ease all;
 }
 .custom-link a::after {
     content: '';
@@ -186,7 +188,12 @@ h6 {
     width: 100%;
     transition: .3s ease all;
 }
-
+.custom-link a:hover {
+    color: var(--bg-primary);
+}
+.custom-link a:hover::after {
+    background-color: var(--bg-primary);
+}
 
 /* Header CSS */
 header {
@@ -796,6 +803,13 @@ footer {
     line-height: 140%;
     max-width: 76ch;
     text-align: center;
+}
+.heading.center h2 {
+    max-width: 42ch;
+    text-align: center;
+}
+.heading.half {
+    width: 60%;
 }
 .ct-tabs {
     margin-top: 42px;
@@ -1526,6 +1540,7 @@ footer {
     text-align: center;
     font-weight: 400;
     font-size: 14px;
+    line-height: 140%;
     letter-spacing: 0.48px;
     color: var(--text-tertiary);
     max-width: 31ch;
@@ -2296,4 +2311,169 @@ p.ct-intro {
 /* PDP Page CSS */
 .pdp {
     margin-top: 90px;
+}
+
+.about-banner {
+    position: relative;
+    padding-top: 100px;
+}
+.abanner-in {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.abanner-in .abanner-top {
+    position: relative;
+    width: 70%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: flex-end;
+    padding-bottom: 160px;
+}
+.abanner-top .abi-images {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    gap: 9px;
+    align-items: flex-end;
+}
+.abi-images .abi-image {
+    overflow: hidden;
+}
+.abi-image.small {
+    aspect-ratio: 1/1;
+}
+.abi-image.big {
+    aspect-ratio: 7/3;
+}
+.abi-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.abi-text {
+    position: relative;
+    z-index: 3;
+    background-color: #ffffff;
+}
+.abi-text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    max-width: 40ch;
+}
+.about-bg {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 59%;
+    height: 100%;
+    z-index: 1;
+}
+.about-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.abanner-bottom h1 {
+    max-width: 15ch;
+}
+.team .team-in {
+    display: grid;
+    grid-template-columns: 1.4fr 3fr;
+    gap: 50px;
+}
+.team-in .team-left {
+
+}
+.team-left .heading h2 {
+    max-width: 18ch;
+}
+.team-right .team-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.team-wrap .team-item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.team-wrap .team-item:nth-child(2n+1) {
+    padding-top: 60px;
+}
+.team-item .teamitem-image {
+    aspect-ratio: 4.5/5;
+    overflow: hidden;
+}
+.teamitem-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.teamitem-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.teamitem-content .tc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tc-top h3 {
+    color: var(--text-primary);
+}
+.tc-top p.desig {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-24);
+    color: var(--text-primary);
+}
+.tc-bottom p {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-tertiary);
+    letter-spacing: var(--letter-spacing-3);
+    line-height: 140%;
+}
+.meet-team {
+    background-color: #F8F7F3;
+    padding: 60px 0;
+}
+.meetteam-in {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.meetteam-in .meetteam-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.mtg-left .mtgl-image {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+.mtgl-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mtg-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+}
+.mtg-right .mtgr-image {
+    height: 60%;
+}
+.mtgr-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

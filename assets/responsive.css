@@ -84,6 +84,13 @@
     .hiw-steps {
         gap: 20px;
     }
+    .abanner-in .abanner-top {
+        width: 90%;
+        padding-bottom: 80px;
+    }
+    .mtg-right .mtgr-image {
+        height: 50%;
+    }
 }
 
 /* ---------------- Mobile navigation ---------------- */
@@ -505,6 +512,21 @@
     .heading {
         gap: 14px;
     }
+    .abanner-in .abanner-top {
+        width: 100%;
+    }
+    .abanner-in .abanner-top {
+        padding-bottom: 70px;
+    }
+    .team .team-in {
+        grid-template-columns: 1fr;
+    }
+    .team-left .heading h2 {
+        max-width: 40ch;
+    }
+    .heading.half {
+        width: 90%;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -718,5 +740,44 @@
     }
     .collection-filters ul li {
         white-space: nowrap;
+    }
+    .abanner-top .abi-images {
+        grid-template-columns: 1fr;
+    }
+    .abanner-in {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .abi-text p {
+        max-width: inherit;
+    }
+    .about-bg {
+        display: none;
+    }
+    .abanner-in .abanner-top {
+        flex-direction: column-reverse;
+        padding-bottom: 0;
+    }
+    .team-right .team-wrap {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .team-wrap .team-item:nth-child(2n+1) {
+        padding-top: 0;
+    }
+    .team-wrap .team-item {
+        gap: 20px;
+    }
+    .teamitem-content {
+        gap: 20px;
+    }
+    .heading.half {
+        width: 100%;
+    }
+    .meetteam-in .meetteam-grid {
+        grid-template-columns: 1fr;
+    }
+    .mtg-right {
+        height: fit-content;
     }
 }
