@@ -11,10 +11,21 @@
   "sections": {
     "main": {
       "type": "article",
-      "settings": {}
+      "settings": {
+        "related_highlight": "Suggested Reading",
+        "related_heading": "You might also like"
+      }
+    },
+    "spacer_B7nD4X": {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": {
+        "spacer_height": 170
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "spacer_B7nD4X"
   ]
 }
