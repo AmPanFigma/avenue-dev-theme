@@ -3,8 +3,9 @@
   Params: article (required)
 {% endcomment %}
 {%- assign card_category = article.tags | first -%}
+{%- capture card_tags -%}{% for t in article.tags %}{{ t | handle }}{% unless forloop.last %},{% endunless %}{% endfor %}{%- endcapture -%}
 <article class="blog-card"
-         data-tags="{{ article.tags | join: ',' | downcase }}"
+         data-tags="{{ card_tags }}"
          data-date="{{ article.published_at | date: '%s' }}"
          data-title="{{ article.title | escape | downcase }}">
   <a href="{{ article.url }}" class="blog-card__media">
