@@ -23,7 +23,7 @@
         "heading": "Aesthetic Services",
         "subheading": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
         "button_text": "book an appointment",
-        "button_link": "#",
+        "button_link": "shopify://pages/book-an-appointment",
         "para": "",
         "sbi_image": "shopify://shop_images/11a7d9a57e703bf1492d7ee5305d72f782c4a541.png",
         "sbi_image_alt": "Service Image"
@@ -179,7 +179,7 @@
       "settings": {
         "highlight": "Services",
         "heading": "Explore our Services",
-        "footer_text": "<p>Don't see what you're looking for here? </p><p>Get in touch with us <a href=\"#\" title=\"#\">here.</a></p>"
+        "footer_text": "<p>Don't see what you're looking for here? </p><p>Get in touch with us <a href=\"/pages/contact\" title=\"Contact\">here.</a></p>"
       }
     },
     "spacer_JWGBUg": {
@@ -195,7 +195,7 @@
         "icon_item_PAHt4T": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323649.svg",
             "number": "01",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -213,7 +213,7 @@
         "icon_item_qzta4M": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323645.svg",
             "number": "03",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -246,7 +246,7 @@
         "cta-alt": "",
         "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
         "button_text": "book an appointment",
-        "button_link": "#",
+        "button_link": "shopify://pages/book-an-appointment",
         "open-para": "We are open from Mon - Fri from 9am to 6pm.",
         "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
         "number": 6477889696,
@@ -310,10 +310,11 @@
       ],
       "name": "FAQ",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
+        "remove_padding": false,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
-        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us <a href=\"/pages/contact-us\" title=\"Contact Us\">here</a>.</p>"
       }
     }
   },
