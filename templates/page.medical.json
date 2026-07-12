@@ -73,7 +73,7 @@
         "icon_item_qDMfgt": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323649.svg",
             "number": "01",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -82,8 +82,8 @@
         "icon_item_waGKnM": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
-            "number": "01",
+            "image": "shopify://shop_images/Group_427323646.svg",
+            "number": "02",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
           }
@@ -92,7 +92,7 @@
           "type": "icon_item",
           "settings": {
             "image": "shopify://shop_images/Group_427323644.svg",
-            "number": "01",
+            "number": "03",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
           }
@@ -188,6 +188,8 @@
       ],
       "name": "FAQ",
       "settings": {
+        "bg_color": "#f8f7f3",
+        "remove_padding": false,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
         "footer_text": "<p>Don't see what you're looking for here?</p><p>Get in touch with us <a href=\"#\" target=\"_blank\" title=\"#\">here</a>.</p>"
