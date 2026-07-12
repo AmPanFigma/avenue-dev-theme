@@ -3110,3 +3110,103 @@ text-decoration: none;
     letter-spacing: var(--letter-spacing-3);
     font-weight: 400;
 }
+
+/* Product Page CSS */
+.pdp-main { padding: 40px 0 100px; }
+.pdp-main .pdp-breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--text-tertiary); margin-bottom: 30px; }
+.pdp-main .pdp-breadcrumb a { color: inherit; text-decoration: none; }
+.pdp-main .pdp-breadcrumb .current { color: var(--text-primary); }
+
+.pdp-main { display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: start; }
+.pdp-main .pdp-gallery { display: flex; flex-direction: column; gap: 24px; }
+.pdp-main .pdp-media {
+    background: var(--bg-light);
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.pdp-main .pdp-media img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+
+.pdp-main .pdp-info { position: sticky; top: 110px; }
+.pdp-main .pdp-info-in { max-width: 480px; }
+.pdp-main .pdp-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 14px; }
+.pdp-main .pdp-price { font-size: 16px; margin-bottom: 24px; }
+.pdp-main .pdp-desc { color: var(--text-tertiary); line-height: 1.7; margin-bottom: 28px; }
+.pdp-main .pdp-desc p { margin: 0; }
+
+.pdp-main .pdp-block-label { text-transform: uppercase; letter-spacing: 0.28em; font-size: 13px; font-family: var(--ppneue); margin-bottom: 20px; }
+
+.pdp-main .pdp-variants { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.pdp-main .pdp-option-label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; color: var(--text-tertiary); }
+.pdp-main .pdp-option-select { padding: 10px 14px; border: 1px solid #ddd; background: #fff; font-family: inherit; }
+
+.pdp-main .pdp-delivery { border-top: 1px solid #e6e3dd; padding-top: 30px; margin-bottom: 40px; }
+.pdp-main .pdp-deliv { display: flex; align-items: flex-start; gap: 18px; padding: 12px 0; cursor: pointer; }
+.pdp-main .pdp-deliv input {
+    appearance: none; -webkit-appearance: none;
+    flex: 0 0 auto;
+    width: 17px; height: 17px;
+    margin: 0; margin-top: 2px;
+    border: 1px solid #AAAAAA;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: border-color .2s ease;
+}
+.pdp-main .pdp-deliv input:checked { border-color: var(--text-primary); }
+.pdp-main .pdp-deliv input:checked::after {
+    content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--text-primary);
+}
+.pdp-main .pdp-deliv-title { display: block; font-size: 14px; line-height: 1.3; }
+.pdp-main .pdp-deliv-sub { display: block; font-size: 13px; color: var(--text-tertiary); margin-top: 6px; }
+
+.pdp-main .pdp-actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.pdp-main .pdp-atc { width: 100%; padding: 16px; }
+.pdp-main .pdp-atc[disabled] { opacity: .5; cursor: not-allowed; }
+.pdp-main .pdp-actions .shopify-payment-button { width: 100%; }
+
+.pdp-main .pdp-payments { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
+.pdp-main .pdp-pay-icon { width: 34px; height: auto; }
+
+.pdp-main .pdp-upsell { border-top: 1px solid #e6e3dd; padding-top: 24px; margin-bottom: 30px; }
+
+.pdp-main .pdp-accordions { border-top: 1px solid #e6e3dd; }
+.pdp-main .pdp-acc { border-bottom: 1px solid #e6e3dd; }
+.pdp-main .pdp-acc-head { width: 100%; display: flex; align-items: center; justify-content: space-between; background: none; border: 0; padding: 22px 0; cursor: pointer; font-family: var(--ppneue); text-transform: uppercase; letter-spacing: 1.92px; font-size: 12px; color: var(--text-primary); }
+.pdp-main .pdp-acc-icon { position: relative; width: 16px; height: 16px; flex: 0 0 auto; transition: transform .25s ease; }
+.pdp-main .pdp-acc-icon::before, .pdp-main .pdp-acc-icon::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--text-primary); }
+.pdp-main .pdp-acc-icon::before { width: 16px; height: 1.5px; transform: translate(-50%,-50%); }
+.pdp-main .pdp-acc-icon::after { width: 1.5px; height: 16px; transform: translate(-50%,-50%); }
+.pdp-main .pdp-acc.active .pdp-acc-icon { transform: rotate(45deg); }
+.pdp-main .pdp-acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.pdp-main .pdp-acc.active .pdp-acc-body { grid-template-rows: 1fr; }
+.pdp-main .pdp-acc-in { overflow: hidden; min-height: 0; }
+.pdp-main .pdp-acc.active .pdp-acc-in { padding-bottom: 22px; }
+.pdp-main .pdp-acc-in, .pdp-main .pdp-acc-in p { color: var(--text-tertiary); line-height: 1.7; }
+
+/* upsell item (shared with cart) */
+.upsell-item { display: flex; align-items: center; gap: 16px; }
+.upsell-item .upsell-media { flex: 0 0 60px; }
+.upsell-item .upsell-media img { width: 60px; height: 72px; object-fit: cover; display: block; }
+.upsell-item .upsell-info { flex: 1; }
+.upsell-item .upsell-title { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 6px; text-decoration: none; color: var(--text-primary); display: block; }
+.upsell-item .upsell-price { font-size: 14px; margin: 0; }
+.upsell-item .upsell-add { width: 46px; height: 46px; background: var(--bg-primary); border: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: .2s ease; }
+.upsell-item .upsell-add:hover { background: var(--text-primary); }
+.upsell-item .upsell-add svg { width: 20px; height: 20px; }
+
+/* pickup modal */
+.pdp-pickup-modal { position: fixed; inset: 0; z-index: 10000; display: none; }
+.pdp-pickup-modal.open { display: block; }
+.pdp-pickup-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.45); }
+.pdp-pickup-box { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #fff; padding: 40px; max-width: 420px; width: 90%; }
+.pdp-pickup-x { position: absolute; top: 14px; right: 18px; background: none; border: 0; font-size: 26px; cursor: pointer; line-height: 1; }
+.pdp-pickup-title { margin: 0 0 14px; }
+.pdp-pickup-address { margin: 0; line-height: 1.6; color: var(--text-tertiary); }
+.pdp-pickup-note { margin: 12px 0 0; font-size: 13px; color: var(--text-tertiary); }
+.shopify-payment-button__button--unbranded {
+    display: inline-block;
+    height: auto;
+}
