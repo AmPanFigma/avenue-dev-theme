@@ -273,7 +273,7 @@
         "icon_item_wbdwTg": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323648_1.svg",
             "number": "01",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -291,7 +291,7 @@
         "icon_item_whYPNc": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323645.svg",
             "number": "03",
             "heading": "Approach Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -324,7 +324,7 @@
         "cta-alt": "",
         "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
         "button_text": "book an appointment",
-        "button_link": "#",
+        "button_link": "shopify://pages/book-an-appointment",
         "open-para": "We are open from Mon - Fri from 9am to 6pm.",
         "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
         "number": 6477889696,
@@ -392,7 +392,7 @@
         "remove_padding": false,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
-        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us <a href=\"/pages/contact-us\" title=\"Contact Us\">here</a>.</p>"
       }
     }
   },
