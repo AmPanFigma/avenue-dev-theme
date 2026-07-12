@@ -17,7 +17,7 @@
         "head": "The avenue to better skin.",
         "para": "We are a full-service dermatology centre based in Toronto focused on evidence-based treatment of your skin.",
         "button_text": "book an appointment",
-        "button_link": "#"
+        "button_link": "shopify://pages/book-an-appointment"
       }
     },
     "spacer": {
@@ -35,7 +35,7 @@
             "tab_title": "Medical",
             "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
             "button_text": "learn more",
-            "button_link": "#",
+            "button_link": "shopify://pages/medical-services",
             "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
             "tab_alt_image": "girl face with pimple"
           }
@@ -46,7 +46,7 @@
             "tab_title": "Aesthetic",
             "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
             "button_text": "learn more",
-            "button_link": "#",
+            "button_link": "shopify://pages/asthetic-services",
             "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
             "tab_alt_image": "girl face with pimple"
           }
@@ -57,7 +57,7 @@
             "tab_title": "Clinical Trial",
             "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
             "button_text": "learn more",
-            "button_link": "#",
+            "button_link": "shopify://pages/clinical-trials",
             "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
             "tab_alt_image": "girl face with pimple"
           }
@@ -68,7 +68,7 @@
             "tab_title": "Body Mapping",
             "tab_content": "<p>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. Fames elementum.<br/><br/>Lorem ipsum dolor sit amet consectetur. Nisi nunc nibh pretium eget erat mauris aenean. </p>",
             "button_text": "learn more",
-            "button_link": "#",
+            "button_link": "shopify://pages/mole-mapping",
             "tab-image": "shopify://shop_images/852f76ab97e8b056810708836a3624ca3a7a0471.png",
             "tab_alt_image": "girl face with pimple"
           }
@@ -101,7 +101,7 @@
         "highlight": "about avenue dermatology group",
         "heading": "We are a full-service dermatology centre based in Toronto focused on evidence-based treatment of your skin.",
         "button_text": "learn more",
-        "button_link": "#",
+        "button_link": "shopify://pages/about-us",
         "about-small-image": "shopify://shop_images/bd50aa2a0a8fa2a7e845a658fd2f382c8c7e7d6b.png",
         "about-small-alt": "image alt text",
         "small-para": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare a suscipit aenean.",
@@ -192,7 +192,12 @@
         "cta-alt": "alt text",
         "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
         "button_text": "book an appointment",
-        "button_link": "#"
+        "button_link": "shopify://pages/book-an-appointment",
+        "open-para": "",
+        "addres-para": "",
+        "email": "",
+        "direction_link": "",
+        "direction_link_text": ""
       }
     },
     "spacer_nLFm3N": {
