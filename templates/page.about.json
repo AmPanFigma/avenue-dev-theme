@@ -64,8 +64,8 @@
       "settings": {
         "highlight": "Meet the Team",
         "heading": "A comprehensive approach that ensures every patient receives safe, effective, and evidence-based care.",
-        "button_text": "View all",
-        "button_link": "#"
+        "button_text": "Learn More",
+        "button_link": "shopify://pages/our-team"
       }
     },
     "spacer_cteY4g": {
@@ -83,7 +83,7 @@
         "cta-alt": "",
         "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
         "button_text": "book an appointment",
-        "button_link": "#",
+        "button_link": "shopify://pages/book-an-appointment",
         "open-para": "",
         "addres-para": "",
         "email": "",
@@ -129,7 +129,7 @@
         "icon_item_a9nKNE": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323649.svg",
             "number": "01",
             "heading": "Philosophy Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
@@ -138,7 +138,7 @@
         "icon_item_dpeqQb": {
           "type": "icon_item",
           "settings": {
-            "image": "shopify://shop_images/Group_427323644.svg",
+            "image": "shopify://shop_images/Group_427323646.svg",
             "number": "02",
             "heading": "Philosophy Pillar",
             "text": "Volutpat aliquam ut feugiat enim vel. Sed sed mauris interdum consequat in elit et. Id in arcu vestibulum enim ornare.."
