@@ -17,7 +17,7 @@
         "heading": "Mole Mapping",
         "highlight": "Experience quality care and achieve your health goals through evidence-based medical treatments.",
         "button_text": "book an appointment",
-        "button_link": "#"
+        "button_link": "shopify://pages/book-an-appointment"
       }
     },
     "spacer_ceBW4P": {
@@ -132,7 +132,7 @@
         "highlight": "How it works",
         "heading": "How Does Mole Mapping Work?",
         "button_text": "Book an appointment",
-        "button_link": ""
+        "button_link": "shopify://pages/book-an-appointment"
       }
     },
     "spacer_hiw": {
@@ -212,7 +212,7 @@
         "remove_padding": true,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
-        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us here.</p>"
+        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us <a href=\"/pages/contact-us\" title=\"Contact Us\">here</a>.</p>"
       }
     },
     "spacer_X4tm99": {
@@ -230,7 +230,7 @@
         "cta-alt": "",
         "cta-heading": "Experience quality care and achieve your health goals through evidence based medical treatments at Avenue.",
         "button_text": "book an appointment",
-        "button_link": "",
+        "button_link": "shopify://pages/book-an-appointment",
         "open-para": "We are open from Mon - Fri from 9am to 6pm.",
         "addres-para": "491 Eglinton Avenue West, Suite 400, Toronto, Ontario, M5N 1A8",
         "number": 6477889696,
