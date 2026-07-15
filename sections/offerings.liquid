@@ -13,6 +13,12 @@
     </div>
 
     <div class="offering-scroll" id="OfferingScroll-{{ section.id }}">
+        <button type="button" class="os-arrow os-arrow--prev" aria-label="Previous" disabled>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="os-arrow os-arrow--next" aria-label="Next">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
         <div class="os-track">
             {% for block in section.blocks %}
                 <div class="os-item" {{ block.shopify_attributes }}>
@@ -58,8 +64,13 @@
 
 <script>
   (function () {
-    var scroller = document.querySelector('#OfferingScroll-{{ section.id }} .os-track');
+    var root = document.getElementById('OfferingScroll-{{ section.id }}');
+    if (!root) return;
+    var scroller = root.querySelector('.os-track');
     if (!scroller) return;
+    var prev = root.querySelector('.os-arrow--prev');
+    var next = root.querySelector('.os-arrow--next');
+
     // drag-to-scroll for desktop mouse users
     var down = false, startX, startLeft;
     scroller.addEventListener('mousedown', function (e) {
@@ -73,6 +84,35 @@
       e.preventDefault();
       scroller.scrollLeft = startLeft - (e.pageX - startX);
     });
+
+    // ---- arrow navigation ----
+    function step() {
+      var item = scroller.querySelector('.os-item');
+      var gap = parseFloat(getComputedStyle(scroller).columnGap || getComputedStyle(scroller).gap) || 24;
+      return item ? item.getBoundingClientRect().width + gap : scroller.clientWidth * 0.8;
+    }
+    function maxScroll() {
+      return scroller.scrollWidth - scroller.clientWidth;
+    }
+    function updateArrows() {
+      var max = maxScroll();
+      var atStart = scroller.scrollLeft <= 1;
+      var atEnd = scroller.scrollLeft >= max - 1;
+      var noScroll = max <= 1; // everything fits, nothing to scroll
+      if (prev) prev.disabled = atStart;
+      if (next) next.disabled = atEnd || noScroll;
+      root.classList.toggle('os-no-scroll', noScroll);
+    }
+    if (prev) prev.addEventListener('click', function () {
+      scroller.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    if (next) next.addEventListener('click', function () {
+      scroller.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+    scroller.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    window.addEventListener('load', updateArrows);
+    updateArrows();
   })();
 </script>
 

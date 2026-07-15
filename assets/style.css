@@ -1695,6 +1695,39 @@ footer {
 .os-track::-webkit-scrollbar { display: none; }
 .os-track.is-dragging { cursor: grabbing; }
 
+.offering-scroll { position: relative; }
+.os-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--white);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    transition: opacity .2s ease, background .2s ease;
+}
+.os-arrow:hover { background: var(--bg-light); }
+.os-arrow--prev { left: 20px; }
+.os-arrow--next { right: 20px; }
+.os-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+.offering-scroll.os-no-scroll .os-arrow { display: none; }
+@media (max-width: 767px) {
+    .os-arrow { width: 40px; height: 40px; }
+    .os-arrow--prev { left: 10px; }
+    .os-arrow--next { right: 10px; }
+}
+
 .os-item {
     display: flex;
     flex: 0 0 auto;
@@ -2257,12 +2290,20 @@ body.ct-popup-lock {
     overflow: hidden;
 }
 .ct-popup {
-    position: fixed; inset: 0; z-index: 9999;
-    display: none; align-items: center; justify-content: center;
+    position: fixed;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 40px 20px;
+    transition: .3s ease all;
+    z-index: 9999;
 }
 .ct-popup.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 .ct-popup-overlay {
     position: absolute; inset: 0;
