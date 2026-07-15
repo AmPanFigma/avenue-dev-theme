@@ -1945,7 +1945,8 @@ p.ct-intro {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 100px);
+    /* height: calc(100% - 100px); */
+    height: 50%;
     background-color: var(--bg-light);
     z-index: -1;
 }
