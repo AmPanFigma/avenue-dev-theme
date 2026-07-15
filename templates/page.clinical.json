@@ -56,7 +56,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -64,10 +64,24 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         },
-        "trial_zVTVR3": {
+        "trial_jhYrMw": {
           "type": "trial",
           "settings": {
             "tab_label": "Atopic Dermatitis",
@@ -75,7 +89,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -83,10 +97,24 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         },
-        "trial_8iVdQc": {
+        "trial_iyHiEj": {
           "type": "trial",
           "settings": {
             "tab_label": "Hidradenitis Suppurativa",
@@ -94,7 +122,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -102,10 +130,24 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         },
-        "trial_3r7Cgz": {
+        "trial_mRL94Y": {
           "type": "trial",
           "settings": {
             "tab_label": "Atopic Dermatitis",
@@ -113,7 +155,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -121,10 +163,24 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         },
-        "trial_4Jt4nA": {
+        "trial_CakGzD": {
           "type": "trial",
           "settings": {
             "tab_label": "Hidradenitis Suppurativa",
@@ -132,7 +188,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -140,10 +196,24 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         },
-        "trial_bC3aCh": {
+        "trial_dqmRGK": {
           "type": "trial",
           "settings": {
             "tab_label": "Atopic Dermatitis",
@@ -151,7 +221,7 @@
             "description": "<p>Hidradenitis Suppurativa (HS) is a chronic, inflammatory skin condition that causes painful lumps, abscesses, and tunnels (sinus tracts) to form beneath the skin, often in areas where friction and sweat occur, such as the underarms or groin.</p>",
             "button_label": "Join the trial",
             "button_link": "",
-            "footer_text": "<p>Unsure if you qualify? Learn more <a href=\"#\" title=\"#\"><span style=\"text-decoration:underline\">here.</span></a></p>",
+            "footer_text": "<p>Unsure if you qualify? Learn more</p>",
             "card1_label": "Who can participate?",
             "card1_content": "<p>People aged 16 and above diagnosed with hidradenitis suppurativa (HS) may participate.</p>",
             "card2_label": "How long will it last? ",
@@ -159,17 +229,31 @@
             "card3_label": "What are the benefits?",
             "card3_content": "<ul><li>No cost to participate or receive study treatment </li><li>Regular visits with study doctors who specialize in treating HS (20 study visits) </li><li>Will receive either an investigative injection or a placebo </li></ul>",
             "card4_label": "What is the inclusion criteria?",
-            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>"
+            "card4_content": "<ul><li>A clinical diagnosis of moderate to severe HS for at least 6 months </li><li>Have the presence of HS lesions in at least 2 distinct anatomic areas </li><li>Intolerance to oral antibiotics for HS treatment </li></ul>",
+            "popup_link_text": "here",
+            "popup_heading": "Learn More About Hidradenitis Suppurativa",
+            "popup_body": "<p>Lorem ipsum dolor sit amet consectetur. Nisi cras cursus nunc commodo imperdiet amet quisque eget nisl. Tempus scelerisque felis quam purus dui. Mi quis morbi sodales nec pellentesque est eu a. Convallis aenean amet velit a. Lorem viverra pellentesque a.<br/></p><ul><li>Lorem ipsum dolor sit amet consectetur. </li><li>Nisi cras cursus nunc commodo </li><li>Imperdiet amet quisque eget nisl. </li><li>Tempus scelerisque felis quam purus dui. </li></ul>",
+            "popup_stage1_label": "stage 01",
+            "popup_stage1_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage1_image": "shopify://shop_images/image_154.png",
+            "popup_stage2_label": "stage 02",
+            "popup_stage2_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage2_image": "shopify://shop_images/image_154.png",
+            "popup_stage3_label": "stage 03",
+            "popup_stage3_content": "<p>Lorem ipsum dolor sit amet consectetur. Felis vel pharetra vulputate.</p>",
+            "popup_stage3_image": "shopify://shop_images/image_154.png",
+            "popup_stage4_label": "",
+            "popup_stage4_content": ""
           }
         }
       },
       "block_order": [
         "trial_gDpEJR",
-        "trial_zVTVR3",
-        "trial_8iVdQc",
-        "trial_3r7Cgz",
-        "trial_4Jt4nA",
-        "trial_bC3aCh"
+        "trial_jhYrMw",
+        "trial_iyHiEj",
+        "trial_mRL94Y",
+        "trial_CakGzD",
+        "trial_dqmRGK"
       ],
       "name": "Clinical Trials",
       "settings": {
