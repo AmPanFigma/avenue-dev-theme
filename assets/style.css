@@ -1986,6 +1986,7 @@ p.ct-intro {
 .ct-left .ct-panel-foot {
     margin-top: 30px;
     display: flex;
+    gap: 3px;
 }
 .ct-panel-foot p {
     font-size: 14px;
