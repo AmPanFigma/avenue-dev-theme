@@ -626,6 +626,9 @@
     .blog-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .ct-popup-right {
+        padding: 30px 20px;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -904,5 +907,25 @@
     }
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+    .ct-popup-box {
+        padding: 60px 24px 30px 24px;
+    }
+
+    .ct-popup-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .ct-popup-right {
+        padding: 24px;
+    }
+
+    .ct-popup-stage {
+        grid-template-columns: 2fr 1.4fr;
+        gap: 16px;
+    }
+    .ct-popup-title {
+        font-size: 24px;
     }
 }

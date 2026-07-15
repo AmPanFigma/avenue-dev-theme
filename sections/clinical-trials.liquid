@@ -46,8 +46,15 @@
                                 <button type="button" class="custom-btn ct-btn black ct-join">{{ block.settings.button_label }}</button>
                             {% endif %}
                             <button type="button" class="custom-btn ct-btn black ct-back">&lsaquo; Go Back</button>
-                            {% if block.settings.footer_text != blank %}
-                                <div class="ct-panel-foot">{{ block.settings.footer_text }}</div>
+                            {% if block.settings.footer_text != blank or block.settings.popup_link_text != blank %}
+                                <div class="ct-panel-foot">
+                                    {{ block.settings.footer_text }}
+                                    {% if block.settings.popup_link_text != blank %}
+                                        <p class="ct-popup-trigger-wrap">
+                                            <button type="button" class="ct-popup-trigger" data-ct-popup-open="{{ block.id }}">{{ block.settings.popup_link_text }}</button>
+                                        </p>
+                                    {% endif %}
+                                </div>
                             {% endif %}
                         </div>
 
@@ -150,7 +157,70 @@
         </div>
     </div>
 
+    {% for block in section.blocks %}
+        {% assign has_popup = false %}
+        {% if block.settings.popup_heading != blank or block.settings.popup_body != blank %}
+            {% assign has_popup = true %}
+        {% endif %}
+        {% for i in (1..4) %}
+            {% assign s_label = 'popup_stage' | append: i | append: '_label' %}
+            {% if block.settings[s_label] != blank %}{% assign has_popup = true %}{% endif %}
+        {% endfor %}
+        {% if has_popup %}
+            <div class="ct-popup" data-ct-popup="{{ block.id }}" aria-hidden="true">
+                <div class="ct-popup-overlay" data-ct-popup-close></div>
+                <div class="ct-popup-box" data-lenis-prevent role="dialog" aria-modal="true" aria-label="{{ block.settings.popup_heading | escape }}">
+                    <button type="button" class="ct-popup-close" data-ct-popup-close>Close</button>
+                    <div class="ct-popup-grid">
+                        <div class="ct-popup-left" data-lenis-prevent>
+                            {% if block.settings.popup_heading != blank %}
+                                <h3 class="ct-popup-title">{{ block.settings.popup_heading }}</h3>
+                            {% endif %}
+                            {% if block.settings.popup_body != blank %}
+                                <div class="ct-popup-body">{{ block.settings.popup_body }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="ct-popup-right" data-lenis-prevent>
+                            {% for i in (1..4) %}
+                                {% assign s_label = 'popup_stage' | append: i | append: '_label' %}
+                                {% assign s_content = 'popup_stage' | append: i | append: '_content' %}
+                                {% assign s_image = 'popup_stage' | append: i | append: '_image' %}
+                                {% assign stage_label = block.settings[s_label] %}
+                                {% assign stage_content = block.settings[s_content] %}
+                                {% assign stage_image = block.settings[s_image] %}
+                                {% if stage_label != blank or stage_content != blank or stage_image != blank %}
+                                    <div class="ct-popup-stage">
+                                        <div class="ct-popup-stage-text">
+                                            {% if stage_label != blank %}
+                                                <p class="ct-popup-stage-label">{{ stage_label }}</p>
+                                            {% endif %}
+                                            {% if stage_content != blank %}
+                                                <div class="ct-popup-stage-content">{{ stage_content }}</div>
+                                            {% endif %}
+                                        </div>
+                                        {% if stage_image != blank %}
+                                            <div class="ct-popup-stage-img">
+                                                <img src="{{ stage_image | image_url: width: 320 }}" alt="{{ stage_label | escape }}" width="140" height="140" loading="lazy">
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
 </section>
+
+<style>
+  
+  @media (max-width: 767px) {
+    
+  }
+</style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js" defer></script>
@@ -206,6 +276,37 @@
         e.target.closest('.ct-panel').classList.remove('form-open');
         return;
       }
+      // open a popup
+      var opener = e.target.closest('[data-ct-popup-open]');
+      if (opener) {
+        var id = opener.getAttribute('data-ct-popup-open');
+        var popup = root.querySelector('.ct-popup[data-ct-popup="' + id + '"]');
+        if (popup) {
+          popup.classList.add('open');
+          popup.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('ct-popup-lock');
+        }
+        return;
+      }
+      // close a popup (overlay or close button)
+      if (e.target.closest('[data-ct-popup-close]')) {
+        var openPopup = e.target.closest('.ct-popup');
+        if (openPopup) closePopup(openPopup);
+        return;
+      }
+    });
+
+    function closePopup(popup) {
+      popup.classList.remove('open');
+      popup.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('ct-popup-lock');
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        var open = root.querySelector('.ct-popup.open');
+        if (open) closePopup(open);
+      }
     });
 
     // if a form was just submitted, keep that panel's form view open
@@ -255,7 +356,28 @@
         { "type": "richtext", "id": "card3_content", "label": "Card 3 content" },
         { "type": "header", "content": "Info card 4" },
         { "type": "text", "id": "card4_label", "label": "Card 4 label" },
-        { "type": "richtext", "id": "card4_content", "label": "Card 4 content" }
+        { "type": "richtext", "id": "card4_content", "label": "Card 4 content" },
+
+        { "type": "header", "content": "Learn More popup" },
+        { "type": "text", "id": "popup_link_text", "label": "Footer link text", "info": "The clickable link shown in the footer that opens the popup. Leave blank to hide." },
+        { "type": "text", "id": "popup_heading", "label": "Popup heading" },
+        { "type": "richtext", "id": "popup_body", "label": "Popup text", "info": "Supports paragraphs and bullet lists." },
+        { "type": "header", "content": "Popup stage 1" },
+        { "type": "text", "id": "popup_stage1_label", "label": "Stage 1 label" },
+        { "type": "richtext", "id": "popup_stage1_content", "label": "Stage 1 text" },
+        { "type": "image_picker", "id": "popup_stage1_image", "label": "Stage 1 image" },
+        { "type": "header", "content": "Popup stage 2" },
+        { "type": "text", "id": "popup_stage2_label", "label": "Stage 2 label" },
+        { "type": "richtext", "id": "popup_stage2_content", "label": "Stage 2 text" },
+        { "type": "image_picker", "id": "popup_stage2_image", "label": "Stage 2 image" },
+        { "type": "header", "content": "Popup stage 3" },
+        { "type": "text", "id": "popup_stage3_label", "label": "Stage 3 label" },
+        { "type": "richtext", "id": "popup_stage3_content", "label": "Stage 3 text" },
+        { "type": "image_picker", "id": "popup_stage3_image", "label": "Stage 3 image" },
+        { "type": "header", "content": "Popup stage 4" },
+        { "type": "text", "id": "popup_stage4_label", "label": "Stage 4 label" },
+        { "type": "richtext", "id": "popup_stage4_content", "label": "Stage 4 text" },
+        { "type": "image_picker", "id": "popup_stage4_image", "label": "Stage 4 image" }
       ]
     }
   ],
