@@ -74,8 +74,10 @@
                 </div>
 
                 {% if paginate.next %}
-                    <div class="collection-more" data-next-url="{{ paginate.next.url }}">
-                        <a href="{{ paginate.next.url }}" class="collection-more__link" rel="next">Load more</a>
+                    <div class="collection-more" data-next-url="{{ paginate.next.url }}" aria-hidden="true">
+                        <noscript>
+                            <a href="{{ paginate.next.url }}" class="collection-more__link" rel="next">Load more</a>
+                        </noscript>
                     </div>
                 {% endif %}
             {% endpaginate %}

@@ -400,7 +400,7 @@ header.filled .header-logo img {
 }
 .mega-menu.small .megamenu-in {
     grid-template-columns: 1fr;
-    right: 24vw;
+    right: 23vw;
 }
 .mega-column {
     display: flex;
@@ -1695,6 +1695,9 @@ footer {
 .os-track::-webkit-scrollbar { display: none; }
 .os-track.is-dragging { cursor: grabbing; }
 
+/* Infinite-scroll sentinel — invisible, just a trigger for auto-load */
+.collection-more { width: 100%; height: 1px; }
+
 .offering-scroll { position: relative; }
 .os-arrow {
     position: absolute;
@@ -2484,9 +2487,40 @@ body.ct-popup-lock {
 .collection-filters .cfilter.active { text-decoration: underline; }
 
 /* banner spans the full width of the product grid */
-.cwarp-product-wrap .cwp-banner { grid-column: 1 / -1; position: relative; }
+.cwarp-product-wrap .cwp-banner { 
+    grid-column: 1 / -1;
+    position: relative;
+    margin: 40px 0;
+}
+.cwp-banner__bg {
+    aspect-ratio: 14/5;
+    overflow: hidden;
+}
 .cwp-banner__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
+.cwp-banner .cwp-banner__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #fff;
+}
+.cwp-banner__content p {
+    max-width: 66ch;
+    text-align: center;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-3);
+    font-size: 14px;
+}
+.cwp-banner__content .custom-btn {
+    margin-top: 15px;
+}
 /* PDP Page CSS */
 .pdp {
     margin-top: 90px;

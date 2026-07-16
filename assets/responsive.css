@@ -7,6 +7,9 @@
     .header-logo {
         max-width: 120px;
     }
+    .mega-menu.small .megamenu-in {
+        right: 26vw;
+    }
 }
 @media(max-width: 1200px){
     .service-tabs .tabcontent-in {
@@ -632,6 +635,9 @@
     .usecase-tabs .ct-panel::before {
         height: 70%;
     }
+    .cwp-banner__bg {
+        aspect-ratio: 14 / 7;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -933,5 +939,8 @@
     }
     .usecase-tabs .ct-panel::before {
         height: calc(100% - 100px);
+    }
+    .cwp-banner__bg {
+        aspect-ratio: 1 / 1;
     }
 }
