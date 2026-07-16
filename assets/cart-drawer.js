@@ -46,7 +46,7 @@
     itemsEl.innerHTML = cart.items.map((item) => {
       const img = item.image
         ? item.image.replace(/(\.[^.]+)(\?.*)?$/, '_200x$1$2')
-        : 'https://cdn.shopify.com/s/files/1/0752/8015/4881/files/jf-placeholder.png?v=1769522647';
+        : 'https://placehold.net/600x600.png';
       const variant = (item.variant_title && item.variant_title !== 'Default Title')
         ? `<p class="cart-item__variant">${item.variant_title}</p>` : '';
       return `

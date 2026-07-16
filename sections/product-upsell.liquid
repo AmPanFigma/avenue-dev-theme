@@ -8,15 +8,21 @@
   <div data-upsell-content>
     <div class="upsell-item">
       <a class="upsell-media" href="{{ rec.url }}">
-        <img src="{{ rec.featured_image | image_url: width: 160 }}" alt="{{ rec.title | escape }}">
+        {%- if rec.featured_image -%}
+          <img src="{{ rec.featured_image | image_url: width: 160 }}" alt="{{ rec.title | escape }}" width="80" height="80" loading="lazy">
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'upsell-media__placeholder' }}
+        {%- endif -%}
       </a>
       <div class="upsell-info">
-        <a class="upsell-title" href="{{ rec.url }}">{{ rec.title }}</a>
-        <p class="upsell-price">{{ rec.price | money }}</p>
+        <div class="upselinfo-top">
+          <a class="upsell-title" href="{{ rec.url }}">{{ rec.title }}</a>
+          <p class="upsell-price">{{ rec.price | money }}</p>
+        </div>
+        <button class="upsell-add" type="button" data-variant-id="{{ rec.selected_or_first_available_variant.id }}" aria-label="Add to cart">
+          {% render 'cart-icon' %}
+        </button>
       </div>
-      <button class="upsell-add" type="button" data-variant-id="{{ rec.selected_or_first_available_variant.id }}" aria-label="Add to cart">
-        {% render 'cart-icon' %}
-      </button>
     </div>
   </div>
 {%- else -%}
