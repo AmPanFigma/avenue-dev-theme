@@ -53,8 +53,9 @@
         "products_per_page": 12,
         "banner_enable": true,
         "banner_position": 8,
+        "banner_image": "shopify://shop_images/Rectangle_25185.jpg",
         "banner_heading": "Discover New Glow Regimen",
-        "banner_text": "",
+        "banner_text": "Lorem ipsum dolor sit amet consectetur. Morbi enim etiam amet vitae a a. Amet enim tincidunt tempus auctor adipiscing quis.",
         "banner_button_text": "Explore Routine",
         "banner_button_link": ""
       }
