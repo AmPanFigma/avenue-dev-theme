@@ -13,14 +13,27 @@ images.forEach((image)=>{
     })
     })
 
-/* Add .active to header after a small scroll */
+/* Add .active to header — reveals the white header background */
 ;(function () {
   const header = document.querySelector('header');
   if (!header) return;
+  const hero = document.querySelector('.banner.home');
+
+  // Home page: the white header background only appears once you scroll PAST the hero.
+  if (hero && typeof ScrollTrigger !== 'undefined') {
+    if (gsap.registerPlugin) gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: hero,
+      start: 'bottom top',   // hero's bottom edge reaches the top of the viewport
+      onEnter:     () => header.classList.add('active'),
+      onLeaveBack: () => header.classList.remove('active')
+    });
+    return;
+  }
+
+  // Other pages: activate after a small scroll.
   const THRESHOLD = 50; // px scrolled before header becomes "active"
   const toggle = (y) => header.classList.toggle('active', y > THRESHOLD);
-
-  // Hook into Lenis if present, otherwise fall back to native scroll.
   if (window.lenis && typeof window.lenis.on === 'function') {
     window.lenis.on('scroll', ({ scroll }) => toggle(scroll));
   } else {
@@ -40,32 +53,32 @@ images.forEach((image)=>{
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // Header logo starts hidden + small; it grows into place as you scroll.
-  gsap.set(headerLogo, { autoAlpha: 0, scale: 0.55, transformOrigin: 'center center' });
+  // Header logo starts hidden + slightly larger; it settles to size 1 as you scroll.
+  gsap.set(headerLogo, { autoAlpha: 0, scale: 1.15, transformOrigin: 'center center' });
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '.banner.home',
       start: 'top top',
-      end: '+=600',     // distance over which the transition plays
-      scrub: 0.5
+      end: '+=320',     // quick transition — completes while still within the hero
+      scrub: true
     }
   });
 
-  // Banner logo lifts up, shrinks toward the header, and fades out.
+  // Hero logo zooms down toward the header slot and fades out.
   tl.to(bannerLogo, {
-    y: () => -(bannerLogo.getBoundingClientRect().top + bannerLogo.offsetHeight * 0.5),
+    y: () => -(bannerLogo.getBoundingClientRect().top + bannerLogo.offsetHeight * 0.5 - 40),
     scale: 0.18,
     autoAlpha: 0,
     ease: 'none'
   }, 0);
 
-  // Header logo scales up into place in sync with the banner logo (starts at 0).
+  // Header logo fades in and settles to full size, finishing before the hero ends.
   tl.to(headerLogo, {
     autoAlpha: 1,
     scale: 1,
     ease: 'none'
-  }, 0.2);
+  }, 0.1);
 })();
 
 /* Clip-path image reveal on scroll-into-view */

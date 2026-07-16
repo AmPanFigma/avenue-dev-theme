@@ -202,6 +202,7 @@ header {
     width: 100%;
     z-index: 9999;
     height: 80px;
+    border-bottom: 1px solid transparent;
     transition: .3s ease all;
 }
 header.transparent {
@@ -210,6 +211,7 @@ header.transparent {
 header.active {
     background-color: var(--white);
     border-bottom: 1px solid #E1E1E1;
+    transition: .3s ease all;
 }
 .header-in {
     display: flex;
@@ -222,13 +224,14 @@ header.active {
     position: absolute;
     left: 0;
     right: 0;
-    top: 80px;
+    top: 20px;
     margin: auto;
     width: auto;
     height: 40px;
     display: flex;
     max-width: 150px;
-    transition: .3s ease all;
+    /* Only fade — transform/position are driven by GSAP, so don't ease them (avoids the bounce) */
+    transition: opacity .3s ease, visibility .3s ease;
     opacity: 0;
     visibility: hidden;
 }
@@ -236,8 +239,6 @@ header.active .header-logo,
 header.filled .header-logo {
     visibility: visible;
     opacity: 1;
-    top: 20px;
-    transition: .3s ease all;
 }
 header.filled .header-logo img {
     filter: invert();
@@ -769,7 +770,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 16px;
 }
 .heading.with-btn .heading-btn {
     margin-top: 10px;
@@ -909,7 +910,7 @@ footer {
   visibility: hidden;
   height: 0;
   overflow: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 .tab-panel.active {
   opacity: 1;
@@ -1008,6 +1009,9 @@ footer {
 }
 .avic-top {
     padding-left: 16px;
+}
+.avic-top .heading h2 {
+    max-width: 36ch;
 }
 .avic-bottom .avb-wrap {
     display: grid;
