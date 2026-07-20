@@ -43,6 +43,7 @@
       ],
       "settings": {
         "select_logo": "shopify://shop_images/avenue-logo-white.svg",
+        "select_logo_clinical": "shopify://shop_images/Group_427323825-white.svg",
         "left_menu": "left-menu",
         "right_menu": "right-menu",
         "shop_mega_menu": "shop",
