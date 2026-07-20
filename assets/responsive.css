@@ -380,7 +380,7 @@
         padding-right: 0px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 10px 100px;
     }
     .cwarp-product-wrap {
         grid-template-columns: 1fr 1fr;
@@ -638,6 +638,9 @@
     .cwp-banner__bg {
         aspect-ratio: 14 / 7;
     }
+    .service-banner {
+        padding-top: 90px;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -647,6 +650,13 @@
     }
     .banner.home {
         min-height: 600px;
+    }
+    .tabs-nav {
+        gap: 10px 50px;
+    }
+    .tabs-nav .tab-button {
+        font-size: 18px;
+        padding: 10px 0;
     }
     .service-tabs .tabcontent-in {
         flex-direction: column;
@@ -942,5 +952,13 @@
     }
     .cwp-banner__bg {
         aspect-ratio: 1 / 1;
+    }
+    .service-banner {
+        padding-top: 110px;
+    }
+}
+@media(max-width:380px) {
+    .tabs-nav {
+        gap: 10px 20px;
     }
 }
