@@ -212,7 +212,7 @@
         "remove_padding": true,
         "highlight": "Frequently Asked",
         "heading": "Common Concerns",
-        "footer_text": "<p>Don't see what you're looking for here? Get in touch with us <a href=\"/pages/contact-us\" title=\"Contact Us\">here</a>.</p>"
+        "footer_text": "<p>Don't see what you're looking for here? </p><p>Get in touch with us <a href=\"/pages/contact-us\" title=\"Contact Us\">here</a>.</p>"
       }
     },
     "spacer_X4tm99": {
