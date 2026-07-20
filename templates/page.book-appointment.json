@@ -13,7 +13,7 @@
       "type": "book-appointment",
       "settings": {
         "image": "shopify://shop_images/d2dfc6d1a725059641bf155050617ec9c2836d4c.png",
-        "heading": "Book an Aesthetic Consult",
+        "heading": "Book an <br> Aesthetic Consult",
         "description": "<p>Pellentesque bibendum dolor tortor diam. Cursus in metus egestas sollicitudin.</p>",
         "referral_text": "<p>Looking for a medical appointment? Fill out our referral form.</p>",
         "referral_button_text": "Book Cosmetic Appointment",
