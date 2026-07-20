@@ -1586,7 +1586,6 @@ footer {
     border-bottom: 1px solid #d9d6cf;
     padding: 22px 0;
 }
-.faq-item:first-child { padding-top: 0; }
 
 .faq-q {
     display: flex;
@@ -2577,8 +2576,12 @@ body.ct-popup-lock {
 .abi-text p {
     font-size: 16px;
     font-weight: 400;
-    line-height: 130%;
-    max-width: 40ch;
+    line-height: 133%;
+    max-width: 38ch;
+    letter-spacing: 0.16px;
+    font-family: var(--ppneue);
+    color: var(--text-primary);
+    text-align: right;
 }
 .about-bg {
     position: absolute;
@@ -2595,6 +2598,7 @@ body.ct-popup-lock {
 }
 .abanner-bottom h1 {
     max-width: 15ch;
+    line-height: 98%;
 }
 .team .team-in {
     display: grid;
@@ -2606,6 +2610,9 @@ body.ct-popup-lock {
 }
 .team-left .heading h2 {
     max-width: 18ch;
+}
+.team-left .heading .heading-btn {
+    margin-top: 32px;
 }
 .team-right .team-wrap {
     display: grid;
@@ -2700,8 +2707,8 @@ body.ct-popup-lock {
     gap: 50px;
 }
 .team-banner .team-bg {
-    height: 90vh;
-    min-height: 600px;
+    height: 60vh;
+    min-height: 550px;
     overflow: hidden;
     position: relative;
 }
@@ -2815,7 +2822,7 @@ body.ct-popup-lock {
 
 /* FAQ Page CSS */
 .faqcat{ 
-    margin-top: 130px;
+    margin-top: 170px;
 }
 .faqcat-in { 
     display: grid; 
@@ -2828,8 +2835,11 @@ body.ct-popup-lock {
     max-width: 8ch;
     line-height: 110%;
 }
-.faqcat-tabs,.faqcat-list {
+.faqcat-tabs {
     margin-top: 30px;
+}
+.faqcat-list {
+    margin-top: 10px;
 }
 .faqcat-tablist { 
     list-style: none;
@@ -2877,10 +2887,7 @@ body.ct-popup-lock {
 .faqcat-list .faq-q {
     text-transform: none;
 }
-.faqcat-list .faq-item:first-child {
-    padding-top: 22px;
-}
-  .faq-item.is-hidden { display: none; }
+.faq-item.is-hidden { display: none; }
 
   @media (max-width: 991px) {
     .faqcat-in { grid-template-columns: 1fr; gap: 30px; }
@@ -2888,7 +2895,7 @@ body.ct-popup-lock {
 /* ---------------- Enquiry pages (Book Appointment / Contact) ---------------- */
 .enquiry-page .ep-grid {
     display: grid;
-    grid-template-columns: 0.6fr 0.9fr 1.5fr;
+    grid-template-columns: 0.6fr 1fr 1.3fr;
     min-height: 100vh;
     align-items: stretch;
 }
@@ -2901,7 +2908,7 @@ body.ct-popup-lock {
 .enquiry-page .ep-content {
     display: flex;
     /* align-items: center; */
-    padding: 180px 48px;
+    padding: 160px 85px 180px 48px;
 }
 .enquiry-page .ep-content-in { 
     width: 100%;
@@ -2922,6 +2929,7 @@ body.ct-popup-lock {
     font-size: 14px;
     letter-spacing: var(--letter-spacing-3);
     color: var(--text-tertiary);
+    max-width: 38ch;
 }
 
 /* referral block (book appointment) */
@@ -3029,14 +3037,14 @@ body.ct-popup-lock {
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-24);
     font-size: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
 }
  .bf-title, .ah-title {
     font-size: clamp(28px, 2.6vw, 42px);
     line-height: 122%;
     letter-spacing: 0.16px;
     color: var(--text-primary);
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     max-width: 16ch;
 }
  .bf-title a, .ah-title a {
@@ -3048,7 +3056,7 @@ body.ct-popup-lock {
     line-height: 140%;
     letter-spacing: var(--letter-spacing-3);
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     max-width: 54ch;
 }
  .bf-image, .ah-image { 

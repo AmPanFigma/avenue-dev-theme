@@ -25,10 +25,14 @@
             </ul>
          </div>
          <div class="header-logo">
+            {%- assign active_logo = section.settings.select_logo -%}
+            {%- if page.handle == 'clinical-trials' and section.settings.select_logo_clinical != blank -%}
+              {%- assign active_logo = section.settings.select_logo_clinical -%}
+            {%- endif -%}
             <a href="{{ routes.root_url }}">
-              {% if section.settings.select_logo %}
+              {% if active_logo %}
                 <img
-                  src="{{ section.settings.select_logo | image_url }}"
+                  src="{{ active_logo | image_url }}"
                   alt="{{ shop.name | escape }}"
                   class="icon">
               {% else %}
@@ -256,6 +260,12 @@
         "type": "image_picker",
         "id": "select_logo",
         "label": "Change Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "select_logo_clinical",
+        "label": "Clinical Trials page logo",
+        "info": "Optional. Used only on the Clinical Trials page. Falls back to the main logo if empty."
       },
       {
         "type": "link_list",
