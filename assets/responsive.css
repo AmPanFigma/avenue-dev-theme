@@ -111,6 +111,9 @@
     .faqcat {
         margin-top: 130px;
     } 
+    .hi-left > ul > li > a, .right-menu > ul > li > a {
+        font-size: 10px;
+    }
 }
 
 /* ---------------- Mobile navigation ---------------- */
@@ -649,6 +652,9 @@
     .service-banner {
         padding-top: 90px;
     }
+    .template-policy .main {
+        padding-top: 120px;
+    }
 }
 @media(max-width: 767px){
     .hnav-promo__media,
@@ -971,6 +977,9 @@
     }
     .hiw-steps {
         gap: 50px;
+    }
+    .template-policy .main {
+        padding-top: 100px;
     }
 }
 @media(max-width:380px) {

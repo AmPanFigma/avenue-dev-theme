@@ -117,7 +117,7 @@
     {{ 'cart-drawer.css' | asset_url | stylesheet_tag }}
   </head>
 
-  <body>
+  <body class="{% if request.page_type == 'policy' %}template-policy{% endif %}">
     {% sections 'header-group' %}
 
     <div class="main">

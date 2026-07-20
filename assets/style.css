@@ -1698,6 +1698,40 @@ footer {
 .os-track::-webkit-scrollbar { display: none; }
 .os-track.is-dragging { cursor: grabbing; }
 
+/* Policy pages (Shopify-generated: privacy, refund, terms, shipping) */
+.template-policy .main {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    max-width: 680px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+.shopify-policy__container {
+    max-width: inherit;
+    padding: 0;
+}
+.template-policy .main h1 {
+    margin-bottom: 30px;
+}
+.shopify-policy__title {
+    text-align: left;
+}
+.shopify-policy__body p {
+    margin-bottom: 20px;
+}
+.shopify-policy__body ul {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.shopify-policy__body a,
+.shopify-policy__body p a,
+.shopify-policy__body li a {
+    color: var(--bg-secondary);
+    transition: .2s ease all;
+}
+
 /* Infinite-scroll sentinel — invisible, just a trigger for auto-load */
 .collection-more { width: 100%; height: 1px; }
 
