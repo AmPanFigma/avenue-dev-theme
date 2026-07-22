@@ -33,6 +33,7 @@
         <div class="pdp-info-in">
 
           <h1 class="pdp-title">{{ product.title }}</h1>
+          {% comment %} <p class="pdp-smalldesc">{{ product.de }}</p> {% endcomment %}
           <p class="pdp-price" data-pdp-price>{{ current_variant.price | money }}</p>
 
           {%- if product.description != blank -%}
@@ -105,6 +106,7 @@
 
           {%- comment -%} Accordions {%- endcomment -%}
           <div class="pdp-accordions">
+            {%- assign details = product.metafields.custom.product_details -%}
             {%- assign how_to_use = product.metafields.custom.how_to_use -%}
             {%- assign ingredients = product.metafields.custom.ingredients -%}
             {%- assign shipping = product.metafields.custom.shipping_returns -%}
@@ -112,7 +114,7 @@
             {%- if product.description != blank -%}
             <div class="pdp-acc active">
               <button type="button" class="pdp-acc-head"><span>Product Details</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
-              <div class="pdp-acc-body"><div class="pdp-acc-in">{{ product.description }}</div></div>
+              <div class="pdp-acc-body"><div class="pdp-acc-in">{{ details | metafield_tag }}</div></div>
             </div>
             {%- endif -%}
 
