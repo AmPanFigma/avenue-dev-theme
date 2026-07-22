@@ -7,6 +7,7 @@
    or template.name == 'article'
    or template.name == 'policy'
    or request.page_type == 'policy'
+   or template.suffix == 'thank-you'
    or filled_pages contains page.handle %}
   <header class="filled" data-ajax-cart-section>
 {% else %}
