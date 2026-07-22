@@ -3590,6 +3590,55 @@ text-decoration: none;
     width: 100%;
 }
 
+/* Click-to-zoom gallery */
+.pdp-media .pdp-zoomable { cursor: zoom-in; }
+
+body.pdp-zoom-lock { overflow: hidden; }
+
+.pdp-zoom {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.pdp-zoom.is-open { display: flex; }
+.pdp-zoom__stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    padding: 40px;
+}
+.pdp-zoom__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+}
+.pdp-zoom.is-zoomed .pdp-zoom__img {
+    transform: scale(2);
+    cursor: zoom-out;
+}
+.pdp-zoom__close {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    z-index: 2;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+.pdp-zoom__close:hover { opacity: 0.7; }
+
 .pdp-main .pdp-payments {
     display: flex;
     flex-wrap: wrap;

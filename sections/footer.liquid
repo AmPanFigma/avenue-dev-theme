@@ -29,11 +29,15 @@
                             <p>{{ section.settings.news_para }}</p>
                         </div>
                         <div class="newsletter-wrap">
+                            {%- assign newsletter_redirect = section.settings.newsletter_thankyou_url | default: pages['thank-you'].url -%}
                             {% form 'customer' %}
                                 {% if form.posted_successfully? %}
                                 <div class="newsletter-success">
                                     Thank you for subscribing!
                                 </div>
+                                {% if newsletter_redirect != blank %}
+                                    <script>window.location.href = {{ newsletter_redirect | json }};</script>
+                                {% endif %}
                                 {% endif %}
 
                                 {{ form.errors | default_errors }}
@@ -115,6 +119,12 @@
         "type": "text",
         "id": "news_para",
         "label": "Newsletter Paragraph"
+    },
+    {
+        "type": "url",
+        "id": "newsletter_thankyou_url",
+        "label": "Newsletter redirect on success",
+        "info": "Optional. Defaults to your Thank You page (handle: thank-you)."
     },
     {
         "type": "image_picker",

@@ -12,11 +12,12 @@
     <h3 class="enquiry-form__title">{{ heading }}</h3>
   {% endif %}
 
+  {%- assign redirect_url = thankyou_url | default: pages['thank-you'].url -%}
   {% form 'contact', class: 'ct-form-el' %}
     {% if form.posted_successfully? %}
       <p class="ct-form-success">{{ success_text | default: 'Thanks — we will be in touch.' }}</p>
-      {% if thankyou_url != blank %}
-        <script>window.location.href = {{ thankyou_url | json }};</script>
+      {% if redirect_url != blank %}
+        <script>window.location.href = {{ redirect_url | json }};</script>
       {% endif %}
     {% endif %}
 

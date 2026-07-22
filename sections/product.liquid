@@ -21,6 +21,8 @@
             <img src="{{ image | image_url: width: 1200 }}"
                  alt="{{ image.alt | escape | default: product.title }}"
                  width="{{ image.width }}" height="{{ image.height }}"
+                 class="pdp-zoomable"
+                 data-zoom-src="{{ image | image_url: width: 2048 }}"
                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
           </div>
         {%- else -%}
@@ -243,6 +245,56 @@
         else { upsell.style.display = 'none'; }
       }).catch(function () { upsell.style.display = 'none'; });
     }
+  })();
+</script>
+
+{%- comment -%} Click-to-zoom lightbox {%- endcomment -%}
+<div class="pdp-zoom" id="PdpZoom-{{ section.id }}" aria-hidden="true">
+  <button type="button" class="pdp-zoom__close" data-zoom-close aria-label="Close">&times;</button>
+  <div class="pdp-zoom__stage" data-zoom-close>
+    <img class="pdp-zoom__img" src="" alt="" data-zoom-img>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('PdpZoom-{{ section.id }}');
+    if (!root) return;
+    var stageImg = root.querySelector('[data-zoom-img]');
+
+    function open(src, alt) {
+      stageImg.src = src;
+      stageImg.alt = alt || '';
+      root.classList.add('is-open');
+      root.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('pdp-zoom-lock');
+    }
+    function close() {
+      root.classList.remove('is-open');
+      root.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('pdp-zoom-lock');
+      stageImg.src = '';
+      root.classList.remove('is-zoomed');
+    }
+
+    // open when a gallery image is clicked
+    document.querySelectorAll('.pdp-zoomable').forEach(function (img) {
+      img.addEventListener('click', function () {
+        open(img.getAttribute('data-zoom-src') || img.src, img.alt);
+      });
+    });
+
+    // click the enlarged image to toggle an extra 2x magnify; click backdrop/close to exit
+    stageImg.addEventListener('click', function (e) {
+      e.stopPropagation();
+      root.classList.toggle('is-zoomed');
+    });
+    root.querySelectorAll('[data-zoom-close]').forEach(function (el) {
+      el.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && root.classList.contains('is-open')) close();
+    });
   })();
 </script>
 
