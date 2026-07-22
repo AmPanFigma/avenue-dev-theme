@@ -3690,6 +3690,13 @@ text-decoration: none;
     color: var(--text-tertiary);
     line-height: 1.7;
 }
+.pdp-acc-in .metafield-multi_line_text_field {
+    color: var(--text-tertiary);
+    line-height: 140%;
+    letter-spacing: var(--letter-spacing-3);
+    font-size: 14px;
+    font-weight: 400;
+}
 
 /* upsell item (shared with cart) */
 .upsell-item {
