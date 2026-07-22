@@ -109,6 +109,7 @@
             {%- assign details = product.metafields.custom.product_details -%}
             {%- assign how_to_use = product.metafields.custom.how_to_use -%}
             {%- assign ingredients = product.metafields.custom.ingredients -%}
+            {%- assign features = product.metafields.custom.features_benefits -%}
             {%- assign shipping = product.metafields.custom.shipping_returns -%}
 
             {%- if product.description != blank -%}
@@ -129,6 +130,13 @@
               <div class="pdp-acc">
                 <button type="button" class="pdp-acc-head"><span>Ingredients</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
                 <div class="pdp-acc-body"><div class="pdp-acc-in">{{ ingredients | metafield_tag }}</div></div>
+              </div>
+            {%- endif -%}
+
+            {%- if features != blank -%}
+              <div class="pdp-acc">
+                <button type="button" class="pdp-acc-head"><span>Features & Benefits</span><span class="pdp-acc-icon" aria-hidden="true"></span></button>
+                <div class="pdp-acc-body"><div class="pdp-acc-in">{{ features | metafield_tag }}</div></div>
               </div>
             {%- endif -%}
 
