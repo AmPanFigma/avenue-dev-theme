@@ -3422,11 +3422,11 @@ text-decoration: none;
 
 .pdp-main .pdp-media {
     background: var(--bg-light);
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1/1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    /* padding: 40px; */
 }
 
 .pdp-main .pdp-media img {
