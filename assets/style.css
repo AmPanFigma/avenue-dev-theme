@@ -3690,7 +3690,9 @@ text-decoration: none;
     color: var(--text-tertiary);
     line-height: 1.7;
 }
-.pdp-acc-in .metafield-multi_line_text_field {
+.pdp-acc-in .metafield-multi_line_text_field,
+.pdp-acc-in .metafield-rich_text_field p,
+.pdp-acc-in .metafield-rich_text_field li {
     color: var(--text-tertiary);
     line-height: 140%;
     letter-spacing: var(--letter-spacing-3);
