@@ -22,7 +22,7 @@
               <p class="ep-referral-text">{{ section.settings.referral_text }}</p>
             {% endif %}
             {% if section.settings.referral_button_text != blank %}
-              <a href="{{ section.settings.referral_button_link | default: '#' }}" class="custom-btn ep-referral-btn">{{ section.settings.referral_button_text }}</a>
+              <a href="{{ section.settings.referral_button_link | default: '#' }}" class="custom-btn ep-referral-btn" target="_blank" rel="noopener">{{ section.settings.referral_button_text }}</a>
             {% endif %}
           </div>
         {% endif %}
@@ -53,7 +53,7 @@
     { "type": "header", "content": "Referral" },
     { "type": "richtext", "id": "referral_text", "label": "Referral text", "default": "<p>Looking for a medical appointment? Fill out our referral form.</p>" },
     { "type": "text", "id": "referral_button_text", "label": "Referral button label", "default": "Book Cosmetic Appointment" },
-    { "type": "url", "id": "referral_button_link", "label": "Referral button link" },
+    { "type": "url", "id": "referral_button_link", "label": "Referral button link (or PDF)", "info": "Paste the URL of your uploaded PDF (Settings → Files → copy link) to open it in a new tab. Or link to any page." },
     { "type": "header", "content": "Form" },
     { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Fill The Form To Book A Aesthetic Consult" },
     { "type": "text", "id": "submit_label", "label": "Submit label", "default": "Submit" },
