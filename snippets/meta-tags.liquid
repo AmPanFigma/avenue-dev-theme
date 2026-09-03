@@ -14,6 +14,8 @@
     assign og_type = 'article'
   elsif request.page_type == 'password'
     assign og_url = request.origin
+    assign og_title = shop.name | append: ' | Coming Soon'
+    assign og_description = 'Avenue Dermatology Group is preparing to welcome patients at our new Toronto clinic. More information will be available shortly.'
   endif
 %}
 
@@ -86,10 +88,14 @@
 >
 
 <title>
-  {{ page_title }}
-  {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-  {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- if request.page_type == 'password' -%}
+    {{ og_title }}
+  {%- else -%}
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- endif -%}
 </title>
 
 <link
@@ -97,7 +103,12 @@
   href="{{ canonical_url }}"
 >
 
-{% if page_description %}
+{% if request.page_type == 'password' %}
+  <meta
+    name="description"
+    content="{{ og_description | escape }}"
+  >
+{% elsif page_description %}
   <meta
     name="description"
     content="{{ page_description | escape }}"
