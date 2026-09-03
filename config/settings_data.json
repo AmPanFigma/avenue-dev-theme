@@ -8,5 +8,10 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "background_color": "#f7f4ef",
+    "foreground_color": "#253238",
+    "input_corner_radius": 10,
+    "content_for_index": []
+  }
 }
